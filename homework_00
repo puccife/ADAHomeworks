@@ -1,0 +1,52 @@
+import json
+import collections
+import matplotlib.pyplot as plt
+import matplotlib
+import pandas as pd
+
+matplotlib.style.use('ggplot')
+data = []
+with open('interactive_data.json') as data_file:
+    for line in data_file:
+        data.append(json.loads(line))
+
+# df2 = pd.DataFrame(np.random.rand(10, 2), columns=['female', 'male'])
+# df2.plot.bar()
+# plt.show()
+
+dataMap = collections.defaultdict(dict)
+
+dataMap['Total']['Males'] = 0
+dataMap['Total']['Females'] = 0
+dataMap['Homicide']['Males'] = 0
+dataMap['Homicide']['Females'] = 0
+dataMap['Suicide']['Males'] = 0
+dataMap['Suicide']['Females'] = 0
+
+for line in data:
+    if line['Intent']=='None selected' and line['Gender']=='Male' and line['Age']=='None selected' and line['Race']=='None selected':
+        dataMap['Total']['Males']+=int(line['Deaths'])
+    elif line['Intent']=='None selected' and line['Gender']=='Female' and line['Age']=='None selected' and line['Race']=='None selected':
+        dataMap['Total']['Females']+=int(line['Deaths'])
+    if line['Intent']=='Homicide' and line['Gender']=='Male' and line['Age']=='None selected' and line['Race']=='None selected':
+        dataMap['Homicide']['Males']+=int(line['Deaths'])
+    elif line['Intent']=='Homicide' and line['Gender']=='Female' and line['Age']=='None selected' and line['Race']=='None selected':
+        dataMap['Homicide']['Females']+=int(line['Deaths'])
+    if line['Intent']=='Suicide' and line['Gender']=='Male' and line['Age']=='None selected' and line['Race']=='None selected':
+        dataMap['Suicide']['Males']+=int(line['Deaths'])
+    elif line['Intent']=='Suicide' and line['Gender']=='Female' and line['Age']=='None selected' and line['Race']=='None selected':
+        dataMap['Suicide']['Females']+=int(line['Deaths'])
+
+print("males: " + str(dataMap['Total']['Males']))
+print("females: " + str(dataMap['Total']['Females']))
+print("males: " + str(dataMap['Homicide']['Males']))
+print("females: " + str(dataMap['Homicide']['Females']))
+print("sum: " + str(dataMap['Total']['Females']+dataMap['Total']['Males']))
+
+x=0
+y=0
+graph = pd.DataFrame([[dataMap['Total']['Males'], dataMap['Total']['Females']],
+                      [ dataMap['Homicide']['Males'],  dataMap['Homicide']['Females']],
+                      [ dataMap['Suicide']['Males'],  dataMap['Suicide']['Females']]], columns=['males', 'females'])
+graph.plot.bar()
+plt.show()

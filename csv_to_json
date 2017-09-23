@@ -1,0 +1,12 @@
+import csv
+import json
+
+csvfile = open('interactive_data.csv', 'r')
+jsonfile = open('interactive_data.json', 'w')
+
+fieldnames = ("","Intent","Gender","Age","Race","Deaths","Population","Rate")
+reader = csv.DictReader( csvfile, fieldnames)
+for row in reader:
+    json.dump(row, jsonfile)
+    jsonfile.write('\n')
+

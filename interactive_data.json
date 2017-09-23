@@ -1,0 +1,541 @@
+{"": "", "Intent": "Intent", "Gender": "Gender", "Age": "Age", "Race": "Race", "Deaths": "Deaths", "Population": "Population", "Rate": "Rate"}
+{"": "1", "Intent": "None selected", "Gender": "None selected", "Age": "None selected", "Race": "None selected", "Deaths": "33599", "Population": "316299978", "Rate": "10.6"}
+{"": "2", "Intent": "None selected", "Gender": "None selected", "Age": "None selected", "Race": "White", "Deaths": "22079", "Population": "197369634", "Rate": "11.2"}
+{"": "3", "Intent": "None selected", "Gender": "None selected", "Age": "None selected", "Race": "Black", "Deaths": "7765", "Population": "38896382", "Rate": "20"}
+{"": "4", "Intent": "None selected", "Gender": "None selected", "Age": "None selected", "Race": "Hispanic", "Deaths": "3007", "Population": "54049078", "Rate": "5.6"}
+{"": "5", "Intent": "None selected", "Gender": "None selected", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "442", "Population": "16315561", "Rate": "2.7"}
+{"": "6", "Intent": "None selected", "Gender": "None selected", "Age": "None selected", "Race": "Other", "Deaths": "306", "Population": "9669323", "Rate": "3.2"}
+{"": "7", "Intent": "None selected", "Gender": "None selected", "Age": "Under 15", "Race": "None selected", "Deaths": "427", "Population": "61085868", "Rate": "0.7"}
+{"": "8", "Intent": "None selected", "Gender": "None selected", "Age": "Under 15", "Race": "White", "Deaths": "242", "Population": "31538832", "Rate": "0.8"}
+{"": "9", "Intent": "None selected", "Gender": "None selected", "Age": "Under 15", "Race": "Black", "Deaths": "109", "Population": "8323603", "Rate": "1.3"}
+{"": "10", "Intent": "None selected", "Gender": "None selected", "Age": "Under 15", "Race": "Hispanic", "Deaths": "63", "Population": "14994449", "Rate": "0.4"}
+{"": "11", "Intent": "None selected", "Gender": "None selected", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "7", "Population": "2825155", "Rate": "0.2"}
+{"": "12", "Intent": "None selected", "Gender": "None selected", "Age": "Under 15", "Race": "Other", "Deaths": "5", "Population": "3403829", "Rate": "0.1"}
+{"": "13", "Intent": "None selected", "Gender": "None selected", "Age": "15 - 34", "Race": "None selected", "Deaths": "12723", "Population": "86611149", "Rate": "14.7"}
+{"": "14", "Intent": "None selected", "Gender": "None selected", "Age": "15 - 34", "Race": "White", "Deaths": "5244", "Population": "48773131", "Rate": "10.8"}
+{"": "15", "Intent": "None selected", "Gender": "None selected", "Age": "15 - 34", "Race": "Black", "Deaths": "5297", "Population": "11893789", "Rate": "44.5"}
+{"": "16", "Intent": "None selected", "Gender": "None selected", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "1822", "Population": "17960261", "Rate": "10.1"}
+{"": "17", "Intent": "None selected", "Gender": "None selected", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "200", "Population": "4950398", "Rate": "4"}
+{"": "18", "Intent": "None selected", "Gender": "None selected", "Age": "15 - 34", "Race": "Other", "Deaths": "160", "Population": "3033571", "Rate": "5.3"}
+{"": "19", "Intent": "None selected", "Gender": "None selected", "Age": "35 - 64", "Race": "None selected", "Deaths": "14874", "Population": "123935928", "Rate": "12"}
+{"": "20", "Intent": "None selected", "Gender": "None selected", "Age": "35 - 64", "Race": "White", "Deaths": "11396", "Population": "81870182", "Rate": "13.9"}
+{"": "21", "Intent": "None selected", "Gender": "None selected", "Age": "35 - 64", "Race": "Black", "Deaths": "2164", "Population": "14848291", "Rate": "14.6"}
+{"": "22", "Intent": "None selected", "Gender": "None selected", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "988", "Population": "17777422", "Rate": "5.6"}
+{"": "23", "Intent": "None selected", "Gender": "None selected", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "203", "Population": "6797707", "Rate": "3"}
+{"": "24", "Intent": "None selected", "Gender": "None selected", "Age": "35 - 64", "Race": "Other", "Deaths": "123", "Population": "2642326", "Rate": "4.7"}
+{"": "25", "Intent": "None selected", "Gender": "None selected", "Age": "65+", "Race": "None selected", "Deaths": "5569", "Population": "44667034", "Rate": "12.5"}
+{"": "26", "Intent": "None selected", "Gender": "None selected", "Age": "65+", "Race": "White", "Deaths": "5192", "Population": "35187489", "Rate": "14.8"}
+{"": "27", "Intent": "None selected", "Gender": "None selected", "Age": "65+", "Race": "Black", "Deaths": "194", "Population": "3830699", "Rate": "5.1"}
+{"": "28", "Intent": "None selected", "Gender": "None selected", "Age": "65+", "Race": "Hispanic", "Deaths": "133", "Population": "3316947", "Rate": "4"}
+{"": "29", "Intent": "None selected", "Gender": "None selected", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "32", "Population": "1742301", "Rate": "1.8"}
+{"": "30", "Intent": "None selected", "Gender": "None selected", "Age": "65+", "Race": "Other", "Deaths": "18", "Population": "589598", "Rate": "3.1"}
+{"": "31", "Intent": "None selected", "Gender": "None selected", "Age": "5", "Race": "None selected", "Deaths": "6", "Population": "0", "Rate": "Inf"}
+{"": "32", "Intent": "None selected", "Gender": "None selected", "Age": "5", "Race": "White", "Deaths": "4", "Population": "0", "Rate": "Inf"}
+{"": "33", "Intent": "None selected", "Gender": "None selected", "Age": "5", "Race": "Black", "Deaths": "1", "Population": "0", "Rate": "Inf"}
+{"": "34", "Intent": "None selected", "Gender": "None selected", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "35", "Intent": "None selected", "Gender": "None selected", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "36", "Intent": "None selected", "Gender": "None selected", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "37", "Intent": "None selected", "Gender": "Female", "Age": "None selected", "Race": "None selected", "Deaths": "4816", "Population": "160668110", "Rate": "3"}
+{"": "38", "Intent": "None selected", "Gender": "Female", "Age": "None selected", "Race": "White", "Deaths": "3562", "Population": "100162288", "Rate": "3.6"}
+{"": "39", "Intent": "None selected", "Gender": "Female", "Age": "None selected", "Race": "Black", "Deaths": "773", "Population": "20362385", "Rate": "3.8"}
+{"": "40", "Intent": "None selected", "Gender": "Female", "Age": "None selected", "Race": "Hispanic", "Deaths": "358", "Population": "26670924", "Rate": "1.3"}
+{"": "41", "Intent": "None selected", "Gender": "Female", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "81", "Population": "8589119", "Rate": "0.9"}
+{"": "42", "Intent": "None selected", "Gender": "Female", "Age": "None selected", "Race": "Other", "Deaths": "42", "Population": "4883395", "Rate": "0.9"}
+{"": "43", "Intent": "None selected", "Gender": "Female", "Age": "Under 15", "Race": "None selected", "Deaths": "123", "Population": "29836679", "Rate": "0.4"}
+{"": "44", "Intent": "None selected", "Gender": "Female", "Age": "Under 15", "Race": "White", "Deaths": "64", "Population": "15355910", "Rate": "0.4"}
+{"": "45", "Intent": "None selected", "Gender": "Female", "Age": "Under 15", "Race": "Black", "Deaths": "32", "Population": "4095428", "Rate": "0.8"}
+{"": "46", "Intent": "None selected", "Gender": "Female", "Age": "Under 15", "Race": "Hispanic", "Deaths": "25", "Population": "7330024", "Rate": "0.3"}
+{"": "47", "Intent": "None selected", "Gender": "Female", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "2", "Population": "1393440", "Rate": "0.1"}
+{"": "48", "Intent": "None selected", "Gender": "Female", "Age": "Under 15", "Race": "Other", "Deaths": "1", "Population": "1661877", "Rate": "0.1"}
+{"": "49", "Intent": "None selected", "Gender": "Female", "Age": "15 - 34", "Race": "None selected", "Deaths": "1521", "Population": "42593280", "Rate": "3.6"}
+{"": "50", "Intent": "None selected", "Gender": "Female", "Age": "15 - 34", "Race": "White", "Deaths": "835", "Population": "23942099", "Rate": "3.5"}
+{"": "51", "Intent": "None selected", "Gender": "Female", "Age": "15 - 34", "Race": "Black", "Deaths": "441", "Population": "6023846", "Rate": "7.3"}
+{"": "52", "Intent": "None selected", "Gender": "Female", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "191", "Population": "8580577", "Rate": "2.2"}
+{"": "53", "Intent": "None selected", "Gender": "Female", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "30", "Population": "2535358", "Rate": "1.2"}
+{"": "54", "Intent": "None selected", "Gender": "Female", "Age": "15 - 34", "Race": "Other", "Deaths": "23", "Population": "1511400", "Rate": "1.5"}
+{"": "55", "Intent": "None selected", "Gender": "Female", "Age": "35 - 64", "Race": "None selected", "Deaths": "2565", "Population": "63125058", "Rate": "4.1"}
+{"": "56", "Intent": "None selected", "Gender": "Female", "Age": "35 - 64", "Race": "White", "Deaths": "2105", "Population": "41284839", "Rate": "5.1"}
+{"": "57", "Intent": "None selected", "Gender": "Female", "Age": "35 - 64", "Race": "Black", "Deaths": "270", "Population": "7932606", "Rate": "3.4"}
+{"": "58", "Intent": "None selected", "Gender": "Female", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "131", "Population": "8863203", "Rate": "1.5"}
+{"": "59", "Intent": "None selected", "Gender": "Female", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "44", "Population": "3668172", "Rate": "1.2"}
+{"": "60", "Intent": "None selected", "Gender": "Female", "Age": "35 - 64", "Race": "Other", "Deaths": "16", "Population": "1376239", "Rate": "1.2"}
+{"": "61", "Intent": "None selected", "Gender": "Female", "Age": "65+", "Race": "None selected", "Deaths": "606", "Population": "25113094", "Rate": "2.4"}
+{"": "62", "Intent": "None selected", "Gender": "Female", "Age": "65+", "Race": "White", "Deaths": "558", "Population": "19579439", "Rate": "2.8"}
+{"": "63", "Intent": "None selected", "Gender": "Female", "Age": "65+", "Race": "Black", "Deaths": "29", "Population": "2310506", "Rate": "1.3"}
+{"": "64", "Intent": "None selected", "Gender": "Female", "Age": "65+", "Race": "Hispanic", "Deaths": "11", "Population": "1897119", "Rate": "0.6"}
+{"": "65", "Intent": "None selected", "Gender": "Female", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "6", "Population": "992150", "Rate": "0.6"}
+{"": "66", "Intent": "None selected", "Gender": "Female", "Age": "65+", "Race": "Other", "Deaths": "2", "Population": "333879", "Rate": "0.6"}
+{"": "67", "Intent": "None selected", "Gender": "Female", "Age": "5", "Race": "None selected", "Deaths": "1", "Population": "0", "Rate": "Inf"}
+{"": "68", "Intent": "None selected", "Gender": "Female", "Age": "5", "Race": "White", "Deaths": "1", "Population": "0", "Rate": "Inf"}
+{"": "69", "Intent": "None selected", "Gender": "Female", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "70", "Intent": "None selected", "Gender": "Female", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "71", "Intent": "None selected", "Gender": "Female", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "72", "Intent": "None selected", "Gender": "Female", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "73", "Intent": "None selected", "Gender": "Male", "Age": "None selected", "Race": "None selected", "Deaths": "28783", "Population": "155631868", "Rate": "18.5"}
+{"": "74", "Intent": "None selected", "Gender": "Male", "Age": "None selected", "Race": "White", "Deaths": "18517", "Population": "97207346", "Rate": "19"}
+{"": "75", "Intent": "None selected", "Gender": "Male", "Age": "None selected", "Race": "Black", "Deaths": "6993", "Population": "18533996", "Rate": "37.7"}
+{"": "76", "Intent": "None selected", "Gender": "Male", "Age": "None selected", "Race": "Hispanic", "Deaths": "2650", "Population": "27378155", "Rate": "9.7"}
+{"": "77", "Intent": "None selected", "Gender": "Male", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "361", "Population": "7726442", "Rate": "4.7"}
+{"": "78", "Intent": "None selected", "Gender": "Male", "Age": "None selected", "Race": "Other", "Deaths": "263", "Population": "4785929", "Rate": "5.5"}
+{"": "79", "Intent": "None selected", "Gender": "Male", "Age": "Under 15", "Race": "None selected", "Deaths": "303", "Population": "31249189", "Rate": "1"}
+{"": "80", "Intent": "None selected", "Gender": "Male", "Age": "Under 15", "Race": "White", "Deaths": "179", "Population": "16182922", "Rate": "1.1"}
+{"": "81", "Intent": "None selected", "Gender": "Male", "Age": "Under 15", "Race": "Black", "Deaths": "77", "Population": "4228176", "Rate": "1.8"}
+{"": "82", "Intent": "None selected", "Gender": "Male", "Age": "Under 15", "Race": "Hispanic", "Deaths": "39", "Population": "7664425", "Rate": "0.5"}
+{"": "83", "Intent": "None selected", "Gender": "Male", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "5", "Population": "1431715", "Rate": "0.3"}
+{"": "84", "Intent": "None selected", "Gender": "Male", "Age": "Under 15", "Race": "Other", "Deaths": "4", "Population": "1741952", "Rate": "0.2"}
+{"": "85", "Intent": "None selected", "Gender": "Male", "Age": "15 - 34", "Race": "None selected", "Deaths": "11202", "Population": "44017869", "Rate": "25.4"}
+{"": "86", "Intent": "None selected", "Gender": "Male", "Age": "15 - 34", "Race": "White", "Deaths": "4409", "Population": "24831032", "Rate": "17.8"}
+{"": "87", "Intent": "None selected", "Gender": "Male", "Age": "15 - 34", "Race": "Black", "Deaths": "4855", "Population": "5869943", "Rate": "82.7"}
+{"": "88", "Intent": "None selected", "Gender": "Male", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "1631", "Population": "9379683", "Rate": "17.4"}
+{"": "89", "Intent": "None selected", "Gender": "Male", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "170", "Population": "2415040", "Rate": "7"}
+{"": "90", "Intent": "None selected", "Gender": "Male", "Age": "15 - 34", "Race": "Other", "Deaths": "136", "Population": "1522171", "Rate": "8.9"}
+{"": "91", "Intent": "None selected", "Gender": "Male", "Age": "35 - 64", "Race": "None selected", "Deaths": "12309", "Population": "60810870", "Rate": "20.2"}
+{"": "92", "Intent": "None selected", "Gender": "Male", "Age": "35 - 64", "Race": "White", "Deaths": "9291", "Population": "40585343", "Rate": "22.9"}
+{"": "93", "Intent": "None selected", "Gender": "Male", "Age": "35 - 64", "Race": "Black", "Deaths": "1894", "Population": "6915685", "Rate": "27.4"}
+{"": "94", "Intent": "None selected", "Gender": "Male", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "858", "Population": "8914219", "Rate": "9.6"}
+{"": "95", "Intent": "None selected", "Gender": "Male", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "159", "Population": "3129535", "Rate": "5.1"}
+{"": "96", "Intent": "None selected", "Gender": "Male", "Age": "35 - 64", "Race": "Other", "Deaths": "107", "Population": "1266087", "Rate": "8.5"}
+{"": "97", "Intent": "None selected", "Gender": "Male", "Age": "65+", "Race": "None selected", "Deaths": "4964", "Population": "19553940", "Rate": "25.4"}
+{"": "98", "Intent": "None selected", "Gender": "Male", "Age": "65+", "Race": "White", "Deaths": "4634", "Population": "15608050", "Rate": "29.7"}
+{"": "99", "Intent": "None selected", "Gender": "Male", "Age": "65+", "Race": "Black", "Deaths": "165", "Population": "1520192", "Rate": "10.9"}
+{"": "100", "Intent": "None selected", "Gender": "Male", "Age": "65+", "Race": "Hispanic", "Deaths": "122", "Population": "1419828", "Rate": "8.6"}
+{"": "101", "Intent": "None selected", "Gender": "Male", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "26", "Population": "750151", "Rate": "3.5"}
+{"": "102", "Intent": "None selected", "Gender": "Male", "Age": "65+", "Race": "Other", "Deaths": "16", "Population": "255719", "Rate": "6.3"}
+{"": "103", "Intent": "None selected", "Gender": "Male", "Age": "5", "Race": "None selected", "Deaths": "5", "Population": "0", "Rate": "Inf"}
+{"": "104", "Intent": "None selected", "Gender": "Male", "Age": "5", "Race": "White", "Deaths": "4", "Population": "0", "Rate": "Inf"}
+{"": "105", "Intent": "None selected", "Gender": "Male", "Age": "5", "Race": "Black", "Deaths": "1", "Population": "0", "Rate": "Inf"}
+{"": "106", "Intent": "None selected", "Gender": "Male", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "107", "Intent": "None selected", "Gender": "Male", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "108", "Intent": "None selected", "Gender": "Male", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "109", "Intent": "Suicide", "Gender": "None selected", "Age": "None selected", "Race": "None selected", "Deaths": "21058", "Population": "316299978", "Rate": "6.7"}
+{"": "110", "Intent": "Suicide", "Gender": "None selected", "Age": "None selected", "Race": "White", "Deaths": "18457", "Population": "197369634", "Rate": "9.4"}
+{"": "111", "Intent": "Suicide", "Gender": "None selected", "Age": "None selected", "Race": "Black", "Deaths": "1111", "Population": "38896382", "Rate": "2.9"}
+{"": "112", "Intent": "Suicide", "Gender": "None selected", "Age": "None selected", "Race": "Hispanic", "Deaths": "1057", "Population": "54049078", "Rate": "2"}
+{"": "113", "Intent": "Suicide", "Gender": "None selected", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "248", "Population": "16315561", "Rate": "1.5"}
+{"": "114", "Intent": "Suicide", "Gender": "None selected", "Age": "None selected", "Race": "Other", "Deaths": "185", "Population": "9669323", "Rate": "1.9"}
+{"": "115", "Intent": "Suicide", "Gender": "None selected", "Age": "Under 15", "Race": "None selected", "Deaths": "139", "Population": "61085868", "Rate": "0.2"}
+{"": "116", "Intent": "Suicide", "Gender": "None selected", "Age": "Under 15", "Race": "White", "Deaths": "117", "Population": "31538832", "Rate": "0.4"}
+{"": "117", "Intent": "Suicide", "Gender": "None selected", "Age": "Under 15", "Race": "Black", "Deaths": "7", "Population": "8323603", "Rate": "0.1"}
+{"": "118", "Intent": "Suicide", "Gender": "None selected", "Age": "Under 15", "Race": "Hispanic", "Deaths": "12", "Population": "14994449", "Rate": "0.1"}
+{"": "119", "Intent": "Suicide", "Gender": "None selected", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "3", "Population": "2825155", "Rate": "0.1"}
+{"": "120", "Intent": "Suicide", "Gender": "None selected", "Age": "Under 15", "Race": "Other", "Deaths": "0", "Population": "3403829", "Rate": "0"}
+{"": "121", "Intent": "Suicide", "Gender": "None selected", "Age": "15 - 34", "Race": "None selected", "Deaths": "5061", "Population": "86611149", "Rate": "5.8"}
+{"": "122", "Intent": "Suicide", "Gender": "None selected", "Age": "15 - 34", "Race": "White", "Deaths": "3878", "Population": "48773131", "Rate": "8"}
+{"": "123", "Intent": "Suicide", "Gender": "None selected", "Age": "15 - 34", "Race": "Black", "Deaths": "510", "Population": "11893789", "Rate": "4.3"}
+{"": "124", "Intent": "Suicide", "Gender": "None selected", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "479", "Population": "17960261", "Rate": "2.7"}
+{"": "125", "Intent": "Suicide", "Gender": "None selected", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "106", "Population": "4950398", "Rate": "2.1"}
+{"": "126", "Intent": "Suicide", "Gender": "None selected", "Age": "15 - 34", "Race": "Other", "Deaths": "88", "Population": "3033571", "Rate": "2.9"}
+{"": "127", "Intent": "Suicide", "Gender": "None selected", "Age": "35 - 64", "Race": "None selected", "Deaths": "10764", "Population": "123935928", "Rate": "8.7"}
+{"": "128", "Intent": "Suicide", "Gender": "None selected", "Age": "35 - 64", "Race": "White", "Deaths": "9634", "Population": "81870182", "Rate": "11.8"}
+{"": "129", "Intent": "Suicide", "Gender": "None selected", "Age": "35 - 64", "Race": "Black", "Deaths": "476", "Population": "14848291", "Rate": "3.2"}
+{"": "130", "Intent": "Suicide", "Gender": "None selected", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "456", "Population": "17777422", "Rate": "2.6"}
+{"": "131", "Intent": "Suicide", "Gender": "None selected", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "115", "Population": "6797707", "Rate": "1.7"}
+{"": "132", "Intent": "Suicide", "Gender": "None selected", "Age": "35 - 64", "Race": "Other", "Deaths": "82", "Population": "2642326", "Rate": "3.1"}
+{"": "133", "Intent": "Suicide", "Gender": "None selected", "Age": "65+", "Race": "None selected", "Deaths": "5092", "Population": "44667034", "Rate": "11.4"}
+{"": "134", "Intent": "Suicide", "Gender": "None selected", "Age": "65+", "Race": "White", "Deaths": "4827", "Population": "35187489", "Rate": "13.7"}
+{"": "135", "Intent": "Suicide", "Gender": "None selected", "Age": "65+", "Race": "Black", "Deaths": "117", "Population": "3830699", "Rate": "3.1"}
+{"": "136", "Intent": "Suicide", "Gender": "None selected", "Age": "65+", "Race": "Hispanic", "Deaths": "109", "Population": "3316947", "Rate": "3.3"}
+{"": "137", "Intent": "Suicide", "Gender": "None selected", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "24", "Population": "1742301", "Rate": "1.4"}
+{"": "138", "Intent": "Suicide", "Gender": "None selected", "Age": "65+", "Race": "Other", "Deaths": "15", "Population": "589598", "Rate": "2.5"}
+{"": "139", "Intent": "Suicide", "Gender": "None selected", "Age": "5", "Race": "None selected", "Deaths": "2", "Population": "0", "Rate": "Inf"}
+{"": "140", "Intent": "Suicide", "Gender": "None selected", "Age": "5", "Race": "White", "Deaths": "2", "Population": "0", "Rate": "Inf"}
+{"": "141", "Intent": "Suicide", "Gender": "None selected", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "142", "Intent": "Suicide", "Gender": "None selected", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "143", "Intent": "Suicide", "Gender": "None selected", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "144", "Intent": "Suicide", "Gender": "None selected", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "145", "Intent": "Suicide", "Gender": "Female", "Age": "None selected", "Race": "None selected", "Deaths": "2896", "Population": "160668110", "Rate": "1.8"}
+{"": "146", "Intent": "Suicide", "Gender": "Female", "Age": "None selected", "Race": "White", "Deaths": "2606", "Population": "100162288", "Rate": "2.6"}
+{"": "147", "Intent": "Suicide", "Gender": "Female", "Age": "None selected", "Race": "Black", "Deaths": "121", "Population": "20362385", "Rate": "0.6"}
+{"": "148", "Intent": "Suicide", "Gender": "Female", "Age": "None selected", "Race": "Hispanic", "Deaths": "116", "Population": "26670924", "Rate": "0.4"}
+{"": "149", "Intent": "Suicide", "Gender": "Female", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "33", "Population": "8589119", "Rate": "0.4"}
+{"": "150", "Intent": "Suicide", "Gender": "Female", "Age": "None selected", "Race": "Other", "Deaths": "21", "Population": "4883395", "Rate": "0.4"}
+{"": "151", "Intent": "Suicide", "Gender": "Female", "Age": "Under 15", "Race": "None selected", "Deaths": "25", "Population": "29836679", "Rate": "0.1"}
+{"": "152", "Intent": "Suicide", "Gender": "Female", "Age": "Under 15", "Race": "White", "Deaths": "19", "Population": "15355910", "Rate": "0.1"}
+{"": "153", "Intent": "Suicide", "Gender": "Female", "Age": "Under 15", "Race": "Black", "Deaths": "1", "Population": "4095428", "Rate": "0"}
+{"": "154", "Intent": "Suicide", "Gender": "Female", "Age": "Under 15", "Race": "Hispanic", "Deaths": "4", "Population": "7330024", "Rate": "0.1"}
+{"": "155", "Intent": "Suicide", "Gender": "Female", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "1", "Population": "1393440", "Rate": "0.1"}
+{"": "156", "Intent": "Suicide", "Gender": "Female", "Age": "Under 15", "Race": "Other", "Deaths": "0", "Population": "1661877", "Rate": "0"}
+{"": "157", "Intent": "Suicide", "Gender": "Female", "Age": "15 - 34", "Race": "None selected", "Deaths": "662", "Population": "42593280", "Rate": "1.6"}
+{"": "158", "Intent": "Suicide", "Gender": "Female", "Age": "15 - 34", "Race": "White", "Deaths": "539", "Population": "23942099", "Rate": "2.3"}
+{"": "159", "Intent": "Suicide", "Gender": "Female", "Age": "15 - 34", "Race": "Black", "Deaths": "44", "Population": "6023846", "Rate": "0.7"}
+{"": "160", "Intent": "Suicide", "Gender": "Female", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "55", "Population": "8580577", "Rate": "0.6"}
+{"": "161", "Intent": "Suicide", "Gender": "Female", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "14", "Population": "2535358", "Rate": "0.6"}
+{"": "162", "Intent": "Suicide", "Gender": "Female", "Age": "15 - 34", "Race": "Other", "Deaths": "10", "Population": "1511400", "Rate": "0.7"}
+{"": "163", "Intent": "Suicide", "Gender": "Female", "Age": "35 - 64", "Race": "None selected", "Deaths": "1773", "Population": "63125058", "Rate": "2.8"}
+{"": "164", "Intent": "Suicide", "Gender": "Female", "Age": "35 - 64", "Race": "White", "Deaths": "1630", "Population": "41284839", "Rate": "3.9"}
+{"": "165", "Intent": "Suicide", "Gender": "Female", "Age": "35 - 64", "Race": "Black", "Deaths": "65", "Population": "7932606", "Rate": "0.8"}
+{"": "166", "Intent": "Suicide", "Gender": "Female", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "52", "Population": "8863203", "Rate": "0.6"}
+{"": "167", "Intent": "Suicide", "Gender": "Female", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "16", "Population": "3668172", "Rate": "0.4"}
+{"": "168", "Intent": "Suicide", "Gender": "Female", "Age": "35 - 64", "Race": "Other", "Deaths": "10", "Population": "1376239", "Rate": "0.7"}
+{"": "169", "Intent": "Suicide", "Gender": "Female", "Age": "65+", "Race": "None selected", "Deaths": "436", "Population": "25113094", "Rate": "1.7"}
+{"": "170", "Intent": "Suicide", "Gender": "Female", "Age": "65+", "Race": "White", "Deaths": "417", "Population": "19579439", "Rate": "2.1"}
+{"": "171", "Intent": "Suicide", "Gender": "Female", "Age": "65+", "Race": "Black", "Deaths": "11", "Population": "2310506", "Rate": "0.5"}
+{"": "172", "Intent": "Suicide", "Gender": "Female", "Age": "65+", "Race": "Hispanic", "Deaths": "5", "Population": "1897119", "Rate": "0.3"}
+{"": "173", "Intent": "Suicide", "Gender": "Female", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "2", "Population": "992150", "Rate": "0.2"}
+{"": "174", "Intent": "Suicide", "Gender": "Female", "Age": "65+", "Race": "Other", "Deaths": "1", "Population": "333879", "Rate": "0.3"}
+{"": "175", "Intent": "Suicide", "Gender": "Female", "Age": "5", "Race": "None selected", "Deaths": "1", "Population": "0", "Rate": "Inf"}
+{"": "176", "Intent": "Suicide", "Gender": "Female", "Age": "5", "Race": "White", "Deaths": "1", "Population": "0", "Rate": "Inf"}
+{"": "177", "Intent": "Suicide", "Gender": "Female", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "178", "Intent": "Suicide", "Gender": "Female", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "179", "Intent": "Suicide", "Gender": "Female", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "180", "Intent": "Suicide", "Gender": "Female", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "181", "Intent": "Suicide", "Gender": "Male", "Age": "None selected", "Race": "None selected", "Deaths": "18162", "Population": "155631868", "Rate": "11.7"}
+{"": "182", "Intent": "Suicide", "Gender": "Male", "Age": "None selected", "Race": "White", "Deaths": "15852", "Population": "97207346", "Rate": "16.3"}
+{"": "183", "Intent": "Suicide", "Gender": "Male", "Age": "None selected", "Race": "Black", "Deaths": "989", "Population": "18533996", "Rate": "5.3"}
+{"": "184", "Intent": "Suicide", "Gender": "Male", "Age": "None selected", "Race": "Hispanic", "Deaths": "941", "Population": "27378155", "Rate": "3.4"}
+{"": "185", "Intent": "Suicide", "Gender": "Male", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "215", "Population": "7726442", "Rate": "2.8"}
+{"": "186", "Intent": "Suicide", "Gender": "Male", "Age": "None selected", "Race": "Other", "Deaths": "164", "Population": "4785929", "Rate": "3.4"}
+{"": "187", "Intent": "Suicide", "Gender": "Male", "Age": "Under 15", "Race": "None selected", "Deaths": "114", "Population": "31249189", "Rate": "0.4"}
+{"": "188", "Intent": "Suicide", "Gender": "Male", "Age": "Under 15", "Race": "White", "Deaths": "98", "Population": "16182922", "Rate": "0.6"}
+{"": "189", "Intent": "Suicide", "Gender": "Male", "Age": "Under 15", "Race": "Black", "Deaths": "6", "Population": "4228176", "Rate": "0.1"}
+{"": "190", "Intent": "Suicide", "Gender": "Male", "Age": "Under 15", "Race": "Hispanic", "Deaths": "9", "Population": "7664425", "Rate": "0.1"}
+{"": "191", "Intent": "Suicide", "Gender": "Male", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "2", "Population": "1431715", "Rate": "0.1"}
+{"": "192", "Intent": "Suicide", "Gender": "Male", "Age": "Under 15", "Race": "Other", "Deaths": "0", "Population": "1741952", "Rate": "0"}
+{"": "193", "Intent": "Suicide", "Gender": "Male", "Age": "15 - 34", "Race": "None selected", "Deaths": "4399", "Population": "44017869", "Rate": "10"}
+{"": "194", "Intent": "Suicide", "Gender": "Male", "Age": "15 - 34", "Race": "White", "Deaths": "3339", "Population": "24831032", "Rate": "13.4"}
+{"": "195", "Intent": "Suicide", "Gender": "Male", "Age": "15 - 34", "Race": "Black", "Deaths": "466", "Population": "5869943", "Rate": "7.9"}
+{"": "196", "Intent": "Suicide", "Gender": "Male", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "424", "Population": "9379683", "Rate": "4.5"}
+{"": "197", "Intent": "Suicide", "Gender": "Male", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "92", "Population": "2415040", "Rate": "3.8"}
+{"": "198", "Intent": "Suicide", "Gender": "Male", "Age": "15 - 34", "Race": "Other", "Deaths": "78", "Population": "1522171", "Rate": "5.1"}
+{"": "199", "Intent": "Suicide", "Gender": "Male", "Age": "35 - 64", "Race": "None selected", "Deaths": "8991", "Population": "60810870", "Rate": "14.8"}
+{"": "200", "Intent": "Suicide", "Gender": "Male", "Age": "35 - 64", "Race": "White", "Deaths": "8005", "Population": "40585343", "Rate": "19.7"}
+{"": "201", "Intent": "Suicide", "Gender": "Male", "Age": "35 - 64", "Race": "Black", "Deaths": "411", "Population": "6915685", "Rate": "5.9"}
+{"": "202", "Intent": "Suicide", "Gender": "Male", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "405", "Population": "8914219", "Rate": "4.5"}
+{"": "203", "Intent": "Suicide", "Gender": "Male", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "99", "Population": "3129535", "Rate": "3.2"}
+{"": "204", "Intent": "Suicide", "Gender": "Male", "Age": "35 - 64", "Race": "Other", "Deaths": "71", "Population": "1266087", "Rate": "5.6"}
+{"": "205", "Intent": "Suicide", "Gender": "Male", "Age": "65+", "Race": "None selected", "Deaths": "4656", "Population": "19553940", "Rate": "23.8"}
+{"": "206", "Intent": "Suicide", "Gender": "Male", "Age": "65+", "Race": "White", "Deaths": "4409", "Population": "15608050", "Rate": "28.2"}
+{"": "207", "Intent": "Suicide", "Gender": "Male", "Age": "65+", "Race": "Black", "Deaths": "106", "Population": "1520192", "Rate": "7"}
+{"": "208", "Intent": "Suicide", "Gender": "Male", "Age": "65+", "Race": "Hispanic", "Deaths": "104", "Population": "1419828", "Rate": "7.3"}
+{"": "209", "Intent": "Suicide", "Gender": "Male", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "22", "Population": "750151", "Rate": "2.9"}
+{"": "210", "Intent": "Suicide", "Gender": "Male", "Age": "65+", "Race": "Other", "Deaths": "14", "Population": "255719", "Rate": "5.5"}
+{"": "211", "Intent": "Suicide", "Gender": "Male", "Age": "5", "Race": "None selected", "Deaths": "2", "Population": "0", "Rate": "Inf"}
+{"": "212", "Intent": "Suicide", "Gender": "Male", "Age": "5", "Race": "White", "Deaths": "1", "Population": "0", "Rate": "Inf"}
+{"": "213", "Intent": "Suicide", "Gender": "Male", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "214", "Intent": "Suicide", "Gender": "Male", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "215", "Intent": "Suicide", "Gender": "Male", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "216", "Intent": "Suicide", "Gender": "Male", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "217", "Intent": "Homicide", "Gender": "None selected", "Age": "None selected", "Race": "None selected", "Deaths": "11726", "Population": "316299978", "Rate": "3.7"}
+{"": "218", "Intent": "Homicide", "Gender": "None selected", "Age": "None selected", "Race": "White", "Deaths": "3049", "Population": "197369634", "Rate": "1.5"}
+{"": "219", "Intent": "Homicide", "Gender": "None selected", "Age": "None selected", "Race": "Black", "Deaths": "6503", "Population": "38896382", "Rate": "16.7"}
+{"": "220", "Intent": "Homicide", "Gender": "None selected", "Age": "None selected", "Race": "Hispanic", "Deaths": "1878", "Population": "54049078", "Rate": "3.5"}
+{"": "221", "Intent": "Homicide", "Gender": "None selected", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "186", "Population": "16315561", "Rate": "1.1"}
+{"": "222", "Intent": "Homicide", "Gender": "None selected", "Age": "None selected", "Race": "Other", "Deaths": "109", "Population": "9669323", "Rate": "1.1"}
+{"": "223", "Intent": "Homicide", "Gender": "None selected", "Age": "Under 15", "Race": "None selected", "Deaths": "221", "Population": "61085868", "Rate": "0.4"}
+{"": "224", "Intent": "Homicide", "Gender": "None selected", "Age": "Under 15", "Race": "White", "Deaths": "88", "Population": "31538832", "Rate": "0.3"}
+{"": "225", "Intent": "Homicide", "Gender": "None selected", "Age": "Under 15", "Race": "Black", "Deaths": "82", "Population": "8323603", "Rate": "1"}
+{"": "226", "Intent": "Homicide", "Gender": "None selected", "Age": "Under 15", "Race": "Hispanic", "Deaths": "45", "Population": "14994449", "Rate": "0.3"}
+{"": "227", "Intent": "Homicide", "Gender": "None selected", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "4", "Population": "2825155", "Rate": "0.1"}
+{"": "228", "Intent": "Homicide", "Gender": "None selected", "Age": "Under 15", "Race": "Other", "Deaths": "3", "Population": "3403829", "Rate": "0.1"}
+{"": "229", "Intent": "Homicide", "Gender": "None selected", "Age": "15 - 34", "Race": "None selected", "Deaths": "7335", "Population": "86611149", "Rate": "8.5"}
+{"": "230", "Intent": "Homicide", "Gender": "None selected", "Age": "15 - 34", "Race": "White", "Deaths": "1180", "Population": "48773131", "Rate": "2.4"}
+{"": "231", "Intent": "Homicide", "Gender": "None selected", "Age": "15 - 34", "Race": "Black", "Deaths": "4701", "Population": "11893789", "Rate": "39.5"}
+{"": "232", "Intent": "Homicide", "Gender": "None selected", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "1296", "Population": "17960261", "Rate": "7.2"}
+{"": "233", "Intent": "Homicide", "Gender": "None selected", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "92", "Population": "4950398", "Rate": "1.9"}
+{"": "234", "Intent": "Homicide", "Gender": "None selected", "Age": "15 - 34", "Race": "Other", "Deaths": "66", "Population": "3033571", "Rate": "2.2"}
+{"": "235", "Intent": "Homicide", "Gender": "None selected", "Age": "35 - 64", "Race": "None selected", "Deaths": "3792", "Population": "123935928", "Rate": "3.1"}
+{"": "236", "Intent": "Homicide", "Gender": "None selected", "Age": "35 - 64", "Race": "White", "Deaths": "1505", "Population": "81870182", "Rate": "1.8"}
+{"": "237", "Intent": "Homicide", "Gender": "None selected", "Age": "35 - 64", "Race": "Black", "Deaths": "1652", "Population": "14848291", "Rate": "11.1"}
+{"": "238", "Intent": "Homicide", "Gender": "None selected", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "514", "Population": "17777422", "Rate": "2.9"}
+{"": "239", "Intent": "Homicide", "Gender": "None selected", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "84", "Population": "6797707", "Rate": "1.2"}
+{"": "240", "Intent": "Homicide", "Gender": "None selected", "Age": "35 - 64", "Race": "Other", "Deaths": "37", "Population": "2642326", "Rate": "1.4"}
+{"": "241", "Intent": "Homicide", "Gender": "None selected", "Age": "65+", "Race": "None selected", "Deaths": "375", "Population": "44667034", "Rate": "0.8"}
+{"": "242", "Intent": "Homicide", "Gender": "None selected", "Age": "65+", "Race": "White", "Deaths": "274", "Population": "35187489", "Rate": "0.8"}
+{"": "243", "Intent": "Homicide", "Gender": "None selected", "Age": "65+", "Race": "Black", "Deaths": "69", "Population": "3830699", "Rate": "1.8"}
+{"": "244", "Intent": "Homicide", "Gender": "None selected", "Age": "65+", "Race": "Hispanic", "Deaths": "22", "Population": "3316947", "Rate": "0.7"}
+{"": "245", "Intent": "Homicide", "Gender": "None selected", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "7", "Population": "1742301", "Rate": "0.4"}
+{"": "246", "Intent": "Homicide", "Gender": "None selected", "Age": "65+", "Race": "Other", "Deaths": "2", "Population": "589598", "Rate": "0.3"}
+{"": "247", "Intent": "Homicide", "Gender": "None selected", "Age": "5", "Race": "None selected", "Deaths": "3", "Population": "0", "Rate": "Inf"}
+{"": "248", "Intent": "Homicide", "Gender": "None selected", "Age": "5", "Race": "White", "Deaths": "2", "Population": "0", "Rate": "Inf"}
+{"": "249", "Intent": "Homicide", "Gender": "None selected", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "250", "Intent": "Homicide", "Gender": "None selected", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "251", "Intent": "Homicide", "Gender": "None selected", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "252", "Intent": "Homicide", "Gender": "None selected", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "253", "Intent": "Homicide", "Gender": "Female", "Age": "None selected", "Race": "None selected", "Deaths": "1791", "Population": "160668110", "Rate": "1.1"}
+{"": "254", "Intent": "Homicide", "Gender": "Female", "Age": "None selected", "Race": "White", "Deaths": "860", "Population": "100162288", "Rate": "0.9"}
+{"": "255", "Intent": "Homicide", "Gender": "Female", "Age": "None selected", "Race": "Black", "Deaths": "633", "Population": "20362385", "Rate": "3.1"}
+{"": "256", "Intent": "Homicide", "Gender": "Female", "Age": "None selected", "Race": "Hispanic", "Deaths": "232", "Population": "26670924", "Rate": "0.9"}
+{"": "257", "Intent": "Homicide", "Gender": "Female", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "47", "Population": "8589119", "Rate": "0.5"}
+{"": "258", "Intent": "Homicide", "Gender": "Female", "Age": "None selected", "Race": "Other", "Deaths": "20", "Population": "4883395", "Rate": "0.4"}
+{"": "259", "Intent": "Homicide", "Gender": "Female", "Age": "Under 15", "Race": "None selected", "Deaths": "85", "Population": "29836679", "Rate": "0.3"}
+{"": "260", "Intent": "Homicide", "Gender": "Female", "Age": "Under 15", "Race": "White", "Deaths": "38", "Population": "15355910", "Rate": "0.2"}
+{"": "261", "Intent": "Homicide", "Gender": "Female", "Age": "Under 15", "Race": "Black", "Deaths": "27", "Population": "4095428", "Rate": "0.7"}
+{"": "262", "Intent": "Homicide", "Gender": "Female", "Age": "Under 15", "Race": "Hispanic", "Deaths": "19", "Population": "7330024", "Rate": "0.3"}
+{"": "263", "Intent": "Homicide", "Gender": "Female", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "1", "Population": "1393440", "Rate": "0.1"}
+{"": "264", "Intent": "Homicide", "Gender": "Female", "Age": "Under 15", "Race": "Other", "Deaths": "1", "Population": "1661877", "Rate": "0.1"}
+{"": "265", "Intent": "Homicide", "Gender": "Female", "Age": "15 - 34", "Race": "None selected", "Deaths": "815", "Population": "42593280", "Rate": "1.9"}
+{"": "266", "Intent": "Homicide", "Gender": "Female", "Age": "15 - 34", "Race": "White", "Deaths": "267", "Population": "23942099", "Rate": "1.1"}
+{"": "267", "Intent": "Homicide", "Gender": "Female", "Age": "15 - 34", "Race": "Black", "Deaths": "389", "Population": "6023846", "Rate": "6.5"}
+{"": "268", "Intent": "Homicide", "Gender": "Female", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "131", "Population": "8580577", "Rate": "1.5"}
+{"": "269", "Intent": "Homicide", "Gender": "Female", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "16", "Population": "2535358", "Rate": "0.6"}
+{"": "270", "Intent": "Homicide", "Gender": "Female", "Age": "15 - 34", "Race": "Other", "Deaths": "13", "Population": "1511400", "Rate": "0.9"}
+{"": "271", "Intent": "Homicide", "Gender": "Female", "Age": "35 - 64", "Race": "None selected", "Deaths": "733", "Population": "63125058", "Rate": "1.2"}
+{"": "272", "Intent": "Homicide", "Gender": "Female", "Age": "35 - 64", "Race": "White", "Deaths": "426", "Population": "41284839", "Rate": "1"}
+{"": "273", "Intent": "Homicide", "Gender": "Female", "Age": "35 - 64", "Race": "Black", "Deaths": "199", "Population": "7932606", "Rate": "2.5"}
+{"": "274", "Intent": "Homicide", "Gender": "Female", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "76", "Population": "8863203", "Rate": "0.9"}
+{"": "275", "Intent": "Homicide", "Gender": "Female", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "26", "Population": "3668172", "Rate": "0.7"}
+{"": "276", "Intent": "Homicide", "Gender": "Female", "Age": "35 - 64", "Race": "Other", "Deaths": "6", "Population": "1376239", "Rate": "0.4"}
+{"": "277", "Intent": "Homicide", "Gender": "Female", "Age": "65+", "Race": "None selected", "Deaths": "158", "Population": "25113094", "Rate": "0.6"}
+{"": "278", "Intent": "Homicide", "Gender": "Female", "Age": "65+", "Race": "White", "Deaths": "129", "Population": "19579439", "Rate": "0.7"}
+{"": "279", "Intent": "Homicide", "Gender": "Female", "Age": "65+", "Race": "Black", "Deaths": "18", "Population": "2310506", "Rate": "0.8"}
+{"": "280", "Intent": "Homicide", "Gender": "Female", "Age": "65+", "Race": "Hispanic", "Deaths": "6", "Population": "1897119", "Rate": "0.3"}
+{"": "281", "Intent": "Homicide", "Gender": "Female", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "4", "Population": "992150", "Rate": "0.4"}
+{"": "282", "Intent": "Homicide", "Gender": "Female", "Age": "65+", "Race": "Other", "Deaths": "1", "Population": "333879", "Rate": "0.3"}
+{"": "283", "Intent": "Homicide", "Gender": "Female", "Age": "5", "Race": "None selected", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "284", "Intent": "Homicide", "Gender": "Female", "Age": "5", "Race": "White", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "285", "Intent": "Homicide", "Gender": "Female", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "286", "Intent": "Homicide", "Gender": "Female", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "287", "Intent": "Homicide", "Gender": "Female", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "288", "Intent": "Homicide", "Gender": "Female", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "289", "Intent": "Homicide", "Gender": "Male", "Age": "None selected", "Race": "None selected", "Deaths": "9935", "Population": "155631868", "Rate": "6.4"}
+{"": "290", "Intent": "Homicide", "Gender": "Male", "Age": "None selected", "Race": "White", "Deaths": "2189", "Population": "97207346", "Rate": "2.3"}
+{"": "291", "Intent": "Homicide", "Gender": "Male", "Age": "None selected", "Race": "Black", "Deaths": "5871", "Population": "18533996", "Rate": "31.7"}
+{"": "292", "Intent": "Homicide", "Gender": "Male", "Age": "None selected", "Race": "Hispanic", "Deaths": "1646", "Population": "27378155", "Rate": "6"}
+{"": "293", "Intent": "Homicide", "Gender": "Male", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "140", "Population": "7726442", "Rate": "1.8"}
+{"": "294", "Intent": "Homicide", "Gender": "Male", "Age": "None selected", "Race": "Other", "Deaths": "89", "Population": "4785929", "Rate": "1.9"}
+{"": "295", "Intent": "Homicide", "Gender": "Male", "Age": "Under 15", "Race": "None selected", "Deaths": "136", "Population": "31249189", "Rate": "0.4"}
+{"": "296", "Intent": "Homicide", "Gender": "Male", "Age": "Under 15", "Race": "White", "Deaths": "50", "Population": "16182922", "Rate": "0.3"}
+{"": "297", "Intent": "Homicide", "Gender": "Male", "Age": "Under 15", "Race": "Black", "Deaths": "55", "Population": "4228176", "Rate": "1.3"}
+{"": "298", "Intent": "Homicide", "Gender": "Male", "Age": "Under 15", "Race": "Hispanic", "Deaths": "26", "Population": "7664425", "Rate": "0.3"}
+{"": "299", "Intent": "Homicide", "Gender": "Male", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "3", "Population": "1431715", "Rate": "0.2"}
+{"": "300", "Intent": "Homicide", "Gender": "Male", "Age": "Under 15", "Race": "Other", "Deaths": "2", "Population": "1741952", "Rate": "0.1"}
+{"": "301", "Intent": "Homicide", "Gender": "Male", "Age": "15 - 34", "Race": "None selected", "Deaths": "6520", "Population": "44017869", "Rate": "14.8"}
+{"": "302", "Intent": "Homicide", "Gender": "Male", "Age": "15 - 34", "Race": "White", "Deaths": "913", "Population": "24831032", "Rate": "3.7"}
+{"": "303", "Intent": "Homicide", "Gender": "Male", "Age": "15 - 34", "Race": "Black", "Deaths": "4312", "Population": "5869943", "Rate": "73.5"}
+{"": "304", "Intent": "Homicide", "Gender": "Male", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "1166", "Population": "9379683", "Rate": "12.4"}
+{"": "305", "Intent": "Homicide", "Gender": "Male", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "76", "Population": "2415040", "Rate": "3.1"}
+{"": "306", "Intent": "Homicide", "Gender": "Male", "Age": "15 - 34", "Race": "Other", "Deaths": "54", "Population": "1522171", "Rate": "3.5"}
+{"": "307", "Intent": "Homicide", "Gender": "Male", "Age": "35 - 64", "Race": "None selected", "Deaths": "3059", "Population": "60810870", "Rate": "5"}
+{"": "308", "Intent": "Homicide", "Gender": "Male", "Age": "35 - 64", "Race": "White", "Deaths": "1079", "Population": "40585343", "Rate": "2.7"}
+{"": "309", "Intent": "Homicide", "Gender": "Male", "Age": "35 - 64", "Race": "Black", "Deaths": "1453", "Population": "6915685", "Rate": "21"}
+{"": "310", "Intent": "Homicide", "Gender": "Male", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "438", "Population": "8914219", "Rate": "4.9"}
+{"": "311", "Intent": "Homicide", "Gender": "Male", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "57", "Population": "3129535", "Rate": "1.8"}
+{"": "312", "Intent": "Homicide", "Gender": "Male", "Age": "35 - 64", "Race": "Other", "Deaths": "31", "Population": "1266087", "Rate": "2.4"}
+{"": "313", "Intent": "Homicide", "Gender": "Male", "Age": "65+", "Race": "None selected", "Deaths": "217", "Population": "19553940", "Rate": "1.1"}
+{"": "314", "Intent": "Homicide", "Gender": "Male", "Age": "65+", "Race": "White", "Deaths": "145", "Population": "15608050", "Rate": "0.9"}
+{"": "315", "Intent": "Homicide", "Gender": "Male", "Age": "65+", "Race": "Black", "Deaths": "51", "Population": "1520192", "Rate": "3.4"}
+{"": "316", "Intent": "Homicide", "Gender": "Male", "Age": "65+", "Race": "Hispanic", "Deaths": "16", "Population": "1419828", "Rate": "1.1"}
+{"": "317", "Intent": "Homicide", "Gender": "Male", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "4", "Population": "750151", "Rate": "0.5"}
+{"": "318", "Intent": "Homicide", "Gender": "Male", "Age": "65+", "Race": "Other", "Deaths": "1", "Population": "255719", "Rate": "0.4"}
+{"": "319", "Intent": "Homicide", "Gender": "Male", "Age": "5", "Race": "None selected", "Deaths": "3", "Population": "0", "Rate": "Inf"}
+{"": "320", "Intent": "Homicide", "Gender": "Male", "Age": "5", "Race": "White", "Deaths": "2", "Population": "0", "Rate": "Inf"}
+{"": "321", "Intent": "Homicide", "Gender": "Male", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "322", "Intent": "Homicide", "Gender": "Male", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "323", "Intent": "Homicide", "Gender": "Male", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "324", "Intent": "Homicide", "Gender": "Male", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "325", "Intent": "Accident", "Gender": "None selected", "Age": "None selected", "Race": "None selected", "Deaths": "546", "Population": "316299978", "Rate": "0.2"}
+{"": "326", "Intent": "Accident", "Gender": "None selected", "Age": "None selected", "Race": "White", "Deaths": "377", "Population": "197369634", "Rate": "0.2"}
+{"": "327", "Intent": "Accident", "Gender": "None selected", "Age": "None selected", "Race": "Black", "Deaths": "109", "Population": "38896382", "Rate": "0.3"}
+{"": "328", "Intent": "Accident", "Gender": "None selected", "Age": "None selected", "Race": "Hispanic", "Deaths": "48", "Population": "54049078", "Rate": "0.1"}
+{"": "329", "Intent": "Accident", "Gender": "None selected", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "4", "Population": "16315561", "Rate": "0"}
+{"": "330", "Intent": "Accident", "Gender": "None selected", "Age": "None selected", "Race": "Other", "Deaths": "7", "Population": "9669323", "Rate": "0.1"}
+{"": "331", "Intent": "Accident", "Gender": "None selected", "Age": "Under 15", "Race": "None selected", "Deaths": "59", "Population": "61085868", "Rate": "0.1"}
+{"": "332", "Intent": "Accident", "Gender": "None selected", "Age": "Under 15", "Race": "White", "Deaths": "33", "Population": "31538832", "Rate": "0.1"}
+{"": "333", "Intent": "Accident", "Gender": "None selected", "Age": "Under 15", "Race": "Black", "Deaths": "19", "Population": "8323603", "Rate": "0.2"}
+{"": "334", "Intent": "Accident", "Gender": "None selected", "Age": "Under 15", "Race": "Hispanic", "Deaths": "6", "Population": "14994449", "Rate": "0"}
+{"": "335", "Intent": "Accident", "Gender": "None selected", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "2825155", "Rate": "0"}
+{"": "336", "Intent": "Accident", "Gender": "None selected", "Age": "Under 15", "Race": "Other", "Deaths": "1", "Population": "3403829", "Rate": "0"}
+{"": "337", "Intent": "Accident", "Gender": "None selected", "Age": "15 - 34", "Race": "None selected", "Deaths": "210", "Population": "86611149", "Rate": "0.2"}
+{"": "338", "Intent": "Accident", "Gender": "None selected", "Age": "15 - 34", "Race": "White", "Deaths": "116", "Population": "48773131", "Rate": "0.2"}
+{"": "339", "Intent": "Accident", "Gender": "None selected", "Age": "15 - 34", "Race": "Black", "Deaths": "60", "Population": "11893789", "Rate": "0.5"}
+{"": "340", "Intent": "Accident", "Gender": "None selected", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "29", "Population": "17960261", "Rate": "0.2"}
+{"": "341", "Intent": "Accident", "Gender": "None selected", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "2", "Population": "4950398", "Rate": "0"}
+{"": "342", "Intent": "Accident", "Gender": "None selected", "Age": "15 - 34", "Race": "Other", "Deaths": "3", "Population": "3033571", "Rate": "0.1"}
+{"": "343", "Intent": "Accident", "Gender": "None selected", "Age": "35 - 64", "Race": "None selected", "Deaths": "206", "Population": "123935928", "Rate": "0.2"}
+{"": "344", "Intent": "Accident", "Gender": "None selected", "Age": "35 - 64", "Race": "White", "Deaths": "165", "Population": "81870182", "Rate": "0.2"}
+{"": "345", "Intent": "Accident", "Gender": "None selected", "Age": "35 - 64", "Race": "Black", "Deaths": "24", "Population": "14848291", "Rate": "0.2"}
+{"": "346", "Intent": "Accident", "Gender": "None selected", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "12", "Population": "17777422", "Rate": "0.1"}
+{"": "347", "Intent": "Accident", "Gender": "None selected", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "2", "Population": "6797707", "Rate": "0"}
+{"": "348", "Intent": "Accident", "Gender": "None selected", "Age": "35 - 64", "Race": "Other", "Deaths": "3", "Population": "2642326", "Rate": "0.1"}
+{"": "349", "Intent": "Accident", "Gender": "None selected", "Age": "65+", "Race": "None selected", "Deaths": "71", "Population": "44667034", "Rate": "0.2"}
+{"": "350", "Intent": "Accident", "Gender": "None selected", "Age": "65+", "Race": "White", "Deaths": "64", "Population": "35187489", "Rate": "0.2"}
+{"": "351", "Intent": "Accident", "Gender": "None selected", "Age": "65+", "Race": "Black", "Deaths": "6", "Population": "3830699", "Rate": "0.2"}
+{"": "352", "Intent": "Accident", "Gender": "None selected", "Age": "65+", "Race": "Hispanic", "Deaths": "2", "Population": "3316947", "Rate": "0.1"}
+{"": "353", "Intent": "Accident", "Gender": "None selected", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "1742301", "Rate": "0"}
+{"": "354", "Intent": "Accident", "Gender": "None selected", "Age": "65+", "Race": "Other", "Deaths": "0", "Population": "589598", "Rate": "0"}
+{"": "355", "Intent": "Accident", "Gender": "None selected", "Age": "5", "Race": "None selected", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "356", "Intent": "Accident", "Gender": "None selected", "Age": "5", "Race": "White", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "357", "Intent": "Accident", "Gender": "None selected", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "358", "Intent": "Accident", "Gender": "None selected", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "359", "Intent": "Accident", "Gender": "None selected", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "360", "Intent": "Accident", "Gender": "None selected", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "361", "Intent": "Accident", "Gender": "Female", "Age": "None selected", "Race": "None selected", "Deaths": "73", "Population": "160668110", "Rate": "0"}
+{"": "362", "Intent": "Accident", "Gender": "Female", "Age": "None selected", "Race": "White", "Deaths": "55", "Population": "100162288", "Rate": "0.1"}
+{"": "363", "Intent": "Accident", "Gender": "Female", "Age": "None selected", "Race": "Black", "Deaths": "11", "Population": "20362385", "Rate": "0.1"}
+{"": "364", "Intent": "Accident", "Gender": "Female", "Age": "None selected", "Race": "Hispanic", "Deaths": "5", "Population": "26670924", "Rate": "0"}
+{"": "365", "Intent": "Accident", "Gender": "Female", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "1", "Population": "8589119", "Rate": "0"}
+{"": "366", "Intent": "Accident", "Gender": "Female", "Age": "None selected", "Race": "Other", "Deaths": "1", "Population": "4883395", "Rate": "0"}
+{"": "367", "Intent": "Accident", "Gender": "Female", "Age": "Under 15", "Race": "None selected", "Deaths": "12", "Population": "29836679", "Rate": "0"}
+{"": "368", "Intent": "Accident", "Gender": "Female", "Age": "Under 15", "Race": "White", "Deaths": "7", "Population": "15355910", "Rate": "0"}
+{"": "369", "Intent": "Accident", "Gender": "Female", "Age": "Under 15", "Race": "Black", "Deaths": "3", "Population": "4095428", "Rate": "0.1"}
+{"": "370", "Intent": "Accident", "Gender": "Female", "Age": "Under 15", "Race": "Hispanic", "Deaths": "2", "Population": "7330024", "Rate": "0"}
+{"": "371", "Intent": "Accident", "Gender": "Female", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "1393440", "Rate": "0"}
+{"": "372", "Intent": "Accident", "Gender": "Female", "Age": "Under 15", "Race": "Other", "Deaths": "0", "Population": "1661877", "Rate": "0"}
+{"": "373", "Intent": "Accident", "Gender": "Female", "Age": "15 - 34", "Race": "None selected", "Deaths": "21", "Population": "42593280", "Rate": "0"}
+{"": "374", "Intent": "Accident", "Gender": "Female", "Age": "15 - 34", "Race": "White", "Deaths": "14", "Population": "23942099", "Rate": "0.1"}
+{"": "375", "Intent": "Accident", "Gender": "Female", "Age": "15 - 34", "Race": "Black", "Deaths": "5", "Population": "6023846", "Rate": "0.1"}
+{"": "376", "Intent": "Accident", "Gender": "Female", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "2", "Population": "8580577", "Rate": "0"}
+{"": "377", "Intent": "Accident", "Gender": "Female", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "2535358", "Rate": "0"}
+{"": "378", "Intent": "Accident", "Gender": "Female", "Age": "15 - 34", "Race": "Other", "Deaths": "0", "Population": "1511400", "Rate": "0"}
+{"": "379", "Intent": "Accident", "Gender": "Female", "Age": "35 - 64", "Race": "None selected", "Deaths": "33", "Population": "63125058", "Rate": "0.1"}
+{"": "380", "Intent": "Accident", "Gender": "Female", "Age": "35 - 64", "Race": "White", "Deaths": "28", "Population": "41284839", "Rate": "0.1"}
+{"": "381", "Intent": "Accident", "Gender": "Female", "Age": "35 - 64", "Race": "Black", "Deaths": "3", "Population": "7932606", "Rate": "0"}
+{"": "382", "Intent": "Accident", "Gender": "Female", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "1", "Population": "8863203", "Rate": "0"}
+{"": "383", "Intent": "Accident", "Gender": "Female", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "1", "Population": "3668172", "Rate": "0"}
+{"": "384", "Intent": "Accident", "Gender": "Female", "Age": "35 - 64", "Race": "Other", "Deaths": "0", "Population": "1376239", "Rate": "0"}
+{"": "385", "Intent": "Accident", "Gender": "Female", "Age": "65+", "Race": "None selected", "Deaths": "7", "Population": "25113094", "Rate": "0"}
+{"": "386", "Intent": "Accident", "Gender": "Female", "Age": "65+", "Race": "White", "Deaths": "6", "Population": "19579439", "Rate": "0"}
+{"": "387", "Intent": "Accident", "Gender": "Female", "Age": "65+", "Race": "Black", "Deaths": "0", "Population": "2310506", "Rate": "0"}
+{"": "388", "Intent": "Accident", "Gender": "Female", "Age": "65+", "Race": "Hispanic", "Deaths": "0", "Population": "1897119", "Rate": "0"}
+{"": "389", "Intent": "Accident", "Gender": "Female", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "992150", "Rate": "0"}
+{"": "390", "Intent": "Accident", "Gender": "Female", "Age": "65+", "Race": "Other", "Deaths": "0", "Population": "333879", "Rate": "0"}
+{"": "391", "Intent": "Accident", "Gender": "Female", "Age": "5", "Race": "None selected", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "392", "Intent": "Accident", "Gender": "Female", "Age": "5", "Race": "White", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "393", "Intent": "Accident", "Gender": "Female", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "394", "Intent": "Accident", "Gender": "Female", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "395", "Intent": "Accident", "Gender": "Female", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "396", "Intent": "Accident", "Gender": "Female", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "397", "Intent": "Accident", "Gender": "Male", "Age": "None selected", "Race": "None selected", "Deaths": "474", "Population": "155631868", "Rate": "0.3"}
+{"": "398", "Intent": "Accident", "Gender": "Male", "Age": "None selected", "Race": "White", "Deaths": "323", "Population": "97207346", "Rate": "0.3"}
+{"": "399", "Intent": "Accident", "Gender": "Male", "Age": "None selected", "Race": "Black", "Deaths": "98", "Population": "18533996", "Rate": "0.5"}
+{"": "400", "Intent": "Accident", "Gender": "Male", "Age": "None selected", "Race": "Hispanic", "Deaths": "43", "Population": "27378155", "Rate": "0.2"}
+{"": "401", "Intent": "Accident", "Gender": "Male", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "3", "Population": "7726442", "Rate": "0"}
+{"": "402", "Intent": "Accident", "Gender": "Male", "Age": "None selected", "Race": "Other", "Deaths": "7", "Population": "4785929", "Rate": "0.1"}
+{"": "403", "Intent": "Accident", "Gender": "Male", "Age": "Under 15", "Race": "None selected", "Deaths": "47", "Population": "31249189", "Rate": "0.2"}
+{"": "404", "Intent": "Accident", "Gender": "Male", "Age": "Under 15", "Race": "White", "Deaths": "26", "Population": "16182922", "Rate": "0.2"}
+{"": "405", "Intent": "Accident", "Gender": "Male", "Age": "Under 15", "Race": "Black", "Deaths": "16", "Population": "4228176", "Rate": "0.4"}
+{"": "406", "Intent": "Accident", "Gender": "Male", "Age": "Under 15", "Race": "Hispanic", "Deaths": "4", "Population": "7664425", "Rate": "0.1"}
+{"": "407", "Intent": "Accident", "Gender": "Male", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "1431715", "Rate": "0"}
+{"": "408", "Intent": "Accident", "Gender": "Male", "Age": "Under 15", "Race": "Other", "Deaths": "1", "Population": "1741952", "Rate": "0.1"}
+{"": "409", "Intent": "Accident", "Gender": "Male", "Age": "15 - 34", "Race": "None selected", "Deaths": "189", "Population": "44017869", "Rate": "0.4"}
+{"": "410", "Intent": "Accident", "Gender": "Male", "Age": "15 - 34", "Race": "White", "Deaths": "102", "Population": "24831032", "Rate": "0.4"}
+{"": "411", "Intent": "Accident", "Gender": "Male", "Age": "15 - 34", "Race": "Black", "Deaths": "56", "Population": "5869943", "Rate": "1"}
+{"": "412", "Intent": "Accident", "Gender": "Male", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "27", "Population": "9379683", "Rate": "0.3"}
+{"": "413", "Intent": "Accident", "Gender": "Male", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "1", "Population": "2415040", "Rate": "0"}
+{"": "414", "Intent": "Accident", "Gender": "Male", "Age": "15 - 34", "Race": "Other", "Deaths": "3", "Population": "1522171", "Rate": "0.2"}
+{"": "415", "Intent": "Accident", "Gender": "Male", "Age": "35 - 64", "Race": "None selected", "Deaths": "173", "Population": "60810870", "Rate": "0.3"}
+{"": "416", "Intent": "Accident", "Gender": "Male", "Age": "35 - 64", "Race": "White", "Deaths": "137", "Population": "40585343", "Rate": "0.3"}
+{"": "417", "Intent": "Accident", "Gender": "Male", "Age": "35 - 64", "Race": "Black", "Deaths": "21", "Population": "6915685", "Rate": "0.3"}
+{"": "418", "Intent": "Accident", "Gender": "Male", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "10", "Population": "8914219", "Rate": "0.1"}
+{"": "419", "Intent": "Accident", "Gender": "Male", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "1", "Population": "3129535", "Rate": "0"}
+{"": "420", "Intent": "Accident", "Gender": "Male", "Age": "35 - 64", "Race": "Other", "Deaths": "3", "Population": "1266087", "Rate": "0.2"}
+{"": "421", "Intent": "Accident", "Gender": "Male", "Age": "65+", "Race": "None selected", "Deaths": "64", "Population": "19553940", "Rate": "0.3"}
+{"": "422", "Intent": "Accident", "Gender": "Male", "Age": "65+", "Race": "White", "Deaths": "57", "Population": "15608050", "Rate": "0.4"}
+{"": "423", "Intent": "Accident", "Gender": "Male", "Age": "65+", "Race": "Black", "Deaths": "5", "Population": "1520192", "Rate": "0.3"}
+{"": "424", "Intent": "Accident", "Gender": "Male", "Age": "65+", "Race": "Hispanic", "Deaths": "2", "Population": "1419828", "Rate": "0.1"}
+{"": "425", "Intent": "Accident", "Gender": "Male", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "750151", "Rate": "0"}
+{"": "426", "Intent": "Accident", "Gender": "Male", "Age": "65+", "Race": "Other", "Deaths": "0", "Population": "255719", "Rate": "0"}
+{"": "427", "Intent": "Accident", "Gender": "Male", "Age": "5", "Race": "None selected", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "428", "Intent": "Accident", "Gender": "Male", "Age": "5", "Race": "White", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "429", "Intent": "Accident", "Gender": "Male", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "430", "Intent": "Accident", "Gender": "Male", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "431", "Intent": "Accident", "Gender": "Male", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "432", "Intent": "Accident", "Gender": "Male", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "433", "Intent": "Unknown", "Gender": "None selected", "Age": "None selected", "Race": "None selected", "Deaths": "269", "Population": "316299978", "Rate": "0.1"}
+{"": "434", "Intent": "Unknown", "Gender": "None selected", "Age": "None selected", "Race": "White", "Deaths": "195", "Population": "197369634", "Rate": "0.1"}
+{"": "435", "Intent": "Unknown", "Gender": "None selected", "Age": "None selected", "Race": "Black", "Deaths": "42", "Population": "38896382", "Rate": "0.1"}
+{"": "436", "Intent": "Unknown", "Gender": "None selected", "Age": "None selected", "Race": "Hispanic", "Deaths": "24", "Population": "54049078", "Rate": "0"}
+{"": "437", "Intent": "Unknown", "Gender": "None selected", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "3", "Population": "16315561", "Rate": "0"}
+{"": "438", "Intent": "Unknown", "Gender": "None selected", "Age": "None selected", "Race": "Other", "Deaths": "5", "Population": "9669323", "Rate": "0.1"}
+{"": "439", "Intent": "Unknown", "Gender": "None selected", "Age": "Under 15", "Race": "None selected", "Deaths": "8", "Population": "61085868", "Rate": "0"}
+{"": "440", "Intent": "Unknown", "Gender": "None selected", "Age": "Under 15", "Race": "White", "Deaths": "5", "Population": "31538832", "Rate": "0"}
+{"": "441", "Intent": "Unknown", "Gender": "None selected", "Age": "Under 15", "Race": "Black", "Deaths": "2", "Population": "8323603", "Rate": "0"}
+{"": "442", "Intent": "Unknown", "Gender": "None selected", "Age": "Under 15", "Race": "Hispanic", "Deaths": "1", "Population": "14994449", "Rate": "0"}
+{"": "443", "Intent": "Unknown", "Gender": "None selected", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "2825155", "Rate": "0"}
+{"": "444", "Intent": "Unknown", "Gender": "None selected", "Age": "Under 15", "Race": "Other", "Deaths": "0", "Population": "3403829", "Rate": "0"}
+{"": "445", "Intent": "Unknown", "Gender": "None selected", "Age": "15 - 34", "Race": "None selected", "Deaths": "116", "Population": "86611149", "Rate": "0.1"}
+{"": "446", "Intent": "Unknown", "Gender": "None selected", "Age": "15 - 34", "Race": "White", "Deaths": "70", "Population": "48773131", "Rate": "0.1"}
+{"": "447", "Intent": "Unknown", "Gender": "None selected", "Age": "15 - 34", "Race": "Black", "Deaths": "25", "Population": "11893789", "Rate": "0.2"}
+{"": "448", "Intent": "Unknown", "Gender": "None selected", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "17", "Population": "17960261", "Rate": "0.1"}
+{"": "449", "Intent": "Unknown", "Gender": "None selected", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "1", "Population": "4950398", "Rate": "0"}
+{"": "450", "Intent": "Unknown", "Gender": "None selected", "Age": "15 - 34", "Race": "Other", "Deaths": "3", "Population": "3033571", "Rate": "0.1"}
+{"": "451", "Intent": "Unknown", "Gender": "None selected", "Age": "35 - 64", "Race": "None selected", "Deaths": "113", "Population": "123935928", "Rate": "0.1"}
+{"": "452", "Intent": "Unknown", "Gender": "None selected", "Age": "35 - 64", "Race": "White", "Deaths": "91", "Population": "81870182", "Rate": "0.1"}
+{"": "453", "Intent": "Unknown", "Gender": "None selected", "Age": "35 - 64", "Race": "Black", "Deaths": "12", "Population": "14848291", "Rate": "0.1"}
+{"": "454", "Intent": "Unknown", "Gender": "None selected", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "6", "Population": "17777422", "Rate": "0"}
+{"": "455", "Intent": "Unknown", "Gender": "None selected", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "2", "Population": "6797707", "Rate": "0"}
+{"": "456", "Intent": "Unknown", "Gender": "None selected", "Age": "35 - 64", "Race": "Other", "Deaths": "2", "Population": "2642326", "Rate": "0.1"}
+{"": "457", "Intent": "Unknown", "Gender": "None selected", "Age": "65+", "Race": "None selected", "Deaths": "31", "Population": "44667034", "Rate": "0.1"}
+{"": "458", "Intent": "Unknown", "Gender": "None selected", "Age": "65+", "Race": "White", "Deaths": "28", "Population": "35187489", "Rate": "0.1"}
+{"": "459", "Intent": "Unknown", "Gender": "None selected", "Age": "65+", "Race": "Black", "Deaths": "3", "Population": "3830699", "Rate": "0.1"}
+{"": "460", "Intent": "Unknown", "Gender": "None selected", "Age": "65+", "Race": "Hispanic", "Deaths": "0", "Population": "3316947", "Rate": "0"}
+{"": "461", "Intent": "Unknown", "Gender": "None selected", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "1742301", "Rate": "0"}
+{"": "462", "Intent": "Unknown", "Gender": "None selected", "Age": "65+", "Race": "Other", "Deaths": "0", "Population": "589598", "Rate": "0"}
+{"": "463", "Intent": "Unknown", "Gender": "None selected", "Age": "5", "Race": "None selected", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "464", "Intent": "Unknown", "Gender": "None selected", "Age": "5", "Race": "White", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "465", "Intent": "Unknown", "Gender": "None selected", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "466", "Intent": "Unknown", "Gender": "None selected", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "467", "Intent": "Unknown", "Gender": "None selected", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "468", "Intent": "Unknown", "Gender": "None selected", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "469", "Intent": "Unknown", "Gender": "Female", "Age": "None selected", "Race": "None selected", "Deaths": "56", "Population": "160668110", "Rate": "0"}
+{"": "470", "Intent": "Unknown", "Gender": "Female", "Age": "None selected", "Race": "White", "Deaths": "42", "Population": "100162288", "Rate": "0"}
+{"": "471", "Intent": "Unknown", "Gender": "Female", "Age": "None selected", "Race": "Black", "Deaths": "7", "Population": "20362385", "Rate": "0"}
+{"": "472", "Intent": "Unknown", "Gender": "Female", "Age": "None selected", "Race": "Hispanic", "Deaths": "5", "Population": "26670924", "Rate": "0"}
+{"": "473", "Intent": "Unknown", "Gender": "Female", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "1", "Population": "8589119", "Rate": "0"}
+{"": "474", "Intent": "Unknown", "Gender": "Female", "Age": "None selected", "Race": "Other", "Deaths": "1", "Population": "4883395", "Rate": "0"}
+{"": "475", "Intent": "Unknown", "Gender": "Female", "Age": "Under 15", "Race": "None selected", "Deaths": "2", "Population": "29836679", "Rate": "0"}
+{"": "476", "Intent": "Unknown", "Gender": "Female", "Age": "Under 15", "Race": "White", "Deaths": "1", "Population": "15355910", "Rate": "0"}
+{"": "477", "Intent": "Unknown", "Gender": "Female", "Age": "Under 15", "Race": "Black", "Deaths": "1", "Population": "4095428", "Rate": "0"}
+{"": "478", "Intent": "Unknown", "Gender": "Female", "Age": "Under 15", "Race": "Hispanic", "Deaths": "0", "Population": "7330024", "Rate": "0"}
+{"": "479", "Intent": "Unknown", "Gender": "Female", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "1393440", "Rate": "0"}
+{"": "480", "Intent": "Unknown", "Gender": "Female", "Age": "Under 15", "Race": "Other", "Deaths": "0", "Population": "1661877", "Rate": "0"}
+{"": "481", "Intent": "Unknown", "Gender": "Female", "Age": "15 - 34", "Race": "None selected", "Deaths": "23", "Population": "42593280", "Rate": "0.1"}
+{"": "482", "Intent": "Unknown", "Gender": "Female", "Age": "15 - 34", "Race": "White", "Deaths": "15", "Population": "23942099", "Rate": "0.1"}
+{"": "483", "Intent": "Unknown", "Gender": "Female", "Age": "15 - 34", "Race": "Black", "Deaths": "3", "Population": "6023846", "Rate": "0"}
+{"": "484", "Intent": "Unknown", "Gender": "Female", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "3", "Population": "8580577", "Rate": "0"}
+{"": "485", "Intent": "Unknown", "Gender": "Female", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "2535358", "Rate": "0"}
+{"": "486", "Intent": "Unknown", "Gender": "Female", "Age": "15 - 34", "Race": "Other", "Deaths": "1", "Population": "1511400", "Rate": "0.1"}
+{"": "487", "Intent": "Unknown", "Gender": "Female", "Age": "35 - 64", "Race": "None selected", "Deaths": "26", "Population": "63125058", "Rate": "0"}
+{"": "488", "Intent": "Unknown", "Gender": "Female", "Age": "35 - 64", "Race": "White", "Deaths": "21", "Population": "41284839", "Rate": "0.1"}
+{"": "489", "Intent": "Unknown", "Gender": "Female", "Age": "35 - 64", "Race": "Black", "Deaths": "3", "Population": "7932606", "Rate": "0"}
+{"": "490", "Intent": "Unknown", "Gender": "Female", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "2", "Population": "8863203", "Rate": "0"}
+{"": "491", "Intent": "Unknown", "Gender": "Female", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "3668172", "Rate": "0"}
+{"": "492", "Intent": "Unknown", "Gender": "Female", "Age": "35 - 64", "Race": "Other", "Deaths": "0", "Population": "1376239", "Rate": "0"}
+{"": "493", "Intent": "Unknown", "Gender": "Female", "Age": "65+", "Race": "None selected", "Deaths": "6", "Population": "25113094", "Rate": "0"}
+{"": "494", "Intent": "Unknown", "Gender": "Female", "Age": "65+", "Race": "White", "Deaths": "5", "Population": "19579439", "Rate": "0"}
+{"": "495", "Intent": "Unknown", "Gender": "Female", "Age": "65+", "Race": "Black", "Deaths": "0", "Population": "2310506", "Rate": "0"}
+{"": "496", "Intent": "Unknown", "Gender": "Female", "Age": "65+", "Race": "Hispanic", "Deaths": "0", "Population": "1897119", "Rate": "0"}
+{"": "497", "Intent": "Unknown", "Gender": "Female", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "992150", "Rate": "0"}
+{"": "498", "Intent": "Unknown", "Gender": "Female", "Age": "65+", "Race": "Other", "Deaths": "0", "Population": "333879", "Rate": "0"}
+{"": "499", "Intent": "Unknown", "Gender": "Female", "Age": "5", "Race": "None selected", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "500", "Intent": "Unknown", "Gender": "Female", "Age": "5", "Race": "White", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "501", "Intent": "Unknown", "Gender": "Female", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "502", "Intent": "Unknown", "Gender": "Female", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "503", "Intent": "Unknown", "Gender": "Female", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "504", "Intent": "Unknown", "Gender": "Female", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "505", "Intent": "Unknown", "Gender": "Male", "Age": "None selected", "Race": "None selected", "Deaths": "213", "Population": "155631868", "Rate": "0.1"}
+{"": "506", "Intent": "Unknown", "Gender": "Male", "Age": "None selected", "Race": "White", "Deaths": "153", "Population": "97207346", "Rate": "0.2"}
+{"": "507", "Intent": "Unknown", "Gender": "Male", "Age": "None selected", "Race": "Black", "Deaths": "35", "Population": "18533996", "Rate": "0.2"}
+{"": "508", "Intent": "Unknown", "Gender": "Male", "Age": "None selected", "Race": "Hispanic", "Deaths": "19", "Population": "27378155", "Rate": "0.1"}
+{"": "509", "Intent": "Unknown", "Gender": "Male", "Age": "None selected", "Race": "Asian/Pacific Islander", "Deaths": "3", "Population": "7726442", "Rate": "0"}
+{"": "510", "Intent": "Unknown", "Gender": "Male", "Age": "None selected", "Race": "Other", "Deaths": "4", "Population": "4785929", "Rate": "0.1"}
+{"": "511", "Intent": "Unknown", "Gender": "Male", "Age": "Under 15", "Race": "None selected", "Deaths": "6", "Population": "31249189", "Rate": "0"}
+{"": "512", "Intent": "Unknown", "Gender": "Male", "Age": "Under 15", "Race": "White", "Deaths": "5", "Population": "16182922", "Rate": "0"}
+{"": "513", "Intent": "Unknown", "Gender": "Male", "Age": "Under 15", "Race": "Black", "Deaths": "1", "Population": "4228176", "Rate": "0"}
+{"": "514", "Intent": "Unknown", "Gender": "Male", "Age": "Under 15", "Race": "Hispanic", "Deaths": "0", "Population": "7664425", "Rate": "0"}
+{"": "515", "Intent": "Unknown", "Gender": "Male", "Age": "Under 15", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "1431715", "Rate": "0"}
+{"": "516", "Intent": "Unknown", "Gender": "Male", "Age": "Under 15", "Race": "Other", "Deaths": "0", "Population": "1741952", "Rate": "0"}
+{"": "517", "Intent": "Unknown", "Gender": "Male", "Age": "15 - 34", "Race": "None selected", "Deaths": "94", "Population": "44017869", "Rate": "0.2"}
+{"": "518", "Intent": "Unknown", "Gender": "Male", "Age": "15 - 34", "Race": "White", "Deaths": "55", "Population": "24831032", "Rate": "0.2"}
+{"": "519", "Intent": "Unknown", "Gender": "Male", "Age": "15 - 34", "Race": "Black", "Deaths": "22", "Population": "5869943", "Rate": "0.4"}
+{"": "520", "Intent": "Unknown", "Gender": "Male", "Age": "15 - 34", "Race": "Hispanic", "Deaths": "14", "Population": "9379683", "Rate": "0.1"}
+{"": "521", "Intent": "Unknown", "Gender": "Male", "Age": "15 - 34", "Race": "Asian/Pacific Islander", "Deaths": "1", "Population": "2415040", "Rate": "0"}
+{"": "522", "Intent": "Unknown", "Gender": "Male", "Age": "15 - 34", "Race": "Other", "Deaths": "2", "Population": "1522171", "Rate": "0.1"}
+{"": "523", "Intent": "Unknown", "Gender": "Male", "Age": "35 - 64", "Race": "None selected", "Deaths": "87", "Population": "60810870", "Rate": "0.1"}
+{"": "524", "Intent": "Unknown", "Gender": "Male", "Age": "35 - 64", "Race": "White", "Deaths": "70", "Population": "40585343", "Rate": "0.2"}
+{"": "525", "Intent": "Unknown", "Gender": "Male", "Age": "35 - 64", "Race": "Black", "Deaths": "9", "Population": "6915685", "Rate": "0.1"}
+{"": "526", "Intent": "Unknown", "Gender": "Male", "Age": "35 - 64", "Race": "Hispanic", "Deaths": "4", "Population": "8914219", "Rate": "0"}
+{"": "527", "Intent": "Unknown", "Gender": "Male", "Age": "35 - 64", "Race": "Asian/Pacific Islander", "Deaths": "2", "Population": "3129535", "Rate": "0.1"}
+{"": "528", "Intent": "Unknown", "Gender": "Male", "Age": "35 - 64", "Race": "Other", "Deaths": "1", "Population": "1266087", "Rate": "0.1"}
+{"": "529", "Intent": "Unknown", "Gender": "Male", "Age": "65+", "Race": "None selected", "Deaths": "26", "Population": "19553940", "Rate": "0.1"}
+{"": "530", "Intent": "Unknown", "Gender": "Male", "Age": "65+", "Race": "White", "Deaths": "23", "Population": "15608050", "Rate": "0.1"}
+{"": "531", "Intent": "Unknown", "Gender": "Male", "Age": "65+", "Race": "Black", "Deaths": "2", "Population": "1520192", "Rate": "0.1"}
+{"": "532", "Intent": "Unknown", "Gender": "Male", "Age": "65+", "Race": "Hispanic", "Deaths": "0", "Population": "1419828", "Rate": "0"}
+{"": "533", "Intent": "Unknown", "Gender": "Male", "Age": "65+", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "750151", "Rate": "0"}
+{"": "534", "Intent": "Unknown", "Gender": "Male", "Age": "65+", "Race": "Other", "Deaths": "0", "Population": "255719", "Rate": "0"}
+{"": "535", "Intent": "Unknown", "Gender": "Male", "Age": "5", "Race": "None selected", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "536", "Intent": "Unknown", "Gender": "Male", "Age": "5", "Race": "White", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "537", "Intent": "Unknown", "Gender": "Male", "Age": "5", "Race": "Black", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "538", "Intent": "Unknown", "Gender": "Male", "Age": "5", "Race": "Hispanic", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "539", "Intent": "Unknown", "Gender": "Male", "Age": "5", "Race": "Asian/Pacific Islander", "Deaths": "0", "Population": "0", "Rate": "NA"}
+{"": "540", "Intent": "Unknown", "Gender": "Male", "Age": "5", "Race": "Other", "Deaths": "0", "Population": "0", "Rate": "NA"}
