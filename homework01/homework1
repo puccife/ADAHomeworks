@@ -1,11 +1,13 @@
+import csv
 import glob
+import numpy as np
 import datetime as time
 from functools import reduce
 import matplotlib.pyplot as plt
 import collections
 import pandas as pd
 
-columns_guinea = ['Totals', 'Description', 'Date']
+columns_guinea = ['Date','Description','Totals']
 columns_liberia = ['National', 'Variable', 'Date']
 columns_sierraleone = ['National', 'variable', 'date']
 
@@ -14,42 +16,58 @@ path_liberia = r'./data/ebola/liberia_data'
 path_sierraleone = r'./data/ebola/sl_data'
 
 allFiles = glob.glob(path_guinea + "/*.csv")
-df = pd.DataFrame()
+frame = pd.DataFrame()
 list_ = []
 for file_ in allFiles:
-    tmpdf = pd.read_csv(file_)
-    selected_df = tmpdf[columns_guinea]
-    list_.append(selected_df)
+    df = pd.read_csv(file_,index_col=None, header=0)
+    list_.append(df)
 df = pd.concat(list_)
 df = pd.DataFrame(df)
-df = df.set_index('Description')
 df = df.fillna(0)
+df = df.set_index('Description')
+col_list= list(df)
+print(col_list)
+col_list.remove('Date')
+col_list.remove('Totals')
+df = df.convert_objects(convert_numeric=True)
+df['TotalsByCity'] = df[col_list].sum(axis=1, numeric_only=True)
+df = df.fillna(0)
+df["MAX"] = df[['TotalsByCity', 'Totals']].max(axis=1)
+df = df[['MAX','Date']]
+
 df_confirmed = df.loc['Total cases of confirmed']
 df_newcases = df.loc['New cases of confirmed']
 dates = df_confirmed['Date'].tolist()
-new_cases = df_newcases['Totals'].tolist()
-print(new_cases)
+new_cases = df_newcases['MAX'].tolist()
 first_day_of_year = time.datetime.strptime("2014-01-01", '%Y-%m-%d')
 first_day = time.datetime.strptime(dates[0], '%Y-%m-%d')
 last_day = time.datetime.strptime(dates[len(dates)-1], '%Y-%m-%d')
 n_days = (last_day - first_day).days
 n_days_tot = (last_day - first_day_of_year).days
-n_deaths = max(list(map(int, df_confirmed['Totals'].tolist())))
+n_deaths = max(list(map(int, df_confirmed['MAX'].tolist())))
 n_newcases = reduce((lambda x, y: x + y), [int(x) for x in new_cases])
 guinea_daily_avg_deaths = float(n_deaths/n_days_tot)
 guinea_daily_avg_newcases = float(n_newcases/n_days)
 
 allFiles = glob.glob(path_liberia + "/*.csv")
-df = pd.DataFrame()
+frame = pd.DataFrame()
 list_ = []
 for file_ in allFiles:
-    tmpdf = pd.read_csv(file_)
-    selected_df = tmpdf[columns_liberia]
-    list_.append(selected_df)
+    df = pd.read_csv(file_,index_col=None, header=0)
+    list_.append(df)
 df = pd.concat(list_)
 df = pd.DataFrame(df)
-df = df.set_index('Variable')
 df = df.fillna(0)
+df = df.set_index('Variable')
+col_list= list(df)
+print(col_list)
+col_list.remove('Date')
+col_list.remove('National')
+df = df.convert_objects(convert_numeric=True)
+df['TotalsByCity'] = df[col_list].sum(axis=1, numeric_only=True)
+df = df.fillna(0)
+df["MAX"] = df[['TotalsByCity', 'National']].max(axis=1)
+df = df[['MAX','Date']]
 df_confirmed = df.loc['Total death/s in confirmed cases']
 df_newcases = df.loc['New case/s (confirmed)']
 dates = df_confirmed['Date'].tolist()
@@ -57,51 +75,63 @@ first_day = time.datetime.strptime(dates[0], '%m/%d/%Y')
 last_day = time.datetime.strptime(dates[len(dates)-1], '%m/%d/%Y')
 n_days = (last_day - first_day).days
 n_days_tot = (last_day - first_day_of_year).days
-n_deaths = max(df_confirmed['National'].tolist())
-n_newcases = max(df_newcases['National'].tolist())
+n_deaths = max(df_confirmed['MAX'].tolist())
+n_newcases = max(df_newcases['MAX'].tolist())
 liberia_daily_avg_deaths = float(n_deaths/n_days_tot)
 liberia_daily_avg_newcases = float(n_newcases/n_days_tot)
 
 allFiles = glob.glob(path_sierraleone + "/*.csv")
-df = pd.DataFrame()
+frame = pd.DataFrame()
 list_ = []
 for file_ in allFiles:
-    tmpdf = pd.read_csv(file_, decimal=',')
-    selected_df = tmpdf[columns_sierraleone]
-    list_.append(selected_df)
+    df = pd.read_csv(file_,index_col=None, header=0)
+    list_.append(df)
 df = pd.concat(list_)
 df = pd.DataFrame(df)
-df = df.set_index('variable')
 df = df.fillna(0)
+df = df.set_index('variable')
+col_list= list(df)
+print(col_list)
+col_list.remove('date')
+col_list.remove('National')
+df = df.convert_objects(convert_numeric=True)
+df['TotalsByCity'] = df[col_list].sum(axis=1, numeric_only=True)
+df = df.fillna(0)
+df["MAX"] = df[['TotalsByCity', 'National']].max(axis=1)
+df = df[['MAX','date']]
 df_confirmed = df.loc['new_confirmed']
 df_newcases = df.loc['cum_confirmed']
 dates = df_confirmed['date'].tolist()
-new_cases = df_newcases['National'].tolist()
+new_cases = df_newcases['MAX'].tolist()
 first_day = time.datetime.strptime(dates[0], '%Y-%m-%d')
 last_day = time.datetime.strptime(dates[len(dates)-1], '%Y-%m-%d')
 first_day_of_year = time.datetime.strptime("2014-01-01", '%Y-%m-%d')
 n_days = (last_day - first_day).days
 n_days_tot = (last_day - first_day_of_year).days
-n_newcases = max(list(map(int, df_confirmed['National'].tolist())))
-n_deaths = [ str(x).replace(",","").replace(".","") for x in df_newcases['National'].tolist()]
+n_newcases = reduce((lambda x, y: x + y), list(map(int, df_confirmed['MAX'].tolist())))
+n_deaths = [ str(x).replace(",","").replace(".0","") for x in df_newcases['MAX'].tolist()]
 n_deaths = (list(map(int, n_deaths)))
 n_deaths = max(list(map(lambda x : x/10 if x>=10000 else x, n_deaths)))
 sierra_daily_avg_deaths = float(n_deaths/n_days_tot)
 sierra_daily_avg_newcases = float(n_newcases/n_days_tot)
 
 result = collections.defaultdict(dict)
-result['Country']['Guinea'] = {}
-result['Country']['Guinea']['Daily deaths (avg)'] = guinea_daily_avg_deaths
-result['Country']['Guinea']['Daily new cases (avg)'] = guinea_daily_avg_newcases
-result['Country']['Liberia'] = {}
-result['Country']['Liberia']['Daily deaths (avg)'] = liberia_daily_avg_deaths
-result['Country']['Liberia']['Daily new cases (avg)'] = liberia_daily_avg_newcases
-result['Country']['Sierra Leone'] = {}
-result['Country']['Sierra Leone']['Daily deaths (avg)'] = sierra_daily_avg_deaths
-result['Country']['Sierra Leone']['Daily new cases (avg)'] = sierra_daily_avg_newcases
 
-df = pd.DataFrame(result['Country'])
-df.plot(kind = 'barh')
+result['Guinea Daily deaths (avg)'] = guinea_daily_avg_deaths
+result['Guinea Daily new cases (avg)'] = guinea_daily_avg_newcases
+
+result['Liberia Daily deaths (avg)'] = liberia_daily_avg_deaths
+result['Liberia Daily new cases (avg)'] = liberia_daily_avg_newcases
+
+result['Sierra Leone Daily deaths (avg)'] = sierra_daily_avg_deaths
+result['Sierra Leone Daily new cases (avg)'] = sierra_daily_avg_newcases
+
+columns=list(result.keys())
+values = list(result.values())
+arr_len = len(values)
+
+df = pd.DataFrame(np.array(values, dtype=object).reshape(1, arr_len), columns=columns)
+df.plot(kind = 'bar')
 plt.tight_layout()
 plt.show()
 print(result)
