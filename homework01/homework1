@@ -23,6 +23,7 @@ for file_ in allFiles:
     list_.append(df)
 df = pd.concat(list_)
 df = pd.DataFrame(df)
+df.dropna(axis=0, how='all')
 df = df.fillna(0)
 df = df.set_index('Description')
 col_list= list(df)
@@ -32,22 +33,39 @@ col_list.remove('Totals')
 df = df.convert_objects(convert_numeric=True)
 df['TotalsByCity'] = df[col_list].sum(axis=1, numeric_only=True)
 df = df.fillna(0)
-df["MAX"] = df[['TotalsByCity', 'Totals']].max(axis=1)
+# df["MAX"] = df[['TotalsByCity', 'Totals']].max(axis=1)
+df["MAX"] = df['TotalsByCity']
 df = df[['MAX','Date']]
-
-df_confirmed = df.loc['Total cases of confirmed']
+df['day'] = pd.DatetimeIndex(df['Date']).day
+df.Date = pd.to_datetime(df.Date).dt.strftime('%m/%Y')
+df_confirmed = df.loc['Total deaths of confirmed']
 df_newcases = df.loc['New cases of confirmed']
-dates = df_confirmed['Date'].tolist()
-new_cases = df_newcases['MAX'].tolist()
-first_day_of_year = time.datetime.strptime("2014-01-01", '%Y-%m-%d')
-first_day = time.datetime.strptime(dates[0], '%Y-%m-%d')
-last_day = time.datetime.strptime(dates[len(dates)-1], '%Y-%m-%d')
-n_days = (last_day - first_day).days
-n_days_tot = (last_day - first_day_of_year).days
-n_deaths = max(list(map(int, df_confirmed['MAX'].tolist())))
-n_newcases = reduce((lambda x, y: x + y), [int(x) for x in new_cases])
-guinea_daily_avg_deaths = float(n_deaths/n_days_tot)
-guinea_daily_avg_newcases = float(n_newcases/n_days)
+df_confirmed['max_deaths'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['MAX'].max()[x])
+df_confirmed['max_day'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['day'].max()[x])
+df_confirmed['min_deaths'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['MAX'].min()[x])
+df_confirmed['min_day'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['day'].min()[x])
+df_confirmed['days'] = df_confirmed['max_day'] - df_confirmed['min_day'] + 1
+df_confirmed = df_confirmed.groupby(['Date']).first()
+del df_confirmed['MAX']
+del df_confirmed['day']
+del df_confirmed['min_day']
+del df_confirmed['max_day']
+df_newcases['guinea_new_mean'] = df_newcases.Date.map(lambda x: df_newcases.groupby('Date')['MAX'].mean()[x])
+df_newcases = df_newcases.groupby(['Date']).first()
+del df_newcases['MAX']
+result_guinea = pd.merge(df_newcases.reset_index(), df_confirmed.reset_index(), on=['Date'], how='inner').set_index(['Date'])
+result_guinea['deaths_x'] = result_guinea['max_deaths'] - result_guinea['max_deaths'].shift(+1)
+result_guinea['deaths_y'] = result_guinea['max_deaths'].sub(result_guinea['min_deaths'], axis=0)
+result_guinea['deaths'] = result_guinea[['deaths_x', 'deaths_y']].max(axis=1)
+result_guinea['guinea_death_mean'] = result_guinea['deaths'] / result_guinea['days']
+del result_guinea['max_deaths']
+del result_guinea['min_deaths']
+del result_guinea['deaths']
+del result_guinea['deaths_x']
+del result_guinea['deaths_y']
+del result_guinea['days']
+del result_guinea['day']
+print(result_guinea)
 
 allFiles = glob.glob(path_liberia + "/*.csv")
 frame = pd.DataFrame()
@@ -66,19 +84,39 @@ col_list.remove('National')
 df = df.convert_objects(convert_numeric=True)
 df['TotalsByCity'] = df[col_list].sum(axis=1, numeric_only=True)
 df = df.fillna(0)
+# df["MAX"] = df['TotalsByCity']
 df["MAX"] = df[['TotalsByCity', 'National']].max(axis=1)
 df = df[['MAX','Date']]
+df['day'] = pd.DatetimeIndex(df['Date']).day
+df.Date = pd.to_datetime(df.Date).dt.strftime('%m/%Y')
 df_confirmed = df.loc['Total death/s in confirmed cases']
 df_newcases = df.loc['New case/s (confirmed)']
-dates = df_confirmed['Date'].tolist()
-first_day = time.datetime.strptime(dates[0], '%m/%d/%Y')
-last_day = time.datetime.strptime(dates[len(dates)-1], '%m/%d/%Y')
-n_days = (last_day - first_day).days
-n_days_tot = (last_day - first_day_of_year).days
-n_deaths = max(df_confirmed['MAX'].tolist())
-n_newcases = max(df_newcases['MAX'].tolist())
-liberia_daily_avg_deaths = float(n_deaths/n_days_tot)
-liberia_daily_avg_newcases = float(n_newcases/n_days_tot)
+df_confirmed['max_deaths'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['MAX'].max()[x])
+df_confirmed['max_day'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['day'].max()[x])
+df_confirmed['min_deaths'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['MAX'].min()[x])
+df_confirmed['min_day'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['day'].min()[x])
+df_confirmed['days'] = df_confirmed['max_day'] - df_confirmed['min_day'] + 1
+df_confirmed = df_confirmed.groupby(['Date']).first()
+del df_confirmed['MAX']
+del df_confirmed['day']
+del df_confirmed['min_day']
+del df_confirmed['max_day']
+df_newcases = df_newcases[df_newcases['MAX'] < 1000]
+df_newcases['liberia_new_mean'] = df_newcases.Date.map(lambda x: df_newcases.groupby('Date')['MAX'].mean()[x])
+df_newcases = df_newcases.groupby(['Date']).first()
+del df_newcases['MAX']
+result_liberia = pd.merge(df_newcases.reset_index(), df_confirmed.reset_index(), on=['Date'], how='inner').set_index(['Date'])
+result_liberia['deaths_x'] = result_liberia['max_deaths'] - result_liberia['max_deaths'].shift(+1)
+result_liberia['deaths_y'] = result_liberia['max_deaths'].sub(result_liberia['min_deaths'], axis=0)
+result_liberia['deaths'] = result_liberia[['deaths_x', 'deaths_y']].max(axis=1)
+result_liberia['liberia_death_mean'] = result_liberia['deaths'] / result_liberia['days']
+del result_liberia['max_deaths']
+del result_liberia['min_deaths']
+del result_liberia['deaths']
+del result_liberia['deaths_x']
+del result_liberia['deaths_y']
+del result_liberia['days']
+del result_liberia['day']
 
 allFiles = glob.glob(path_sierraleone + "/*.csv")
 frame = pd.DataFrame()
@@ -97,41 +135,44 @@ col_list.remove('National')
 df = df.convert_objects(convert_numeric=True)
 df['TotalsByCity'] = df[col_list].sum(axis=1, numeric_only=True)
 df = df.fillna(0)
-df["MAX"] = df[['TotalsByCity', 'National']].max(axis=1)
+df["MAX"] = df['TotalsByCity']
+# df["MAX"] = df[['TotalsByCity', 'National']].max(axis=1)
 df = df[['MAX','date']]
-df_confirmed = df.loc['new_confirmed']
-df_newcases = df.loc['cum_confirmed']
-dates = df_confirmed['date'].tolist()
-new_cases = df_newcases['MAX'].tolist()
-first_day = time.datetime.strptime(dates[0], '%Y-%m-%d')
-last_day = time.datetime.strptime(dates[len(dates)-1], '%Y-%m-%d')
-first_day_of_year = time.datetime.strptime("2014-01-01", '%Y-%m-%d')
-n_days = (last_day - first_day).days
-n_days_tot = (last_day - first_day_of_year).days
-n_newcases = reduce((lambda x, y: x + y), list(map(int, df_confirmed['MAX'].tolist())))
-n_deaths = [ str(x).replace(",","").replace(".0","") for x in df_newcases['MAX'].tolist()]
-n_deaths = (list(map(int, n_deaths)))
-n_deaths = max(list(map(lambda x : x/10 if x>=10000 else x, n_deaths)))
-sierra_daily_avg_deaths = float(n_deaths/n_days_tot)
-sierra_daily_avg_newcases = float(n_newcases/n_days_tot)
+df.rename(columns={"date": "Date"}, inplace=True)
+df['day'] = pd.DatetimeIndex(df['Date']).day
+df.Date = pd.to_datetime(df.Date).dt.strftime('%m/%Y')
+df_newcases = df.loc['new_confirmed']
+df_confirmed = df.loc['death_confirmed']
 
-result = collections.defaultdict(dict)
+df_confirmed['max_deaths'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['MAX'].max()[x])
+df_confirmed['max_day'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['day'].max()[x])
+df_confirmed['min_deaths'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['MAX'].min()[x])
+df_confirmed['min_day'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['day'].min()[x])
+df_confirmed['days'] = df_confirmed['max_day'] - df_confirmed['min_day'] + 1
+df_confirmed = df_confirmed.groupby(['Date']).first()
+del df_confirmed['MAX']
+del df_confirmed['day']
+del df_confirmed['min_day']
+del df_confirmed['max_day']
+df_newcases['sierra_new_mean'] = df_newcases.Date.map(lambda x: df_newcases.groupby('Date')['MAX'].mean()[x])
+df_newcases = df_newcases.groupby(['Date']).first()
+del df_newcases['MAX']
+result_sierra = pd.merge(df_newcases.reset_index(), df_confirmed.reset_index(), on=['Date'], how='inner').set_index(['Date'])
+result_sierra['deaths_x'] = result_sierra['max_deaths'] - result_sierra['max_deaths'].shift(+1)
+result_sierra['deaths_y'] = result_sierra['max_deaths'].sub(result_sierra['min_deaths'], axis=0)
+result_sierra['deaths'] = result_sierra[['deaths_x', 'deaths_y']].max(axis=1)
+result_sierra['sierra_death_mean'] = result_sierra['deaths'] / result_sierra['days']
+del result_sierra['max_deaths']
+del result_sierra['min_deaths']
+del result_sierra['deaths']
+del result_sierra['deaths_x']
+del result_sierra['deaths_y']
+del result_sierra['days']
+del result_sierra['day']
 
-result['Guinea Daily deaths (avg)'] = guinea_daily_avg_deaths
-result['Guinea Daily new cases (avg)'] = guinea_daily_avg_newcases
-
-result['Liberia Daily deaths (avg)'] = liberia_daily_avg_deaths
-result['Liberia Daily new cases (avg)'] = liberia_daily_avg_newcases
-
-result['Sierra Leone Daily deaths (avg)'] = sierra_daily_avg_deaths
-result['Sierra Leone Daily new cases (avg)'] = sierra_daily_avg_newcases
-
-columns=list(result.keys())
-values = list(result.values())
-arr_len = len(values)
-
-df = pd.DataFrame(np.array(values, dtype=object).reshape(1, arr_len), columns=columns)
-df.plot(kind = 'bar')
-plt.tight_layout()
-plt.show()
+result = pd.merge(result_liberia.reset_index(), result_guinea.reset_index(), on=['Date'], how='outer').set_index(['Date'])
+result = pd.merge(result.reset_index(), result_sierra.reset_index(), on=['Date'], how='outer').set_index(['Date'])
 print(result)
+result.plot()
+
+plt.show()
