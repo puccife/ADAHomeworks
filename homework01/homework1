@@ -40,7 +40,8 @@ df['day'] = pd.DatetimeIndex(df['Date']).day
 df.Date = pd.to_datetime(df.Date).dt.strftime('%m/%Y')
 df_confirmed = df.loc['Total deaths of confirmed']
 df_newcases = df.loc['New cases of confirmed']
-df_confirmed['max_deaths'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['MAX'].max()[x])
+
+df_confirmed.loc['max_deaths'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['MAX'].max()[x])
 df_confirmed['max_day'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['day'].max()[x])
 df_confirmed['min_deaths'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['MAX'].min()[x])
 df_confirmed['min_day'] = df_confirmed.Date.map(lambda x: df_confirmed.groupby('Date')['day'].min()[x])
