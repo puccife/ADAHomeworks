@@ -1,2 +1,3 @@
 # ADAHomeworks
-The solution to Homework 1 can be found in homework01/Homework 1.ipynb.
+The solution to Homework 2 can be found in homework02/Homework 2.ipynb.
+
