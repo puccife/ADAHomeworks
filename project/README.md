@@ -18,7 +18,7 @@ List the dataset(s) you want to use, and some ideas on how do you expect to get,
 This database contains information on almost 500,000 offshore entities that are part of the Panama Papers, the Offshore Leaks and the Bahamas Leaks investigations. The data covers nearly 40 years – from 1977 through to early 2016 – and links to people and companies in more than 200 countries and territories.
 The real value of the database is that it strips away the secrecy that cloaks companies and trusts incorporated in tax havens and exposes the people behind them. This includes, when available, the names of the real owners of those opaque structures.
 
-The dataset is divided into 5 main csv files [ Addresses, all_edges, Entities, Intermediaries, Officers ].
+The dataset is divided into five main csv files [ Addresses, all_edges, Entities, Intermediaries, Officers ].
 
 We will now discuss each of them briefly.
 
