@@ -106,7 +106,7 @@ We are convinced that through the Index of Freedom it is possible to enrich the 
 We also believe that it is possible to highlight some probable effects on the economies of the countries involved in the case, having the same dataset available for different years.
 
 ### Data format
-The data, in different years, is available in ** .xls ** format.
+The data, in different years, is available in **.xls** format.
 Each dataset contains information about 186 countries. Each of them has 42 attributes related to the topics listed in the introduction.
 
 # A list of internal milestones up until project milestone 2
