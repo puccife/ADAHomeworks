@@ -110,7 +110,9 @@ The data, in different years, is available in **.xls** format.
 Each dataset contains information about 186 countries. Each of them has 42 attributes related to the topics listed in the introduction.
 
 # A list of internal milestones up until project milestone 2
-Add here a sketch of your planning for the next project milestone.
+1. Better understanding of each dataset.
+2. Finding more relationships between both datasets.
+3. Elaborate coordinates from addresses.
 
 # Questions for TAa
 We think that it would be interesting to do a more detailed analysis taking into account a distinction for different sectors of industry. However, we did not find a good way to find out the sector an entity in the panama papers belongs to. In particular, we would need to enrich the dataset somehow. (Note that there is a column named company type in the panama papers data set, but it is all empty.) Can you point us to other data sets possibly containing this information?
