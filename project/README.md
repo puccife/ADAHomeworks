@@ -1,8 +1,10 @@
-# Reasons for opening offshore companies
+# Inside Panama Papers
 
 # Abstract
-Every day men and women around the globe go to work with the the same goal: to prosper. But what is not the same is the degree of economic freedom that each country offers to its people. Fiscal prudence and opennesss in international trade can have a powerful effect on improving society. As global markets expand and become more interconnected, business are increasingly looking for resources to help identify competitive and profitable opportunities. Our goal is to analyze motivating factors for creating offshore companies, i.e. companies created in low-tax, offshore jurisdictions. The analysis is performed using the [Offshore Leaks Database](https://www.occrp.org/en/panamapapers/database) which contains data about companies, foundations and trusts. To this end, we enrich our dataset with information about the economical and social background of countries from the [Index of Economic Freedom](http://www.heritage.org/index/about), considering legal factors as well. 
-We believe that a better understanding of the reasons can help prevent those tendencies.
+As global markets expand and become more interconnected, businesses are increasingly looking for resources to help identify competitive and profitable opportunities. Several data leakages in the last years have shown that a common approach to this is the creation of offshore companies, i.e. companies created in low-tax, offshore jurisdictions.
+Our goal is to analyze motivating factors for creating
+such entities. We believe that a better understanding of the reasons can help to find ways to deal with those tendencies. This has an impact on the social good, because fiscal prudence and opennesss in international trade can have a powerful effect on improving society.
+The data analysis is performed using the [Offshore Leaks Database](https://www.occrp.org/en/panamapapers/database) which contains data about offshore companies, foundations and trusts. We enrich the dataset with information about the economical and social background of countries from the [Index of Economic Freedom](http://www.heritage.org/index/about), considering legal factors as well.  
 
 # Research questions
 1. Which economic factors motivate the foundation of offshore companies? 
@@ -21,7 +23,7 @@ The dataset is divided into five main csv files [ Addresses, all_edges, Entities
 
 We will now discuss each of them briefly.
 
-### 1-Addresses
+### 1- Addresses
 We can find here addresses of the officers involved.
 
 The data consists of 151605 inputs.
@@ -110,9 +112,11 @@ The data, in different years, is available in **.xls** format.
 Each dataset contains information about 186 countries. Each of them has 42 attributes related to the topics listed in the introduction.
 
 # A list of internal milestones up until project milestone 2
-1. Better understanding of each dataset.
-2. Finding more relationships between both datasets.
-3. Elaborate coordinates from addresses.
+1. Further understand the details of each dataset.
+2. Find more relationships between both datasets.
+3. Merge the datasets. 
+4. Elaborate coordinates from addresses.
+5. Explorative data analysis: value ranges and distributions, correlations.
 
 # Questions for TAa
 We think that it would be interesting to do a more detailed analysis taking into account a distinction for different sectors of industry. However, we did not find a good way to find out the sector an entity in the panama papers belongs to. In particular, we would need to enrich the dataset somehow. (Note that there is a column named company type in the panama papers data set, but it is all empty.) Can you point us to other data sets possibly containing this information?
