@@ -10,9 +10,7 @@ We believe that a better understanding of the reasons can help prevent those ten
 3. How are the countries connected? Is there a pattern in the way players in origin countries select special countries for their offshores?
 4. There is a hypothesis that scandals involving tax havens actually help to promote creating offshores there. See for example http://www.isa-world.com/news/?tx_ttnews%5BbackPid%5D=1&tx_ttnews%5Btt_news%5D=198&cHash=10b412a7de63d3b2a02adf0d120a09f6. Can we find evidence for this in the data?
 
-# Dataset
-List the dataset(s) you want to use, and some ideas on how do you expect to get, manage, process and enrich it/them. Show us you've read the docs and some examples, and you've a clear idea on what to expect. Discuss data size and format if relevant.
-
+# Datasets
 ## [Offshore leaks database](https://panamapapers.icij.org/)
 ![title](./images/panama_papers.jpg)
 ### Introduction
