@@ -3,6 +3,13 @@
 # Abstract
 The goal of this project is to analyze motivating factors for creating offshore companies, i.e. companies created in low-tax, offshore jurisdictions. The analysis is performed using the Offshore Leaks Database (https://www.occrp.org/en/panamapapers/database) which contains data about offshore companies, foundations and trusts. We plan to consider economic as well as legal factors. To this end, we enrich our dataset with information about the economic and legal background of countries from the Index of Economic Freedom project (http://www.heritage.org/index/about). While it is often unclear whether the offshore entities are legal, it is a fact that tendencies to create companies in tax havens abroad have a bad effect on the local community, as the local government loses tax money. This money would in turn benefit the inhabitants of the country. Therefore, the general social good is affected. We think that a better understanding of the reasons can help to prevent this tendencies.
 
+Each with the same goal to prosper but with not teh same , its wit hthe degree of the economic freedom each country offers to its people, every the heritage foundation ranks almost every country by it's economic freedom adn the results are pretty interesting the index uses data from sectors like business,trade, governance, and policy to generate a score with 100 being the most free countries that score higher are those that have fiendly tax code and governments that encourage innovation and entrepreneurship in addition to enjoying high level of financial people in this free societies live longer , healthier , are more educated and surprisingly are better protectors of the environment.
+
+the good news is that in the past 2 decades global economic freedom has been increasing 2016 is the fourth consecutive year of a global increase but you will notice that only five countries have reached a score above 80 which qualifies them as free of those top 5 only switz have become more free in the past year, the competetive swiss economy have moved to the fourth place while the rest have declined, while there has been progress towards economical progress.
+Physical prudence and opennesss in international trade, big government interfernece in financial sectors which depresses economy .
+continuing growth of in regulation and public sector spending
+Economic freedom can have a powerful effect on improving society 
+
 # Research questions
 1. Which economic factors motivate the foundation of offshore companies? 
 2. Which role does the legal situation in the origin country play compared to the legal situation in the offshore country? In particular, are off-shores used also to avoid  higher wages and better working conditions imposed by countries legislation?
