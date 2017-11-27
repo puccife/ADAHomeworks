@@ -6,6 +6,10 @@ from functools import reduce
 from utils import dateparser
 import pycountry
 
+import requests
+
+import json
+
 def process_countries(entities, first_involved_countries, analisys_on='jurisdiction', from_year=1990, to_year=2017):
     most_involved_leak = []
     for index, involved_country in enumerate(first_involved_countries):
@@ -108,7 +112,6 @@ def process_countries_with_code(entities, first_involved_countries, analisys_on=
                 cou = int('92')
             else:
                 cou = int(pycountry.countries.get(name=cou).numeric)
-
             jur = row['jurisdiction']
             if(jur == 'British Anguilla'):
                 jur = int('660')
@@ -136,3 +139,33 @@ def process_countries_with_code(entities, first_involved_countries, analisys_on=
         countries_frame.loc[id_, 'jurisdiction'] = jur
         
     return countries_frame
+
+def addDetails(actives_flows_by_country2, restcountries):
+    actives_flows_by_country = actives_flows_by_country2.copy()
+    for i, row in actives_flows_by_country.iterrows():
+        actives_flows_by_country.loc[i, 'CODE'] = restcountries[int(row['Country'])]['alpha3Code']
+        actives_flows_by_country.loc[i, 'Name'] = restcountries[int(row['Country'])]['name']
+    return actives_flows_by_country
+
+def parseCountries(actives_flows):
+    cols=[i for i in actives_flows.columns if i not in ["Country_name"]]
+    for col in cols:
+        actives_flows[col]=pd.to_numeric(actives_flows[col],errors='coerce')
+    return actives_flows
+
+def buildJsonAPI(url):
+    restcountries = {}
+    nametoid = {}
+    response = requests.get(url)
+    for json_country in response.json():
+        try:
+            code = int(json_country['numericCode'])
+            restcountries[code] = {}
+            restcountries[code]['name'] = json_country['name']
+            restcountries[code]['latlng'] = json_country['latlng']
+            restcountries[code]['name'] = json_country['name']
+            restcountries[code]['alpha3Code'] = json_country['alpha3Code']
+            nametoid[json_country['name']] = code
+        except:
+            print(json_country['name'] + " has problem with numeric code " + str(json_country['numericCode']))
+    return restcountries, nametoid
