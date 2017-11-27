@@ -10,6 +10,8 @@ The data analysis is performed using the [Offshore Leaks Database](https://www.o
 1. Which economic factors motivate the foundation of offshore companies? 
 2. Which role does the legal situation in the origin country play compared to the legal situation in the offshore country? In particular, are off-shores used also to avoid  higher wages and better working conditions imposed by countries legislation?
 3. How are the countries connected? Is there a pattern in the way players in origin countries select special countries for their offshores?
+*For the analysis we count for every combination of two countries that occur in the data the number of offshores founded in one country coming from the other country and vice versa.*
+
 4. There is a hypothesis that scandals involving tax havens actually help to promote creating offshores there. See for example http://www.isa-world.com/news/?tx_ttnews%5BbackPid%5D=1&tx_ttnews%5Btt_news%5D=198&cHash=10b412a7de63d3b2a02adf0d120a09f6. Can we find evidence for this in the data?
 
 # Datasets
@@ -111,12 +113,18 @@ We also believe that it is possible to highlight some probable effects on the ec
 The data, in different years, is available in **.xls** format.
 Each dataset contains information about 186 countries. Each of them has 42 attributes related to the topics listed in the introduction.
 
-# A list of internal milestones up until project milestone 2
-1. Further understand the details of each dataset.
-2. Find more relationships between both datasets.
-3. Merge the datasets. 
-4. Elaborate coordinates from addresses.
-5. Explorative data analysis: value ranges and distributions, correlations.
+# Internal milestones up until project milestone 2
+1. Further understand the details of each dataset. - Done
+2. Find more relationships between both datasets. - Done
+3. Merge the datasets. - Started, some interesting parts still open, see part about research question 1 in Notebook. 
+4. Elaborate coordinates from addresses. - Not necessary for the path of analysis we decided to take.
+5. Explorative data analysis: value ranges and distributions, correlations. - Done
 
-# Questions for TAa
-We think that it would be interesting to do a more detailed analysis taking into account a distinction for different sectors of industry. However, we did not find a good way to find out the sector an entity in the panama papers belongs to. In particular, we would need to enrich the dataset somehow. (Note that there is a column named company type in the panama papers data set, but it is all empty.) Can you point us to other data sets possibly containing this information?
+# Internal milestones up until project milestone 3
+1. Finish analysis: 
+   1.1. Question 1: Directly relate the number of offshores computed from the Panama Papers to the Index Of Economics Freedom. Possibly do a regression / PCA to find the most important factors.
+   1.2. Question 2: Find realtionship between countries in the same cluster in order to explain the pattern in the country relationships. Do a similar analysis for countries that occur together as origin countries.
+   1.3. Question 3: 
+   1.4. Prepare final version of Notebook.
+2. Visualize results in a coherent way, probably combining results of different research questions.
+3. Write data story using the visualizations.
