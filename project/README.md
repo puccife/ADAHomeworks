@@ -123,9 +123,9 @@ Each dataset contains information about 186 countries. Each of them has 42 attri
 
 # Internal milestones up until project milestone 3
 1. Finish analysis: 
-   1.1. Question 1: Directly relate the number of offshores computed from the Panama Papers to the Index Of Economics Freedom. Possibly do a regression / PCA to find the most important factors.
-   1.2. Question 2: Find realtionship between countries in the same cluster in order to explain the pattern in the country relationships. Do a similar analysis for countries that occur together as origin countries.
-   1.3. Question 3: 
-   1.4. Prepare final version of Notebook.
+- Question 1: Directly relate the number of offshores computed from the Panama Papers to the Index Of Economics Freedom. Possibly do a regression / PCA to find the most important factors.
+- Question 2: Find realtionship between countries in the same cluster in order to explain the pattern in the country relationships. Do a similar analysis for countries that occur together as origin countries.
+- Question 3: 
+- Prepare final version of Notebook.
 2. Visualize results in a coherent way, probably combining results of different research questions.
 3. Write data story using the visualizations.
