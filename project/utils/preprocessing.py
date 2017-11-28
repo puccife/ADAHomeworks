@@ -22,9 +22,15 @@ def process_countries(entities, first_involved_countries, analisys_on='jurisdict
     :return: a list of parsed dataframes (one for each country).
     """
     most_involved_leak = []
+
+    # Function runned over the specified countries
     for index, involved_country in enumerate(first_involved_countries):
         testing_entities = entities.copy()
+
+        # Getting only the country interested in.
         involved_leak = testing_entities[testing_entities['Country'].isin([involved_country])].copy()
+
+        # Parsing dates in a default datetime format.
         involved_leak = dateparser.parse_dates(involved_leak, from_year, to_year)
         total_incorporation = involved_leak.groupby(['Country','jurisdiction_description', 'incorporation_date']).count()
         total_inactivation = involved_leak.groupby(['Country','jurisdiction_description', 'inactivation_date']).count()
@@ -204,9 +210,12 @@ def build_json_from_api(url):
     """
     restcountries = {}
     nametoid = {}
+    # making request to specific url
     response = requests.get(url)
     for json_country in response.json():
+        # For each request - catching exceptions
         try:
+            # Saving useful information in 2 different json objects.
             code = int(json_country['numericCode'])
             restcountries[code] = {}
             restcountries[code]['name'] = json_country['name']
