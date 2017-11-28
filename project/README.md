@@ -131,7 +131,7 @@ Other ideas:
 - Using the Financial Secrecy Index to investigate the history tax haven jurisdiction and key events that might have changed the way people invested in those countries (e.g. laws). In the dataset is present a pdf file for each country with its history and key events. Link [here](http://www.financialsecrecyindex.com/introduction/fsi-2015-results)
 - Using graphs to predict missing links?
 - Looking into paradise papers.
-- Looking into the human development index to see if it may be useful.
+- Looking into the human development index to see if it may be useful. Link [here](http://hdr.undp.org/en/content/human-development-index-hdi)
 - Prepare final version of Notebook.
 2. Visualize results in a coherent way, probably combining results of different research questions.
 3. Write data story using the visualizations.
