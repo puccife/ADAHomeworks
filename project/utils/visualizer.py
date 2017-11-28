@@ -34,11 +34,12 @@ def visualize_countries_situation(most_involved_leak, divide_by='Country', selec
                    sharey=True, 
                    sharex=False,
                    size=4,
-                   aspect=4)
+                   aspect=4
+                   )
 
-def visualizeFlowByCountry(country, year):
+def visualizeFlowByCountry(country, year, feat):
     url = 'https://restcountries.eu/rest/v2/'
-    actives_path = r'csv/cash_flows_actives.csv'
+    actives_path = r'csv/cash_flows_'+feat+'.csv'
     restcountries, nametoid = preprocessing.buildJsonAPI(url)
     actives_flows = pd.read_csv(actives_path,low_memory=False)
     actives_flows = preprocessing.parseCountries(actives_flows)
