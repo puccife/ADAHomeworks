@@ -32,15 +32,23 @@ def process_countries(entities, first_involved_countries, analisys_on='jurisdict
 
         # Parsing dates in a default datetime format.
         involved_leak = dateparser.parse_dates(involved_leak, from_year, to_year)
+
+        # Getting the amount of incorporations - inactivations - strucks in the specific year.
         total_incorporation = involved_leak.groupby(['Country','jurisdiction_description', 'incorporation_date']).count()
         total_inactivation = involved_leak.groupby(['Country','jurisdiction_description', 'inactivation_date']).count()
         total_struck = involved_leak.groupby(['Country','jurisdiction_description', 'struck_off_date']).count()
+
+        # Renaming columns
         incorporation = total_incorporation.reset_index().rename(columns={'incorporation_date': 'date', 'node_id': 'incorporations'}).set_index(['Country','jurisdiction_description','date'])
         inactivation = total_inactivation.reset_index().rename(columns={'inactivation_date': 'date', 'node_id': 'inactivations'}).set_index(['Country','jurisdiction_description','date'])
         struck = total_struck.reset_index().rename(columns={'struck_off_date': 'date', 'node_id': 'strucks'}).set_index(['Country','jurisdiction_description','date'])
+
+        # Getting specific dataframes
         incorporation = incorporation.loc[:, ['incorporations']]
         inactivation = inactivation.loc[:, ['inactivations']]
         struck = struck.loc[:, ['strucks']]
+
+        # Merging dataframes by columns.
         country_res = pd.merge(incorporation.reset_index(),
                                            inactivation.reset_index(), 
                                            on=['Country','jurisdiction_description', 'date'],
@@ -50,6 +58,7 @@ def process_countries(entities, first_involved_countries, analisys_on='jurisdict
                                            on=['Country','jurisdiction_description', 'date'],
                                            how='outer').set_index(['Country','jurisdiction_description','date'])
         involved = involved_leak.copy()
+        # Computing the number of actives offshores for each year.
         for index, row in country_res.iterrows():
             number_of_offshores = involved[
                 ((involved['inactivation_date'] > int(index[2])) | 
@@ -58,12 +67,22 @@ def process_countries(entities, first_involved_countries, analisys_on='jurisdict
                 (involved['Country'] == index[0]) &
                 (involved['jurisdiction_description'] == index[1])].count()['node_id'] 
             country_res.loc[index, 'active offshores'] = number_of_offshores 
+
+        # Getting the interesting columns
         country_result = country_res.loc[:, ['incorporations','inactivations','active offshores','strucks']]
         country_result = country_result.reset_index()
+
+        # Setting index in all the columns excepts for OFFSHORES and ACTIONS
         country_result = country_result.set_index(['Country','jurisdiction_description','date'])
+
+        # Stacking columns on actions and offshores.
         country_result = pd.DataFrame(country_result.stack())
         country_result = country_result.reset_index()
+
+        # Renaming columns to meaningful names
         country_result = country_result.rename(columns={'level_3': 'action', 0: 'offshores', 'jurisdiction_description':'jurisdiction'})
+
+        # Parsing date year to int (float before)
         country_result["date"] = country_result["date"].astype(int)
         most_involved_leak.append(country_result.set_index(analisys_on))
     return most_involved_leak
@@ -86,17 +105,23 @@ def process_countries_with_code(entities, first_involved_countries, analisys_on=
     most_involved_leak = []
     for index, involved_country in enumerate(first_involved_countries):
         testing_entities = entities.copy()
+        # Getting only the country interested in.
         involved_leak = testing_entities[testing_entities['Country'].isin([involved_country])].copy()
+        # Parsing dates in a default datetime format.
         involved_leak = dateparser.parse_dates(involved_leak, from_year, to_year)
+        # Getting the amount of incorporations - inactivations - strucks in the specific year.
         total_incorporation = involved_leak.groupby(['Country','jurisdiction', 'incorporation_date']).count()
         total_inactivation = involved_leak.groupby(['Country','jurisdiction', 'inactivation_date']).count()
         total_struck = involved_leak.groupby(['Country','jurisdiction', 'struck_off_date']).count()
+        # Renaming columns
         incorporation = total_incorporation.reset_index().rename(columns={'incorporation_date': 'date', 'node_id': 'incorporations'}).set_index(['Country','jurisdiction','date'])
         inactivation = total_inactivation.reset_index().rename(columns={'inactivation_date': 'date', 'node_id': 'inactivations'}).set_index(['Country','jurisdiction','date'])
         struck = total_struck.reset_index().rename(columns={'struck_off_date': 'date', 'node_id': 'strucks'}).set_index(['Country','jurisdiction','date'])
+        # Getting specific dataframes
         incorporation = incorporation.loc[:, ['incorporations']]
         inactivation = inactivation.loc[:, ['inactivations']]
         struck = struck.loc[:, ['strucks']]
+        # Merging dataframes by columns.
         country_res = pd.merge(incorporation.reset_index(),
                                            inactivation.reset_index(), 
                                            on=['Country','jurisdiction', 'date'],
@@ -106,6 +131,7 @@ def process_countries_with_code(entities, first_involved_countries, analisys_on=
                                            on=['Country','jurisdiction', 'date'],
                                            how='outer').set_index(['Country','jurisdiction','date'])
         involved = involved_leak.copy()
+        # Computing the number of actives offshores for each year.
         for index, row in country_res.iterrows():
             number_of_offshores = involved[
                 ((involved['inactivation_date'] > int(index[2])) | 
@@ -114,12 +140,19 @@ def process_countries_with_code(entities, first_involved_countries, analisys_on=
                 (involved['Country'] == index[0]) &
                 (involved['jurisdiction'] == index[1])].count()['node_id']             
             country_res.loc[index, 'active offshores'] = number_of_offshores 
+        # Getting the interesting columns
         country_result = country_res.loc[:, ['incorporations','inactivations','active offshores','strucks']]
         country_result = country_result.reset_index()
+
+        # Parsing date years into integers (float before)
         country_result["date"] = country_result["date"].astype(int)
+
+        # Setting new index
         country_result = country_result.set_index(['Country','jurisdiction','date'])
         most_involved_leak.append(country_result)
         print("Country done:" + involved_country)
+
+    # For each country add columns with their ISO 3166-1 numeric code - used to match the map
     collection = []
     for f_ in most_involved_leak:
         f_ = pd.DataFrame(f_[feature])
@@ -141,7 +174,7 @@ def process_countries_with_code(entities, first_involved_countries, analisys_on=
             elif (cou == 'British Virgin Islands'):
                 cou = int('92')
             else:
-                cou = int(pycountry.countries.get(name=cou).numeric)
+                cou = int(pycountry.countries.get(name=cou).numeric) #library used to get codes
             jur = row['jurisdiction']
             if(jur == 'British Anguilla'):
                 jur = int('660')
@@ -167,7 +200,8 @@ def process_countries_with_code(entities, first_involved_countries, analisys_on=
         countries_frame.loc[id_, 'Country_name'] = row['Country']
         countries_frame.loc[id_, 'Country'] = cou
         countries_frame.loc[id_, 'jurisdiction'] = jur
-        
+
+    # returning list of new parsed dataframes
     return countries_frame
 
 
@@ -180,6 +214,7 @@ def add_details(actives_flows_by_country2, restcountries):
     :return: a new updated dataframe
     """
     actives_flows_by_country = actives_flows_by_country2.copy()
+    # Adding details to each country - alpha3code and their full name.
     for i, row in actives_flows_by_country.iterrows():
         actives_flows_by_country.loc[i, 'CODE'] = restcountries[int(row['Country'])]['alpha3Code']
         actives_flows_by_country.loc[i, 'Name'] = restcountries[int(row['Country'])]['name']
