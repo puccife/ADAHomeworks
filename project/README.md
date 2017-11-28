@@ -7,13 +7,9 @@ such entities. We believe that a better understanding of the reasons can help to
 The data analysis is performed using the [Offshore Leaks Database](https://www.occrp.org/en/panamapapers/database) which contains data about offshore companies, foundations and trusts. We enrich the dataset with information about the economical and social background of countries from the [Index of Economic Freedom](http://www.heritage.org/index/about), considering legal factors as well.  
 
 # Research questions
-1. Which economic factors motivate the foundation of offshore companies? 
-
-2. Which role does the legal situation in the origin country play compared to the legal situation in the offshore country? In particular, are off-shores used also to avoid  higher wages and better working conditions imposed by countries legislation?
-
-3. How are the countries connected? Is there a pattern in the way players in origin countries select special countries for their offshores? (*For the analysis we count for every combination of two countries that occur in the data the number of offshores founded in one country coming from the other country and vice versa.*)
-
-4. There is a hypothesis that scandals involving tax havens actually help to promote creating offshores there. See for example http://www.isa-world.com/news/?tx_ttnews%5BbackPid%5D=1&tx_ttnews%5Btt_news%5D=198&cHash=10b412a7de63d3b2a02adf0d120a09f6. Can we find evidence for this in the data?
+1. How the number of offshores that are founded from an origin country in tax havens is related to economical factors of the origin country? Which roles does the legal situation in the origin country play compared to the legal situation in the offshore country?
+2. How are the countries connected? Is there a pattern in the way players in origin counrties select special countries for their offshores.
+3. There is a hypothesis that scandals involving tax havens actually help to promote creating offshores there. Can we find evidence for this in the data? See for example http://www.isa-world.com/news/tx_ttnews%5BbackPid%5D=1&tx_ttnews%5Btt_news%5D=
 
 # Datasets
 ## [Offshore leaks database](https://panamapapers.icij.org/)
