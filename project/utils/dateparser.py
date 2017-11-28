@@ -1,6 +1,7 @@
 import dateutil.parser
 import numpy as np
 
+
 def __parse_year_of_date(row, column, from_year, to_year):
     """
     !private function - This function is used by parse_dates function to parse the date 
@@ -19,7 +20,8 @@ def __parse_year_of_date(row, column, from_year, to_year):
             return np.nan
     else:
         return np.nan    
-    
+
+
 def parse_dates(dataframe, from_year, to_year): #leak_data, bounded_data_bottom, bounded_data_up
     """
     This function is used to parse the dates in the original dataframe. It's possible to specify

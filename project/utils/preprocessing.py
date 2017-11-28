@@ -7,6 +7,7 @@ import pycountry
 
 import requests
 
+
 def process_countries(entities, first_involved_countries, analisys_on='jurisdiction', from_year=1990, to_year=2017):
     """
     This function is used to process the Entities dataset and obtains one detailed dataset for
@@ -60,6 +61,7 @@ def process_countries(entities, first_involved_countries, analisys_on='jurisdict
         country_result["date"] = country_result["date"].astype(int)
         most_involved_leak.append(country_result.set_index(analisys_on))
     return most_involved_leak
+
 
 def process_countries_with_code(entities, first_involved_countries, analisys_on='jurisdiction', from_year=1990, to_year=2017, feature='incorporations'):
     """

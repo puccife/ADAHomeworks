@@ -94,6 +94,7 @@ def visualize_flow_by_country(country, year, feat):
     iplot([trace], filename='basic_pie_chart.html')
     print("Total offshores in " + str(year) + " = " + str(total_offshores))
 
+
 def __get_data(dataframe, year):
     """
     ! private function. This function is used to parse and get data json object based on 
