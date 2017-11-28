@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 from functools import reduce
 
@@ -8,9 +7,19 @@ import pycountry
 
 import requests
 
-import json
-
 def process_countries(entities, first_involved_countries, analisys_on='jurisdiction', from_year=1990, to_year=2017):
+    """
+    This function is used to process the Entities dataset and obtains one detailed dataset for
+    each country that we want to analyse.
+    :param entities: the dataset we want to process
+    :param first_involved_countries: countries over which we want to conduct our analysis
+    :param analisys_on: the feature over we want to conduct the analysis, the default value 
+    is 'jurisdiction' since we want to analyse the behavior of each country in each tax
+    haven jurisdiction.
+    :param from_year: bottom bound for the years that we want to analyse
+    :param to_year: upper bound for the years that we want to analyse
+    :return: a list of parsed dataframes (one for each country).
+    """
     most_involved_leak = []
     for index, involved_country in enumerate(first_involved_countries):
         testing_entities = entities.copy()
@@ -53,6 +62,19 @@ def process_countries(entities, first_involved_countries, analisys_on='jurisdict
     return most_involved_leak
 
 def process_countries_with_code(entities, first_involved_countries, analisys_on='jurisdiction', from_year=1990, to_year=2017, feature='incorporations'):
+    """
+    This function is used to process the Entities dataset and obtains one detailed dataset for
+    each country that we want to analyse.
+    :param entities: the dataset we want to process
+    :param first_involved_countries: countries over which we want to conduct our analysis
+    :param analisys_on: the feature over we want to conduct the analysis, the default value 
+    is 'jurisdiction' since we want to analyse the behavior of each country in each tax
+    haven jurisdiction.
+    :param from_year: bottom bound for the years that we want to analyse
+    :param to_year: upper bound for the years that we want to analyse
+    :return: a list of parsed dataframes (one for each country) where each country is mapped to its
+    ISO 3166-1 numeric code.
+    """
     most_involved_leak = []
     for index, involved_country in enumerate(first_involved_countries):
         testing_entities = entities.copy()
@@ -140,20 +162,44 @@ def process_countries_with_code(entities, first_involved_countries, analisys_on=
         
     return countries_frame
 
-def addDetails(actives_flows_by_country2, restcountries):
+
+def add_details(actives_flows_by_country2, restcountries):
+    """
+    This function is used to add details to a given dataframe using a json build with a get request of
+    a RESTful API.
+    :param actives_flows_by_country2: dataframe where to add details
+    :param restcountries: the json containing informations about countries.
+    :return: a new updated dataframe
+    """
     actives_flows_by_country = actives_flows_by_country2.copy()
     for i, row in actives_flows_by_country.iterrows():
         actives_flows_by_country.loc[i, 'CODE'] = restcountries[int(row['Country'])]['alpha3Code']
         actives_flows_by_country.loc[i, 'Name'] = restcountries[int(row['Country'])]['name']
     return actives_flows_by_country
 
-def parseCountries(actives_flows):
+
+def parse_countries(actives_flows):
+    """
+    This function is used to parse the dataframe before using it
+    :param actives_flows: the dataframe to use
+    :return: the parsed dataframe
+    """
     cols=[i for i in actives_flows.columns if i not in ["Country_name"]]
     for col in cols:
         actives_flows[col]=pd.to_numeric(actives_flows[col],errors='coerce')
     return actives_flows
 
-def buildJsonAPI(url):
+
+def build_json_from_api(url):
+    """
+    This method is used to perform a get request to a RESTful API service. With this call is possible
+    to store informations about each country. In particular we will store name - latlng - codes
+    (but there are a plenty more available) of each country based on their ISO 3166-1 numeric code.
+    :param url: url for the API request.
+    :return: 
+    - a json object that maps the ISO 3166-1 numeric code to values for each country. 
+    - a json object that maps the name of each country to its numeric code.
+    """
     restcountries = {}
     nametoid = {}
     response = requests.get(url)
