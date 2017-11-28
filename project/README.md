@@ -6,7 +6,7 @@ Our goal is to analyze motivating factors for creating
 such entities. We believe that a better understanding of the reasons can help to find ways to deal with those tendencies. This has an impact on the social good, because fiscal prudence and opennesss in international trade can have a powerful effect on improving society.
 The data analysis is performed using the [Offshore Leaks Database](https://www.occrp.org/en/panamapapers/database) which contains data about offshore companies, foundations and trusts. We enrich the dataset with information about the economical and social background of countries from the [Index of Economic Freedom](http://www.heritage.org/index/about), considering legal factors as well.  
 
-# Research questions
+# Research questions ( Updated / Milestone 2 )
 1. How the number of offshores that are founded from an origin country in tax havens is related to economical factors of the origin country? Which roles does the legal situation in the origin country play compared to the legal situation in the offshore country?
 2. How are the countries connected? Is there a pattern in the way players in origin counrties select special countries for their offshores.
 3. There is a hypothesis that scandals involving tax havens actually help to promote creating offshores there. Can we find evidence for this in the data? See for example http://www.isa-world.com/news/tx_ttnews%5BbackPid%5D=1&tx_ttnews%5Btt_news%5D=
