@@ -125,7 +125,11 @@ Each dataset contains information about 186 countries. Each of them has 42 attri
 1. Finish analysis: 
 - Question 1: Directly relate the number of offshores computed from the Panama Papers to the Index Of Economics Freedom. Possibly do a regression / PCA to find the most important factors.
 - Question 2: Find realtionship between countries in the same cluster in order to explain the pattern in the country relationships. Do a similar analysis for countries that occur together as origin countries.
-- Question 3: 
+- Question 3: Investigate relationship between countries and tax haven jurisdictions using the analysis producted in Research Question 2. Furthermore we can investigate key events during the timeline where we see major changes in the way countries invested in tax haven jurisdictions using the analysis from Research Question 1.
+
+Other ideas:
+- Using the Financial Secrecy Index to investigate the history tax haven jurisdiction and key events that might have changed the way people invested in those countries (e.g. laws). In the dataset is present a pdf file for each country with its history and key events. Link [here](http://www.financialsecrecyindex.com/introduction/fsi-2015-results)
+
 - Prepare final version of Notebook.
 2. Visualize results in a coherent way, probably combining results of different research questions.
 3. Write data story using the visualizations.
