@@ -1,5 +1,6 @@
 import pandas as pd
 import seaborn as sns
+import numpy as np
 
 from utils import preprocessing
 
@@ -30,14 +31,14 @@ def visualize_countries_situation(most_involved_leak, divide_by='Country', selec
         leaks = most_involved_leak
 
     # For each country this function displays a seaborn factorplot.
-    for index_, country_result in enumerate(leaks):     
-        sns.factorplot(x='date', 
-                   y='offshores', 
-                   row=divide_by, 
-                   data=country_result, 
+    for index_, country_result in enumerate(leaks):
+        sns.factorplot(x='date',
+                   y='offshores',
+                   row=divide_by,
+                   data=country_result,
                    hue='action',
-                   kind='bar', 
-                   sharey=True, 
+                   kind='bar',
+                   sharey=True,
                    sharex=False,
                    size=4,
                    aspect=4
@@ -105,7 +106,8 @@ def visualize_flow_by_country(country, year, feat):
                 )
 
     # Drawing choropleth and arcs on the map layout.
-    fig = dict( data=flows_path + __get_data(actives_flows_by_country, year), layout=__get_layout() )
+    ok_data = __get_data(actives_flows_by_country, year)
+    fig = dict( data=flows_path + ok_data, layout=__get_layout(year) )
 
     # Inline plotting figure
     iplot( fig, validate=False, filename='d3-world-map.html')
@@ -122,7 +124,7 @@ def visualize_flow_by_country(country, year, feat):
 
 def __get_data(dataframe, year):
     """
-    ! private function. This function is used to parse and get data json object based on 
+    ! private function. This function is used to parse and get data json object based on
     a specific year dataframe.
     :param dataframe: the dataframe to analyse
     :param year: the year to use to display details on the map
@@ -153,11 +155,38 @@ def __get_data(dataframe, year):
     return data
 
 
-def __get_layout():
+def __get_layout(year):
     """
     ! private function. This function is created to obtain the layout of the choropleth map
     :return: the layout of the choropleth map.
     """
+    sliders_dict = {
+        'active': 0,
+        'yanchor': 'top',
+        'xanchor': 'left',
+        'currentvalue': {
+            'font': {'size': 20},
+            'prefix': 'Year:',
+            'visible': True,
+            'xanchor': 'right'
+        },
+        'transition': {'duration': 300, 'easing': 'cubic-in-out'},
+        'pad': {'b': 10, 't': 50},
+        'len': 0.9,
+        'x': 0.1,
+        'y': 0,
+        'steps': []
+    }
+    slider_step = {'args': [
+        [year],
+        {'frame': {'duration': 300, 'redraw': True},
+         'mode': 'immediate',
+       'transition': {'duration': 300}}
+     ],
+     'label': year,
+     'method': 'animate'}
+    sliders_dict['steps'] = slider_step
+
     # Getting layout as json object for the map.
     layout = dict(
         title = 'Active offshores per country <br> <br> Source:\
@@ -168,6 +197,66 @@ def __get_layout():
                 type = 'Mercator'
             ),
             resolution='50',
-        )
+        ),
+        sliders=sliders_dict
     )
     return layout
+
+def visualize_slider_jurisdiction(countries_frame2, label):
+    jurisd = pd.concat(countries_frame2)
+    jurisd = jurisd.reset_index() 
+    jurisdictions = jurisd.jurisdiction.unique()
+    countries_frame = []
+    for jur in jurisdictions:
+        countries_frame.append(jurisd[jurisd['jurisdiction'] == jur])
+    for i, es_country in enumerate(countries_frame):
+        test = countries_frame[i][countries_frame[i]['action'] == label].copy()
+        test = test.sort_values('date')
+        test = test.set_index(['date'])
+        juri = test.jurisdiction.unique()
+        countries = test.Country.unique()
+        traces = []
+        for country in countries:
+            tmp_df = test[test['Country'] == country]
+            tmp_trace = go.Scatter(x=tmp_df.index,
+                                  y=tmp_df.offshores,
+                                  name=country)
+            traces.append(tmp_trace)
+        data = go.Data(traces)
+        layout = dict(
+            title=juri[0] + " " + label + ' account distribution by Country with time series',
+            xaxis=dict(
+                rangeslider=dict(),
+                type='date'
+            )
+        )
+
+        fig = dict(data=data, layout=layout)
+        iplot(fig)
+
+def visualize_slider_country(countries_frame, label):
+    for i, es_country in enumerate(countries_frame):
+        test = countries_frame[i][countries_frame[i]['action'] == label].copy()
+        test = test.reset_index()
+        test = test.sort_values('date')
+        test = test.set_index(['date'])
+        jurisdictions = test.jurisdiction.unique()
+        country = test.Country.unique()
+        traces = []
+        for jurisdiction in jurisdictions:
+            tmp_df = test[test['jurisdiction'] == jurisdiction]
+            tmp_trace = go.Scatter(x=tmp_df.index,
+                                  y=tmp_df.offshores,
+                                  name=jurisdiction)
+            traces.append(tmp_trace)
+        data = go.Data(traces)
+        layout = dict(
+            title=country[0] + " " + label + ' account distribution by jurisdiction with time series',
+            xaxis=dict(
+                rangeslider=dict(),
+                type='date'
+            )
+        )
+
+        fig = dict(data=data, layout=layout)
+        iplot(fig)
