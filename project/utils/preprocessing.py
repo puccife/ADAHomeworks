@@ -7,6 +7,73 @@ import pycountry
 
 import requests
 
+def process_countries_unstacked(entities, first_involved_countries, analisys_on='jurisdiction', from_year=1990, to_year=2017):
+    """
+    This function is used to process the Entities dataset and obtains one detailed dataset for
+    each country that we want to analyse.
+    :param entities: the dataset we want to process
+    :param first_involved_countries: countries over which we want to conduct our analysis
+    :param analisys_on: the feature over we want to conduct the analysis, the default value 
+    is 'jurisdiction' since we want to analyse the behavior of each country in each tax
+    haven jurisdiction.
+    :param from_year: bottom bound for the years that we want to analyse
+    :param to_year: upper bound for the years that we want to analyse
+    :return: a list of parsed dataframes (one for each country).
+    """
+    most_involved_leak = []
+
+    # Function runned over the specified countries
+    for index, involved_country in enumerate(first_involved_countries):
+        testing_entities = entities.copy()
+
+        # Getting only the country interested in.
+        involved_leak = testing_entities[testing_entities['Country'].isin([involved_country])].copy()
+
+        # Parsing dates in a default datetime format.
+        involved_leak = dateparser.parse_dates(involved_leak, from_year, to_year)
+
+        # Getting the amount of incorporations - inactivations - strucks in the specific year.
+        total_incorporation = involved_leak.groupby(['Country','jurisdiction_description', 'incorporation_date']).count()
+        total_inactivation = involved_leak.groupby(['Country','jurisdiction_description', 'inactivation_date']).count()
+        total_struck = involved_leak.groupby(['Country','jurisdiction_description', 'struck_off_date']).count()
+
+        # Renaming columns
+        incorporation = total_incorporation.reset_index().rename(columns={'incorporation_date': 'date', 'node_id': 'incorporations'}).set_index(['Country','jurisdiction_description','date'])
+        inactivation = total_inactivation.reset_index().rename(columns={'inactivation_date': 'date', 'node_id': 'inactivations'}).set_index(['Country','jurisdiction_description','date'])
+        struck = total_struck.reset_index().rename(columns={'struck_off_date': 'date', 'node_id': 'strucks'}).set_index(['Country','jurisdiction_description','date'])
+
+        # Getting specific dataframes
+        incorporation = incorporation.loc[:, ['incorporations']]
+        inactivation = inactivation.loc[:, ['inactivations']]
+        struck = struck.loc[:, ['strucks']]
+
+        # Merging dataframes by columns.
+        country_res = pd.merge(incorporation.reset_index(),
+                                           inactivation.reset_index(), 
+                                           on=['Country','jurisdiction_description', 'date'],
+                                           how='outer').set_index(['Country','jurisdiction_description','date'])
+        country_res = pd.merge(country_res.reset_index(),
+                                           struck.reset_index(), 
+                                           on=['Country','jurisdiction_description', 'date'],
+                                           how='outer').set_index(['Country','jurisdiction_description','date'])
+        involved = involved_leak.copy()
+        # Computing the number of actives offshores for each year.
+        for index, row in country_res.iterrows():
+            number_of_offshores = involved[
+                ((involved['inactivation_date'] > int(index[2])) | 
+                (pd.isnull(involved['inactivation_date']))) &
+                (involved['incorporation_date'] <= int(index[2])) & 
+                (involved['Country'] == index[0]) &
+                (involved['jurisdiction_description'] == index[1])].count()['node_id'] 
+            country_res.loc[index, 'active offshores'] = number_of_offshores 
+
+        # Getting the interesting columns
+        country_result = country_res.loc[:, ['incorporations','inactivations','active offshores','strucks']]
+        country_result = country_result.reset_index()
+        country_result["date"] = country_result["date"].astype(int)
+        country_result = country_result.rename(columns={'jurisdiction_description':'jurisdiction'})
+        most_involved_leak.append(country_result.fillna(0))
+    return most_involved_leak
 
 def process_countries(entities, first_involved_countries, analisys_on='jurisdiction', from_year=1990, to_year=2017):
     """

@@ -6,6 +6,7 @@ from utils import preprocessing
 
 from plotly.offline import init_notebook_mode, iplot
 import plotly.graph_objs as go
+from plotly.graph_objs import *
 init_notebook_mode(connected=True)
 
 
@@ -260,3 +261,138 @@ def visualize_slider_country(countries_frame, label):
 
         fig = dict(data=data, layout=layout)
         iplot(fig)
+
+def visualize_time_series(countries_frame):
+    for time_frame in countries_frame:
+        c = time_frame['Country'][0]
+        dataset = time_frame.copy().reset_index()
+        years_from_col = set(dataset['date'])
+        years_ints = sorted(list(years_from_col))
+        years = [str(year) for year in years_ints]
+        years = years[:-1]
+        continents = []
+        for continent in dataset['jurisdiction']:
+            if continent not in continents: 
+                continents.append(continent)
+        # make figure
+        figure = {
+            'data': [],
+            'layout': dict(title = '<b>'+ c +' offshores account by jurisdictions</b>'),
+            'frames': []
+        }
+
+        # fill in most of layout
+
+        #figure['layout']['xaxis'] = {'range':[int(min(years)) - 3, int(max(years)) + 3],'title': 'Jurisdictions'}
+        figure['layout']['xaxis'] = {'range':[-100, max(dataset['inactivations']) + 500],'title': 'Inactivations'}
+        figure['layout']['yaxis'] = {'range':[-100, max(dataset['incorporations']) + 500],'title': 'Incorporations'}
+        figure['layout']['hovermode'] = 'compare'
+        figure['layout']['sliders'] = {
+            'args': [
+                'transition', {
+                    'duration': 400,
+                    'easing': 'cubic-in-out'
+                }
+            ],
+            'initialValue': '1980',
+            'plotlycommand': 'animate',
+            'values': years,
+            'visible': True
+        }
+        figure['layout']['updatemenus'] = [
+            {
+                'buttons': [
+                    {
+                        'args': [None, {'frame': {'duration': 500, 'redraw': False},
+                                 'fromcurrent': True, 'transition': {'duration': 300, 'easing': 'quadratic-in-out'}}],
+                        'label': 'Play',
+                        'method': 'animate'
+                    },
+                    {
+                        'args': [[None], {'frame': {'duration': 0, 'redraw': False}, 'mode': 'immediate',
+                        'transition': {'duration': 0}}],
+                        'label': 'Pause',
+                        'method': 'animate'
+                    }
+                ],
+                'direction': 'left',
+                'pad': {'r': 10, 't': 87},
+                'showactive': False,
+                'type': 'buttons',
+                'x': 0.1,
+                'xanchor': 'right',
+                'y': 0,
+                'yanchor': 'top'
+            }
+        ]
+
+        sliders_dict = {
+            'active': 0,
+            'yanchor': 'top',
+            'xanchor': 'left',
+            'currentvalue': {
+                'font': {'size': 20},
+                'prefix': 'Year:',
+                'visible': True,
+                'xanchor': 'right'
+            },
+            'transition': {'duration': 300, 'easing': 'cubic-in-out'},
+            'pad': {'b': 10, 't': 50},
+            'len': 0.9,
+            'x': 0.1,
+            'y': 0,
+            'steps': []
+        }
+
+        # make data
+        year = 1980
+        for continent in continents:
+            dataset_by_year = dataset[dataset['date'] == year]
+            dataset_by_year_and_cont = dataset_by_year[dataset_by_year['jurisdiction'] == continent]
+
+            data_dict = go.Scatter(
+                    x= list(dataset_by_year_and_cont['inactivations']),
+                    y= list(dataset_by_year_and_cont['incorporations']),
+                    mode= 'markers',
+                    text= list(dataset_by_year_and_cont['jurisdiction']),
+                    marker = dict (
+                        sizemode= 'area',
+                        size= list(dataset_by_year_and_cont['active offshores'])
+                    ),
+                    name= continent
+                )
+            figure['data'].append(data_dict)
+
+        # make frames
+        for year in years:
+            frame = {'data': [], 'name': str(year)}
+            for continent in continents:
+                dataset_by_year = dataset[dataset['date'] == int(year)]
+                dataset_by_year_and_cont = dataset_by_year[dataset_by_year['jurisdiction'] == continent]
+                data_dict = go.Scatter(
+                    x= list(dataset_by_year_and_cont['inactivations']),
+                    y= list(dataset_by_year_and_cont['incorporations']),
+                    mode= 'markers',
+                    text= list(dataset_by_year_and_cont['jurisdiction']),
+                    marker = dict (
+                        sizemode= 'area',
+                        size= list(dataset_by_year_and_cont['active offshores'])
+                    ),
+                    name= continent
+                )
+                frame['data'].append(data_dict)
+
+            figure['frames'].append(frame)
+            slider_step = {'args': [
+                [year],
+                {'frame': {'duration': 300, 'redraw': True},
+                 'mode': 'immediate',
+               'transition': {'duration': 300}}
+             ],
+             'label': year,
+             'method': 'animate'}
+            sliders_dict['steps'].append(slider_step)
+
+
+        figure['layout']['sliders'] = [sliders_dict]
+        iplot(figure)
