@@ -3,5 +3,5 @@
 ### Testing IFRAME
 
 <html>
-<iframe id="bahamas" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/3.embed"  height="500px" width="100%"></iframe>
+<iframe id="bahamas" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/3.embed"  height="600" width="100%"></iframe>
 <html>
