@@ -828,4 +828,7 @@ def visualize_time_series4(countries_frame2):
 
 
         figure['layout']['sliders'] = [sliders_dict]
-        plot(figure, filename=c+'.html')
+        div = plot(figure, output_type='div')
+        f = open(c+'.html','w')
+        f.write(div)
+        f.close()
