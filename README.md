@@ -6,7 +6,7 @@
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/13.embed?link=false"  height="500" width="100%"></iframe>
 
 <h2> Investigating the interest throughout the years</h2>
-News involving leaks and scandals might can inevitably influence the behavior of the countries involved. In this section we analyse countries' behavior after this events, throughout the years.
+News involving leaks and scandals might inevitably influence the behavior of the countries involved. In this section we analyse countries' behavior after this events, throughout the years.
 <h3>The majority of the countries has decreasing trend</h3>
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/23.embed?link=false"  height="500" width="100%"></iframe>
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/21.embed?link=false"  height="500" width="100%"></iframe>
