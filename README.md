@@ -2,7 +2,7 @@
 
 <html>
 <h2>Inspecting clusters' behavior throughout the years</h2>
-<iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/38.embed?link=false"  height="500" width="100%"></iframe>
+<iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/38.embed?link=false"  height="300" width="100%"></iframe>
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/39.embed?link=false"  height="500" width="100%"></iframe>
 
 <h2> Investigating the interest throughout the years</h2>
