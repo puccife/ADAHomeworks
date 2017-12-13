@@ -1,9 +1,5 @@
 # Inside Panama Papers
 
-<html>
-<iframe id="bahamas" scrolling="no" style="border:none;" seamless="seamless" src="./iframes/Bahamas.html" height="525" width="100%"></iframe>
-</html>
-
 # Abstract
 As global markets expand and become more interconnected, businesses are increasingly looking for resources to help identify competitive and profitable opportunities. Several data leakages in the last years have shown that a common approach to this is the creation of offshore companies, i.e. companies created in low-tax, offshore jurisdictions.
 Our goal is to analyze motivating factors for creating
