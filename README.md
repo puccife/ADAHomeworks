@@ -1,7 +1,6 @@
 # Inside the Leak!
 
 <html>
-<iframe id="bahamas" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/17.embed?link=false"  height="500" width="100%"></iframe>
 <h2> Trends by clusters </h2>
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/13.embed?link=false"  height="500" width="100%"></iframe>
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/15.embed?link=false"  height="500" width="100%"></iframe>
@@ -17,5 +16,9 @@
 <h3> Countries with increasing trend </h3>
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/19.embed?link=false"  height="500" width="100%"></iframe>
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/25.embed?link=false"  height="500" width="100%"></iframe>
+
+<h4> Distribution of incorporations by Country </h4>
+<iframe id="bahamas" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/17.embed?link=false"  height="500" width="100%"></iframe>
+<iframe id="bahamas" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/35.embed?link=false"  height="500" width="100%"></iframe>
 <html>
 
