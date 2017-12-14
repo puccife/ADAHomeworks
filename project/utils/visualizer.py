@@ -235,6 +235,72 @@ def visualize_slider_jurisdiction(countries_frame2, label):
         fig = dict(data=data, layout=layout)
         iplot(fig)
 
+def visualize_clusters_with_brush(countries_frame2, cluster_info, label):
+    clusters = cluster_info.copy()
+    cluster_color = {
+        0:'rgba(44,123,182, .9)',
+        1:'rgba(208,28,139, .9)',
+        2:'rgba(166,97,26, .9)',
+        3:'rgba(77,172,38, .9)',
+    }
+    jurisd = pd.concat(countries_frame2.copy())
+    jurisd = jurisd.reset_index() 
+    jurisdictions = jurisd.jurisdiction.unique()
+    jurisd = jurisd[jurisd['action'] == label]
+    jurisd = jurisd.groupby(['date','Country']).sum()
+    jurisd = jurisd.reset_index() 
+    jurisd = jurisd.sort_values('date')
+    jurisd = jurisd.set_index(['date'])
+
+    c_clust = []
+    for i, row in jurisd.iterrows():
+        if ";" in row.at['Country']:
+            c_clust.append(0)
+        else:
+            temp_cluster = clusters[clusters['origin']==row.at['Country']]['cluster'].values[0]
+            c_clust.append(temp_cluster)
+
+    jurisd['cluster'] = c_clust
+    cluster_0 = jurisd[jurisd['cluster'] == 0].reset_index().groupby(['cluster','Country']).sum().reset_index().sort_values('offshores', ascending=False).head(5).copy()
+    cluster_1 = jurisd[jurisd['cluster'] == 1].reset_index().groupby(['cluster','Country']).sum().reset_index().sort_values('offshores', ascending=False).head(5).copy()
+    cluster_2 = jurisd[jurisd['cluster'] == 2].reset_index().groupby(['cluster','Country']).sum().reset_index().sort_values('offshores', ascending=False).head(5).copy()
+    cluster_3 = jurisd[jurisd['cluster'] == 3].reset_index().groupby(['cluster','Country']).sum().reset_index().sort_values('offshores', ascending=False).head(5).copy()
+
+    clustering = [cluster_0, cluster_1, cluster_2, cluster_3].copy()
+    clusters_top = pd.concat(clustering)
+    countries = clusters_top.Country.unique()
+    traces = []
+    for country in countries:
+        tmp_df = jurisd[jurisd['Country'] == country].copy()
+        tmp_cluster = clusters[clusters['origin']==country]['cluster'].values[0]
+        if ';' not in country:
+            tmp_trace = go.Scattergl(x=tmp_df.index,
+                                    y=tmp_df.offshores,
+                                    mode= 'markers',
+                                    marker = dict(
+                                        size = 15,
+                                        color = cluster_color[tmp_cluster],
+                                        line = dict(
+                                            width = 1,
+                                        )
+                                    ),
+                                    name=country)
+            traces.append(tmp_trace)
+
+    data = go.Data(traces)
+    layout = dict(
+        xaxis=dict(
+            title='Year'
+        ),
+        yaxis=dict(
+            title=label
+        )
+    )  
+    fig = dict(data=data, layout=layout)
+    iplot(fig)
+
+        
+
 def visualize_slider_country(countries_frame, label):
     for i, es_country in enumerate(countries_frame):
         test = countries_frame[i][countries_frame[i]['action'] == label].copy()
@@ -252,10 +318,41 @@ def visualize_slider_country(countries_frame, label):
             traces.append(tmp_trace)
         data = go.Data(traces)
         layout = dict(
-            title=country[0] + " " + label + ' account distribution by jurisdiction with time series',
+            title='Country: ' + country[0],
             xaxis=dict(
                 rangeslider=dict(),
-                type='date'
+                title='Year'
+            ),
+            yaxis=dict(
+                title=label
+            )
+        )
+
+        fig = dict(data=data, layout=layout)
+        iplot(fig)
+
+def visualize_candle_country(countries_frame):
+    for i, es_country in enumerate(countries_frame):
+        test = countries_frame[i].copy()
+        test = test.reset_index()
+        test = test.sort_values('date').reset_index()
+        test = test.groupby(['date','Country']).sum().reset_index()
+        country = (test['Country'][0])
+        tmp_trace = go.Candlestick(x=test.date,
+                                low=test.incorporations,
+                                close=test.incorporations,
+                                high=test.inactivations,
+                                open=test.inactivations,
+                                name=country)
+        data = go.Data([tmp_trace])
+        layout = dict(
+            title='Country: ' + country,
+            xaxis=dict(
+                rangeslider=dict(),
+                title='Year'
+            ),
+            yaxis=dict(
+                title='Movement'
             )
         )
 
@@ -782,7 +879,7 @@ def visualize_time_series4(countries_frame2):
             dataset_by_year_and_cont = dataset_by_year[dataset_by_year['Country'] == continent]
 
             data_dict = go.Scatter(
-                    x= list(dataset_by_year_and_cont['inactivations']),
+                    x= list(dataset_by_year_and_cont['date']),
                     y= list(dataset_by_year_and_cont['incorporations']),
                     mode= 'markers',
                     text= list(dataset_by_year_and_cont['Country']),
@@ -802,7 +899,7 @@ def visualize_time_series4(countries_frame2):
                 dataset_by_year = dataset[dataset['date'] == int(year)]
                 dataset_by_year_and_cont = dataset_by_year[dataset_by_year['Country'] == continent]
                 data_dict = go.Scatter(
-                    x= list(dataset_by_year_and_cont['inactivations']),
+                    x= list(dataset_by_year_and_cont['date']),
                     y= list(dataset_by_year_and_cont['incorporations']),
                     mode= 'markers',
                     text= list(dataset_by_year_and_cont['Country']),
