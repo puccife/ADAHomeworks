@@ -10,20 +10,21 @@ We choose to analyze the behavior of the 50 most involved countries by clusters,
 The graphs in the figures above show the amount of incorporations and inactivations that each country has registered throughout the years. Considering the previously analyzed clusters, we want to highlight the behavior of the countries that make up these macro-groups by analyzing their behavior over the years. Recall that these clusters are designed to identify patterns in the way that certain countries invest, in fact each country is assigned to a specific cluster based on the geographical displacement of its offshore accounts.
 <br>
 Furthermore, countries belonging to the same clusters show similar trends on the size of their movements, both for incorporations and inactivations. 
-As shown in Figure 3.A and Figure 3.B, all the clusters share a similar trend regarding the creation of new offshores accounts. More precisely The majority of countries experience a peak of movements in the years preceding 2007, with some particular differences.
-For both clusters 2 and 4, the countries within them tend to share the same trend regarding the incorporation of offshores and slightly different trends regarding the inactivation of them.
+As shown in Figure 3.A, all the clusters share a similar trend regarding the creation of new offshores accounts. More precisely The majority of countries experienced a peak of movements in the years preceding 2007, with some particular differences.
+For both clusters 2 and 4, the countries within them tend to share the same trend regarding the incorporation of offshores and slightly different trends regarding the inactivation of them, as show in Figure 3.B.
 Cluster 1, which is also the cluster with the highest number of registered accounts is composed by countries that are acting almost independently between them:
+<br>
   <ul>
-    <li>Switzerland and British Virgin Islands reached their pick of number of offshores created respectively in 2005 and 2007.</li>
+    <li>Switzerland and British Virgin Islands reached their pick of number of incorporations respectively in 2005 and 2007.</li>
     <li>Hong Kong kept increasing its number until 2010.</li>
-    <li>Jersey and United Kingdom registered their highest number of incorporations before the 2000, rispectively in the 1999 and 1997.</li>
+    <li>Jersey and United Kingdom registered their highest number of incorporations before the 2000, rispectively in 1999 and 1997.</li>
   </ul>
 <h3>Interesting insights</h3>
-In the years following 2007 many countries experienced is a dizzying fall regarding the number of created account offshores.
+In the years following 2007 many countries experienced a dizzying fall regarding the number of created account offshores.
 Is this related to the 2008 economic crisis?
-
+<br>
 For each country, we register the highest number of inactivations <b> approximately five years </b> after we registered the highest number of incorporations.
-
+<br>
 From 2010 onwards only a minority of countries continue to increase the number of offshores founded annually.
 Is the trend of incorporations related to the stock market?
 <h2> Investigating the behavior throughout the years</h2>
