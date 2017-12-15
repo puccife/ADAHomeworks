@@ -28,7 +28,7 @@ For each country, we register the highest number of inactivations <b> approximat
 From 2010 onwards only a minority of countries continue to increase the number of offshores founded annually.
 <h1> Investigating the behavior throughout the years</h1>
 News involving leaks and scandals might inevitably influence the behavior of the countries involved. In this section we analyse countries' behavior after this events, throughout the years.
-<h2>The majority of the countries has decreasing trend</h3>
+<h2>The majority of the countries has decreasing trend</h2>
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/23.embed?link=false"  height="500" width="100%"></iframe>
 <iframe id="b" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/21.embed?link=false"  height="500" width="100%"></iframe>
 <iframe id="c" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/33.embed?link=false"  height="500" width="100%"></iframe>
