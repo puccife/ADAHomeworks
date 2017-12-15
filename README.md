@@ -1,7 +1,7 @@
 # Inside the Leak!
 
 <html>
-<h2>Inspecting clusters' behavior throughout the years</h2>
+<h1>Inspecting clusters' behavior throughout the years</h2>
 We choose to analyze the behavior of the 50 most involved countries by clusters, keeping only the top 5 countries for each of them. Cluster 3 is composed only by <b>Seychelles</b> since the other members of the cluster are not included in the 50 most involved.
 <br>
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/38.embed?link=false"  height="400" width="100%"></iframe>
@@ -19,24 +19,23 @@ Cluster 1, which is also the cluster with the highest number of registered accou
     <li>Hong Kong kept increasing its number until 2010.</li>
     <li>Jersey and United Kingdom registered their highest number of incorporations before the 2000, rispectively in 1999 and 1997.</li>
   </ul>
-<h3>Interesting insights</h3>
+<h2>Interesting insights</h3>
 In the years following 2007 many countries experienced a dizzying fall regarding the number of created account offshores.
 Is this related to the 2008 economic crisis?
 <br>
 For each country, we register the highest number of inactivations <b> approximately five years </b> after we registered the highest number of incorporations.
 <br>
 From 2010 onwards only a minority of countries continue to increase the number of offshores founded annually.
-Is the trend of incorporations related to the stock market?
-<h2> Investigating the behavior throughout the years</h2>
+<h1> Investigating the behavior throughout the years</h2>
 News involving leaks and scandals might inevitably influence the behavior of the countries involved. In this section we analyse countries' behavior after this events, throughout the years.
-<h3>The majority of the countries has decreasing trend</h3>
+<h2>The majority of the countries has decreasing trend</h3>
 <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/23.embed?link=false"  height="500" width="100%"></iframe>
 <iframe id="b" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/21.embed?link=false"  height="500" width="100%"></iframe>
 <iframe id="c" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/33.embed?link=false"  height="500" width="100%"></iframe>
 <iframe id="d" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/31.embed?link=false"  height="500" width="100%"></iframe>
-<h3>China is showing increasing interest</h3>
+<h2>China is showing increasing interest</h3>
 <iframe id="china_trend" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/19.embed?link=false"  height="500" width="100%"></iframe>
-Is this related to the stock market?
+<h3>Is this related to the stock market?</h3>
 <iframe id="china_stock" scrolling="no" style="border:none;" seamless="seamless" src="https://tvchart.tradingeconomics.com/c?s=SHCOMP:IND&interval=M&locale=com&originUrl=https://tradingeconomics.com/china/stock-market"  height="500" width="100%"></iframe>
 <h4>The distribution of the investment is diversified in different offshores</h4>
 <iframe id="china_dist" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/17.embed?link=false"  height="500" width="100%"></iframe>
