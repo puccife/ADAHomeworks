@@ -38,5 +38,6 @@ News involving leaks and scandals might inevitably influence the behavior of the
 <iframe id="china_trend" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/19.embed?link=false"  height="500" width="100%"></iframe>
 <h4>The distribution of the investment is diversified in different offshores</h4>
 <iframe id="china_dist" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/17.embed?link=false"  height="500" width="100%"></iframe>
+<iframe id="china_stock" scrolling="no" style="border:none;" seamless="seamless" src="https://tvchart.tradingeconomics.com/c?s=SHCOMP:IND&interval=D&locale=com&originUrl=https://tradingeconomics.com/china/stock-market"  height="500" width="100%"></iframe>
 <html>
 
