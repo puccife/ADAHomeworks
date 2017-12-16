@@ -18,15 +18,15 @@ def plot_cross_table(matrix):
     ax = fig.add_subplot(111)
     ax.set_aspect('auto')
     res = ax.matshow(matrix, cmap='YlOrRd')
-    
+
     cb = fig.colorbar(res, fraction=0.046, pad=0.04)
-    
+
     width, height = matrix.shape
     plt.xticks(range(height), matrix.columns.values, rotation=90)
     plt.ylabel('Origin country')
     plt.xlabel('Goal country')
     plt.yticks(range(width), matrix.index.values)
-   
+
 def addChoropleth(dataframe, map_, feature, legend_name, key, scale_color,json_data,object_):
     '''
     Add a cloropleth map to the specified map using specified dataframe and columns
@@ -35,12 +35,12 @@ def addChoropleth(dataframe, map_, feature, legend_name, key, scale_color,json_d
              data=dataframe,
              columns=[key, feature],
              key_on='feature.id',
-             fill_color=scale_color, 
-             fill_opacity=0.5, 
+             fill_color=scale_color,
+             fill_opacity=0.5,
              line_opacity=0.2,
              highlight=True,
              legend_name=legend_name, topojson = object_)
-             
+
 def buildJsonAPI(url):
     '''
     Build json API of that can be used to match countries with there ID and other information

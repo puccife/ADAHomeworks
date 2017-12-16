@@ -122,6 +122,33 @@ def visualize_flow_by_country(country, year, feat):
     iplot([trace], filename='basic_pie_chart.html')
     print("Total offshores in " + str(year) + " = " + str(total_offshores))
 
+def visualize_cluster(cluster):
+    """
+    This function is used to display an interactive map with the interactive widget. It displays the
+    flows from Country to jurisdiction of inactivations - incorporations and actives account in each
+    jurisdiciton.
+    :param country: selected country to analyse the flow
+    :param year: the specific year in which is computed the analysis
+    :param feat: the feature over which is computed the analysis (inactivations - incorporations or actives offshores)
+    """
+    layout = dict(
+        title = 'Active offshores per country',
+        geo = dict(
+            projection = dict(
+                type = 'orthographic'
+            ),
+            resolution='100',
+        ),
+        showlegend=True
+    )
+    traces = []
+    for i in range(4):
+        temp_clust = cluster[cluster['cluster']==i].copy()
+        ok_data = __get_data_cluster(temp_clust, i)
+        traces.append(ok_data)
+
+    fig = go.Figure( data=traces[0]+traces[1]+traces[2]+traces[3] , layout=layout)
+    iplot( fig, validate=False, filename='d3-world-map.html')
 
 def __get_data(dataframe, year):
     """
@@ -148,14 +175,47 @@ def __get_data(dataframe, year):
                 color = 'rgb(180,180,180)',
                 width = 0.5
             ) ),
-        colorbar = dict(
-            autotick = False,
-            tickprefix = '$',
-            title = 'Active offshores per country<br>In ' + str(year)),
+        showland=False,
+        showrivers=False,
+        showsubunits=False,
+        showlegend=True,
+        showcountries = False,
+        showcoastlines = False,
       ) ]
     return data
 
-
+def __get_data_cluster(dataframe, i):
+    """
+    ! private function. This function is used to parse and get data json object based on
+    a specific year dataframe.
+    :param dataframe: the dataframe to analyse
+    :param year: the year to use to display details on the map
+    :return: the a json object representing the details of one country -> jurisdiction in one
+    specific year passed as argument.
+    """
+    colored = {
+        0:[[0, 'rgb(255,255,255)'], [1, 'rgb(255,20,147)']],
+        1:[[0, 'rgb(255,255,255)'], [1, 'rgb(000,255,000)']],
+        2:[[0, 'rgb(255,255,255)'], [1, 'rgb(000,000,000)']],
+        3:[[0, 'rgb(255,255,255)'], [1, 'rgb(255,255,000)']],
+    }
+    # Wrapping the values of the filter dataframe (per year) into a json file.
+    data = [ dict(
+        type = 'choropleth',
+        locations = dataframe['id'],
+        z = dataframe['cluster'],
+        text = dataframe['origin'],
+        autocolorscale = False,
+        showscale=False,
+        colorscale = colored[i],
+        marker = dict(
+            line = dict (
+                color = 'rgb(000,000,000)',
+                width = 1
+            ) ),
+        name = 'Cluster ' + str(i),
+      ) ]
+    return data
 def __get_layout(year):
     """
     ! private function. This function is created to obtain the layout of the choropleth map
@@ -205,7 +265,7 @@ def __get_layout(year):
 
 def visualize_slider_jurisdiction(countries_frame2, label):
     jurisd = pd.concat(countries_frame2)
-    jurisd = jurisd.reset_index() 
+    jurisd = jurisd.reset_index()
     jurisdictions = jurisd.jurisdiction.unique()
     countries_frame = []
     for jur in jurisdictions:
@@ -244,11 +304,11 @@ def visualize_clusters_with_brush(countries_frame2, cluster_info, label):
         3:'rgba(77,172,38, .9)',
     }
     jurisd = pd.concat(countries_frame2.copy())
-    jurisd = jurisd.reset_index() 
+    jurisd = jurisd.reset_index()
     jurisdictions = jurisd.jurisdiction.unique()
     jurisd = jurisd[jurisd['action'] == label]
     jurisd = jurisd.groupby(['date','Country']).sum()
-    jurisd = jurisd.reset_index() 
+    jurisd = jurisd.reset_index()
     jurisd = jurisd.sort_values('date')
     jurisd = jurisd.set_index(['date'])
 
@@ -295,11 +355,11 @@ def visualize_clusters_with_brush(countries_frame2, cluster_info, label):
         yaxis=dict(
             title=label
         )
-    )  
+    )
     fig = dict(data=data, layout=layout)
     iplot(fig)
 
-        
+
 
 def visualize_slider_country(countries_frame, label):
     for i, es_country in enumerate(countries_frame):
@@ -369,7 +429,7 @@ def visualize_time_series(countries_frame):
         years = years[:-1]
         continents = []
         for continent in dataset['jurisdiction']:
-            if continent not in continents: 
+            if continent not in continents:
                 continents.append(continent)
         # make figure
         figure = {
@@ -496,12 +556,12 @@ def visualize_time_series(countries_frame):
 
 def visualize_time_series2(countries_frame2):
     jurisd = pd.concat(countries_frame2)
-    jurisd = jurisd.reset_index() 
+    jurisd = jurisd.reset_index()
     jurisdictions = jurisd.jurisdiction.unique()
     countries_frame = []
     for jur in jurisdictions:
         countries_frame.append(jurisd[jurisd['jurisdiction'] == jur])
-    for time_frame in countries_frame: 
+    for time_frame in countries_frame:
         dataset = time_frame.copy().reset_index()
         c = dataset['jurisdiction'][0]
         years_from_col = set(dataset['date'])
@@ -510,7 +570,7 @@ def visualize_time_series2(countries_frame2):
         years = years[:-1]
         continents = []
         for continent in dataset['Country']:
-            if continent not in continents: 
+            if continent not in continents:
                 continents.append(continent)
         # make figure
         figure = {
@@ -638,12 +698,12 @@ def visualize_time_series2(countries_frame2):
 
 def visualize_time_series3(countries_frame2):
     jurisd = pd.concat(countries_frame2)
-    jurisd = jurisd.reset_index() 
+    jurisd = jurisd.reset_index()
     jurisdictions = jurisd.jurisdiction.unique()
     countries_frame = []
     for jur in jurisdictions:
         countries_frame.append(jurisd[jurisd['jurisdiction'] == jur])
-    for time_frame in countries_frame: 
+    for time_frame in countries_frame:
         dataset = time_frame.copy().reset_index()
         c = dataset['jurisdiction'][0]
         years_from_col = set(dataset['date'])
@@ -652,7 +712,7 @@ def visualize_time_series3(countries_frame2):
         years = years[:-1]
         continents = []
         for continent in dataset['Country']:
-            if continent not in continents: 
+            if continent not in continents:
                 continents.append(continent)
         # make figure
         figure = {
@@ -738,10 +798,10 @@ def visualize_time_series3(countries_frame2):
                         size= list(dataset_by_year_and_cont['active offshores'])
                     ),
                     name= continent,
-                    xaxis='x'+str(i), 
+                    xaxis='x'+str(i),
                     yaxis='y'+str(i)
                 )
-            
+
             figure['data'].extend(go.Data([data_dict]))
 
         # make frames
@@ -776,7 +836,7 @@ def visualize_time_series3(countries_frame2):
             sliders_dict['steps'].append(slider_step)
 
         # The graph's yaxis2 MUST BE anchored to the graph's xaxis2 and vice versa
-        # Update the margins to add a title and see graph x-labels. 
+        # Update the margins to add a title and see graph x-labels.
         # Update the height because adding a graph vertically will interact with
         # the plot height calculated for the table
         figure['layout']['height'] = 800
@@ -786,12 +846,12 @@ def visualize_time_series3(countries_frame2):
 
 def visualize_time_series4(countries_frame2):
     jurisd = pd.concat(countries_frame2)
-    jurisd = jurisd.reset_index() 
+    jurisd = jurisd.reset_index()
     jurisdictions = jurisd.jurisdiction.unique()
     countries_frame = []
     for jur in jurisdictions:
         countries_frame.append(jurisd[jurisd['jurisdiction'] == jur])
-    for time_frame in countries_frame: 
+    for time_frame in countries_frame:
         dataset = time_frame.copy().reset_index()
         c = dataset['jurisdiction'][0]
         years_from_col = set(dataset['date'])
@@ -800,7 +860,7 @@ def visualize_time_series4(countries_frame2):
         years = years[:-1]
         continents = []
         for continent in dataset['Country']:
-            if continent not in continents: 
+            if continent not in continents:
                 continents.append(continent)
         # make figure
         figure = {

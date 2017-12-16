@@ -3,6 +3,11 @@ import numpy as np
 import collections
 import seaborn as sns
 
+from plotly.offline import init_notebook_mode, plot, iplot
+import plotly.graph_objs as go
+from plotly.graph_objs import *
+init_notebook_mode(connected=True)
+
 def visualize_specific_count(countries,jurisdiction_country,divide_by='Country'):
     ## Input :
         # countries : the list of countries to be visualized
@@ -52,14 +57,22 @@ def visualize_country_count(total_jurisdiction_country):
 
     # Filtering the count less than 500.
     total_jurisdiction_country=total_jurisdiction_country.loc[total_jurisdiction_country['Count'] > 500]
-    total_jurisdiction_country = total_jurisdiction_country.reset_index()
+    total_jurisdiction_country = total_jurisdiction_country.reset_index().sort_values('Count')
     # Visualizing the data.
-    g = sns.factorplot(x='Count',
-                      y='countries',
-                      data = total_jurisdiction_country,
-                      kind='bar',
-                      size = 15,
-                      aspect = 1)
+    trace0 = go.Bar(
+        x=total_jurisdiction_country['Count'],
+        y=total_jurisdiction_country['countries'],
+        marker=dict(
+            color='rgba(50, 171, 96, 0.6)',
+            line=dict(
+                color='rgba(50, 171, 96, 1.0)',
+                width=1),
+        ),
+        name='Entities registered',
+        orientation='h',
+    )
+    fig = go.Figure(data = [trace0])
+    iplot(fig)
 
 def visualize_jurisdiction_count(total_jurisdiction_country):
     ## Input
@@ -77,6 +90,8 @@ def visualize_jurisdiction_count(total_jurisdiction_country):
     total_jurisdiction_country=total_jurisdiction_country.loc[total_jurisdiction_country['Count'] > 500]
     total_jurisdiction_country = total_jurisdiction_country.reset_index()
 
+
+
     # Visualizing the data.
     g = sns.factorplot(x='Count',
                       y='jurisdiction_description',
@@ -84,6 +99,68 @@ def visualize_jurisdiction_count(total_jurisdiction_country):
                       kind='bar',
                       size = 9,
                       aspect = 1.9)
+
+def visualize_jurisdiction_countly(total_jurisdiction_country):
+    total_jurisdiction_country = total_jurisdiction_country.reset_index()\
+    .drop('countries',axis=1)\
+    .groupby('jurisdiction_description').aggregate(np.sum)
+    total_jurisdiction_country=total_jurisdiction_country.loc[total_jurisdiction_country['Count'] > 500]
+    total_jurisdiction_country = total_jurisdiction_country.reset_index().sort_values('Count')
+    trace0 = go.Bar(
+        x=total_jurisdiction_country['Count'],
+        y=total_jurisdiction_country['jurisdiction_description'],
+        marker=dict(
+            color='rgba(50, 171, 96, 0.6)',
+            line=dict(
+                color='rgba(50, 171, 96, 1.0)',
+                width=1),
+        ),
+        name='Try',
+        orientation='h',
+    )
+    fig = go.Figure(data = [trace0])
+    iplot(fig)
+
+def visualize_jurisdiction_countly_mixed(jurisdiction_country, total_jurisdiction_country):
+    jurisdiction_country = jurisdiction_country.reset_index()\
+    .drop('countries',axis=1)\
+    .groupby('jurisdiction_description').aggregate(np.sum)
+    jurisdiction_country=jurisdiction_country.loc[jurisdiction_country['Count'] > 500]
+    jurisdiction_country = jurisdiction_country.reset_index().sort_values('Count')
+
+    total_jurisdiction_country = total_jurisdiction_country.reset_index()\
+    .drop('countries',axis=1)\
+    .groupby('jurisdiction_description').aggregate(np.sum)
+    total_jurisdiction_country=total_jurisdiction_country.loc[total_jurisdiction_country['Count'] > 500]
+    total_jurisdiction_country = total_jurisdiction_country.reset_index().sort_values('Count')
+
+    trace1 = go.Bar(
+        x=jurisdiction_country['Count'],
+        y=jurisdiction_country['jurisdiction_description'],
+        marker=dict(
+            color='rgba(000, 000, 255, 0.6)',
+            line=dict(
+                color='rgba(50, 171, 96, 1.0)',
+                width=1),
+        ),
+        name='Entities with registered origin',
+        orientation='h',
+    )
+
+    trace0 = go.Bar(
+        x=total_jurisdiction_country['Count'],
+        y=total_jurisdiction_country['jurisdiction_description'],
+        marker=dict(
+            color='rgba(50, 171, 96, 0.6)',
+            line=dict(
+                color='rgba(50, 171, 96, 1.0)',
+                width=1),
+        ),
+        name='Entities without registered origin',
+        orientation='h',
+    )
+    fig = go.Figure(data = [trace0, trace1])
+    iplot(fig)
 
 def visualize_feature_correlation(df,columns):
     ## Input
@@ -99,13 +176,15 @@ def visualize_feature_correlation(df,columns):
     # Find the correlations of those features.
     correlations = df[columns].corr()
 
-    # Visualizing the data.
-    sns.heatmap(correlations,
-        xticklabels=correlations.columns,
-        yticklabels=correlations.columns,
-        vmin=0,
-        cmap="YlGnBu",
-        annot = True)
+    print(correlations)
+
+    matrix_z = correlations.as_matrix()
+    trace = go.Heatmap(z=matrix_z,
+                      x=correlations.columns.values,
+                      y=correlations.index.values,
+                      colorscale = 'Reds')
+    data=[trace]
+    iplot(data, filename='basic-heatmap')
 
 def visualizing_index_data(economical_indexes,lead_countries,data,years):
 
