@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         body {
             font: 400 15px Lato, sans-serif;
@@ -188,6 +189,15 @@
                 font-size: 150px;
             }
         }
+
+        .intro_image {
+            max-height: 400px;
+            width: 100%;
+        }
+
+        .intro {
+            background-image: url("project/images/mossac_fonseca.jpg")
+        }
     </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" class="row">
@@ -215,34 +225,66 @@
     </div>
 </nav>
 
-<div class="jumbotron text-center">
-    <h1>Inside the Leak!</h1>
-    <p>Panama Papers as you have never seen it</p>
-    <h3>Visit our website</h3>
-    <img src="insidetheleakqr.png" alt="qr_code">
+<div class="jumbotron text-center intro">
+    <div class="container row" >
+        <div class="col-lg-8 col-sm-12">
+            <h1>Inside the Leak!</h1>
+            <p>Panama Papers as you have never seen it</p>
+        </div>
+    </div>
 </div>
 
 <!-- Container (About Section) -->
-<div id="analysis" class="container-fluid">
+<div id="analysis" class="container">
     <div class="row">
-        <div class="col-lg-12">
-            <h2>Analysis Stuff</h2><br>
-            <div class="row">
-                <div class="col-lg-6">
-                    <iframe id="1" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/41.embed?link=false" height="500" width="100%"></iframe>
-                </div>
-                <div class="col-lg-6">
-                    <iframe id="2" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/43.embed?link=false" height="500" width="100%"></iframe>
-                </div>
-                <div class="col-lg-12">
-                    <iframe id="3" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~shamanga/7.embed?link=false" height="800" width="100%"></iframe>
-                </div>
+        <h2>Analysis Stuff</h2><br>
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <h5>Number of Entities by Jurisdiction</h5>
+                <iframe id="1" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/41.embed?link=false" height="500" width="100%"></iframe>
+            </div>
+            <div class="col-lg-6 text-center">
+                <h5>Number of Entities by Origin Country</h5>
+                <iframe id="2" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/43.embed?link=false" height="500" width="100%"></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 text-center">
+                <iframe id="3" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~shamanga/11.embed?link=false" height="700" width="100%"></iframe>
+            </div>
+            <div class="col-lg-4 text-center">
+                <hr>
+                <br>
+                <br>
+                <h2>Where do the <b class="w3-text-blue">most involved countries</b> are investing?</h2>
+                <p>Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+                </p>
+                <br>
+                <br>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <hr>
+                <br>
+                <br>
+                <h2 class="">Let's look at their <b class="w3-text-red">Economical Factors</b></h2>
+                <p>
+                    Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+                </p>
+                <br>
+                <br>
+                <hr>
+            </div>
+            <div class="col-lg-8 col-sm-12 text-center">
+                <iframe id="distribution" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~shamanga/7.embed?link=false" height="800" width="100%"></iframe>
             </div>
         </div>
     </div>
 </div>
 
-<div id="clusters" class="container-fluid bg-white">
+<div id="clusters" class="container bg-white">
     <div class="row ">
         <div class="col-lg-12">
             <h2>Clusters stuff</h2><br>
@@ -261,18 +303,31 @@
                 </div>
             </div>
             <div class="row slideanim">
-                <div class="col-lg-12 col-sm-12">
+                <div class="col-lg-8 col-sm-12 text-center">
                     <iframe id="pca_clusters" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~shamanga/9.embed?link=false" height="800" width="100%"></iframe>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <hr>
+                    <br>
+                    <br>
+                    <h2><b class="w3-text-green">Clusters</b> are not sharing economical factors</h2>
+                    <p>Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+                    </p>
+                    <br>
+                    <br>
+                    <hr>
                 </div>
             </div>
             <div class="row slideanim">
-                <div class="col-lg-12 col-sm-12">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <h2 class="">Can we say something about their <b class="w3-text-pink">geographical</b> position?</h2>
                     <iframe id="map" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/47.embed?link=false" height="800" width="100%"></iframe>
                 </div>
             </div>
             <div class="row slideanim">
-                <div class="col-lg-12 col-sm-12">
-                    <iframe id="network" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/57.embed?link=false" height="800" width="100%"></iframe>
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <h2 class="">Is the <b class="w3-text-red">Network</b> of the countries interesting?</h2>
+                    <iframe id="network" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/57.embed?link=false" height="800" width="70%"></iframe>
                 </div>
             </div>
         </div>
@@ -280,7 +335,7 @@
 </div>
 
 <!-- Container (Services Section) -->
-<div id="trends" class="container-fluid text-center">
+<div id="trends" class="container text-center">
     <h2>Inspecting countries behavior</h2>
     <br>
     <div class="row slideanim">
@@ -298,105 +353,104 @@
             <iframe id="11" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/39.embed?link=false" height="400" width="100%"></iframe>
         </div>
     </div>
-</div>
-
-<!-- Container (Portfolio Section) -->
-<div id="portfolio" class="container-fluid text-center bg-grey">
-    <h2><b>Analysis on the plot</b></h2>
-    <p>
-        We choose to analyze the behavior of the 50 most involved countries by clusters,
-        keeping only the top 5 countries for each of them. Cluster 3 is composed only
-        by Seychelles since the other members of the cluster are not included in the 50 most involved.
-    </p>
-    <br>
-    <p>
-        The graphs in the figures aside show the amount of incorporations and inactivations that
-        each country has registered throughout the years. Considering the previously analyzed clusters,
-        we want to highlight the behavior of the countries that make up these macro-groups by analyzing
-        their behavior over the years. Recall that these clusters are designed to identify patterns in
-        the way that certain countries invest, in fact each country is assigned to a specific cluster
-        based on the geographical displacement of its offshore accounts.
-    </p>
-    <br>
-    <p>
-        Furthermore, countries belonging to the same clusters show similar trends on the size of their
-        movements, both for incorporations and inactivations. As shown in Figure 3.A, all the clusters
-        share a similar trend regarding the creation of new offshores accounts. More precisely, the
-        majority of countries experienced a peak of movements in the years preceding 2007, with some
-        particular differences. For both clusters 2 and 4, the countries within them tend to share
-        the same trend regarding the incorporation of offshores and slightly different trends regarding
-        the inactivation of them, as show in Figure 3.B. Cluster 1, which is also the cluster with the
-        highest number of registered accounts is composed by countries that are acting almost
-        independently between them:
-    </p>
-    <p>Switzerland and British Virgin Islands reached their pick of number of incorporations respectively in 2005 and 2007.<br>
-        Hong Kong kept increasing its number until 2010.<br>
-        Jersey and United Kingdom registered their highest number of incorporations before the 2000, rispectively in 1999 and 1997.</p>
-    <div class="">
-        <h3><b>Interesting insights</b></h3>
+    <div id="analysis_trends" class="container-fluid w3-light-gray">
+        <h2><b>Analysis on the plot</b></h2>
+        <p>
+            We choose to analyze the behavior of the 50 most involved countries by clusters,
+            keeping only the top 5 countries for each of them. Cluster 3 is composed only
+            by Seychelles since the other members of the cluster are not included in the 50 most involved.
+        </p>
+        <br>
+        <p>
+            The graphs in the figures aside show the amount of incorporations and inactivations that
+            each country has registered throughout the years. Considering the previously analyzed clusters,
+            we want to highlight the behavior of the countries that make up these macro-groups by analyzing
+            their behavior over the years. Recall that these clusters are designed to identify patterns in
+            the way that certain countries invest, in fact each country is assigned to a specific cluster
+            based on the geographical displacement of its offshore accounts.
+        </p>
+        <br>
+        <p>
+            Furthermore, countries belonging to the same clusters show similar trends on the size of their
+            movements, both for incorporations and inactivations. As shown in Figure 3.A, all the clusters
+            share a similar trend regarding the creation of new offshores accounts. More precisely, the
+            majority of countries experienced a peak of movements in the years preceding 2007, with some
+            particular differences. For both clusters 2 and 4, the countries within them tend to share
+            the same trend regarding the incorporation of offshores and slightly different trends regarding
+            the inactivation of them, as show in Figure 3.B. Cluster 1, which is also the cluster with the
+            highest number of registered accounts is composed by countries that are acting almost
+            independently between them:
+        </p>
+        <p>Switzerland and British Virgin Islands reached their pick of number of incorporations respectively in 2005 and 2007.<br>
+            Hong Kong kept increasing its number until 2010.<br>
+            Jersey and United Kingdom registered their highest number of incorporations before the 2000, rispectively in 1999 and 1997.</p>
+        <div class="">
+            <h3><b>Interesting insights</b></h3>
+        </div>
+        <div class="">
+            <p>
+                In the years following 2007 many countries experienced a dizzying fall regarding the number of created account offshores. Is this related to the 2008 economic crisis?
+            </p>
+            <p>
+                For each country, we register the highest number of inactivations approximately five years after we registered the highest number of incorporations.
+            </p>
+            <p>
+                From 2010 onwards only a minority of countries continue to increase the number of offshores founded annually.
+            </p>
+        </div>
     </div>
-    <div class="">
-        <p>
-            In the years following 2007 many countries experienced a dizzying fall regarding the number of created account offshores. Is this related to the 2008 economic crisis?
-        </p>
-        <p>
-            For each country, we register the highest number of inactivations approximately five years after we registered the highest number of incorporations.
-        </p>
-        <p>
-            From 2010 onwards only a minority of countries continue to increase the number of offshores founded annually.
-        </p>
-    </div>
-</div>
-
-<!-- Container (Pricing Section) -->
-<div id="pricing" class="container-fluid">
-    <div class="row slideanim">
-        <div class="col-lg-12 col-sm-12">
-            <div class="">
-                <h3><b>Investigating the behavior throughout the years</b></h3>
-            </div>
-            <div class="">
-                <p>
-                    News involving leaks and scandals might inevitably influence the behavior of the countries involved.
-                    In this section we analyse countries' behavior after this events, throughout the years.
-                </p>
-            </div>
-            <div class="row">
-                <h4><b>The majority of the countries has decreasing trend</b></h4>
-                <div class="col-lg-6 col-sm-12">
-                    <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/23.embed?link=false" height="500" width="100%"></iframe>
+    <div id="behavior_analysis" class="container-fluid">
+        <div class="row slideanim">
+            <div class="col-lg-12 col-sm-12">
+                <div class="">
+                    <h3><b>Investigating the behavior throughout the years</b></h3>
                 </div>
-                <div class="col-lg-6 col-sm-12">
-                    <iframe id="b" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/21.embed?link=false" height="500" width="100%"></iframe>                    </div>
-                <div class="col-lg-6 col-sm-12">
-                    <iframe id="c" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/33.embed?link=false" height="500" width="100%"></iframe>                    </div>
-                <div class="col-lg-6 col-sm-12">
-                    <iframe id="d" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/31.embed?link=false" height="500" width="100%"></iframe>                    </div>
-            </div>
-            <div class="">
-                <h3><b>China is showing increasing interest</b></h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-sm-12">
-                    <iframe id="china_trend" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/19.embed?link=false" height="500" width="100%"></iframe>
+                <div class="">
+                    <p>
+                        News involving leaks and scandals might inevitably influence the behavior of the countries involved.
+                        In this section we analyse countries' behavior after this events, throughout the years.
+                    </p>
                 </div>
-                <div class="col-lg-6 col-sm-12">
-                    <iframe id="china_dist" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/17.embed?link=false" height="500" width="100%"></iframe>                     </div>
-                <div class="col-lg-12 col-sm-12">
-                    <h3>
-                        Is this related to the stock market?
-                    </h3>
-                    <iframe id="china_stock" scrolling="no" style="border:none;" seamless="seamless" src="https://tvchart.tradingeconomics.com/c?s=SHCOMP:IND&interval=M&locale=com&originUrl=https://tradingeconomics.com/china/stock-market" height="500" width="100%"></iframe>                     </div>
+                <div class="row">
+                    <h4><b>The majority of the countries has decreasing trend</b></h4>
+                    <div class="col-lg-6 col-sm-12">
+                        <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/23.embed?link=false" height="500" width="100%"></iframe>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <iframe id="b" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/21.embed?link=false" height="500" width="100%"></iframe>                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <iframe id="c" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/33.embed?link=false" height="500" width="100%"></iframe>                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <iframe id="d" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/31.embed?link=false" height="500" width="100%"></iframe>                    </div>
+                </div>
+                <div class="">
+                    <h3><b>China is showing increasing interest</b></h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <iframe id="china_trend" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/19.embed?link=false" height="500" width="100%"></iframe>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <iframe id="china_dist" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/17.embed?link=false" height="500" width="100%"></iframe>                     </div>
+                    <div class="col-lg-12 col-sm-12">
+                        <h3>
+                            Is this related to the stock market?
+                        </h3>
+                        <iframe id="china_stock" scrolling="no" style="border:none;" seamless="seamless" src="https://tvchart.tradingeconomics.com/c?s=SHCOMP:IND&interval=M&locale=com&originUrl=https://tradingeconomics.com/china/stock-market" height="500" width="100%"></iframe>                     </div>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
 
 <!-- Container (Contact Section) -->
 <div id="about" class="container-fluid bg-grey">
     <h2 class="text-center">ABOUT SECTION</h2>
     <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-5 text-center">
+            <h3>Visit our website</h3>
+            <img class="qr_code" src="insidetheleakqr.png" alt="qr_code">
             <p>Contact us and we'll get back to you within 24 hours.</p>
         </div>
     </div>
