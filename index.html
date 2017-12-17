@@ -237,7 +237,22 @@
 <!-- Container (About Section) -->
 <div id="analysis" class="container">
     <div class="row">
-        <h2>Analysis Stuff</h2><br>
+        <div class="col-lg-12 text-center">
+            <h2>A brief introduction to the study case</h2>
+            <p>
+                As global markets expand and become more interconnected, businesses are increasingly looking for resources to help identify competitive and profitable opportunities. Several data leakages in the last years have shown that a common approach to this is the creation of offshore companies, i.e. companies created in low-tax, offshore jurisdictions.
+                Our goal is to analyze motivating factors for creating
+                such entities. We believe that a better understanding of the reasons can help to find ways to deal with those tendencies. This has an impact on the social good, because fiscal prudence and opennesss in international trade can have a powerful effect on improving society.
+            </p>
+            <p>
+                Our analysis is based on data provided in the <a class="w3-text-indigo" href="https://www.occrp.org/en/panamapapers/database">Offshore Leaks Database</a>. It contains information about 500,000 offshore companies, foundations and trusts including links to people and companies in more than 200 countries and territories. The information comes from the Panama Papers, the Offshore Leaks and the Bahamas Leaks investigations cunducted in the years 2013 to 2016. While those data leaks contain diverse sorts of documents from emails to bank documents, the database provides structured information excluding raw files. The latest investigation on the Paradise Papers that was released in November 2017 is not included in our analysis.
+            </p>
+            <p>
+                In order to better understand the underlying structures of the offshore business we analyze the available data on the level of countries. We identify the most involved countries and try to find factors that characterize those countries. To this aim we enrich the dataset with information about the economical and social background of countries from the
+                <a class="w3-text-indigo" href="http://www.heritage.org/index/about">Index of Economic Freedom</a>.
+                Furthermore, we investigate how the different countries are connected and how their presence in the offshore business evolved in the last years. In particular, we wanted to see whether the publication of the leaks influenced those developments in some way.
+            </p>
+        </div>
         <div class="row">
             <div class="col-lg-6 text-center">
                 <h5>Number of Entities by Jurisdiction</h5>
@@ -287,7 +302,14 @@
 <div id="clusters" class="container bg-white">
     <div class="row ">
         <div class="col-lg-12">
-            <h2>Clusters stuff</h2><br>
+            <hr>
+            <h2>Extricating the <b class="w3-text-indigo">connections</b></h2>
+            <p>Let us now take a closer look at how the different countries are connected. We measure the connectedness of two countries by the number of offshores coming from one country founded in the other country.
+                <br>
+                To begin with, we want to see if there is a pattern in the way players in origin countries select special countries for their offshores. Therefore, we cluster the origin countries into groups with similar selection information using kMeans clustering.
+                <br>
+                The selection patterns of the four resulting clusters are visualized in the matrices below. Each row corresponds to an origin country and each column to a goal country. The color of a cell indicates for the corresponding origin country the relative frequency of offshores that where founded in the corresponding goal country.</p>
+            <hr>
             <div class="row slideanim">
                 <div class="col-lg-6 col-sm-12">
                     <iframe id="4" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/49.embed?link=false" height="500" width="100%"></iframe>
@@ -302,6 +324,22 @@
                     <iframe id="7" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/55.embed?link=false" height="500" width="100%"></iframe>
                 </div>
             </div>
+            <hr>
+            <p>
+                And indeed it is easy to see a pattern that characterizes the countries which are in the same  cluster: The first cluster contains those countries where the majority of offshore entities are founded on the British Virgin Islands. The second cluster contains the countries with most offshore entities in Panama, the third those countries with a mojority of entities on the Seychelles. The countries in the fourth cluster show more diverse distributions of destination countries. However there are still interesting patterns. For example, for many countries in this cluster the main destination of entities is the country itself, see for example the Cook Islands or Samoa.
+                <br>
+                Now that we know that the countries can be categorized by the way jurisdictions for offshores are selected, an obvious question to ask is what causes those different structures. In other words, we want to know how the countries that are in the same cluster are similar to each other and different to the coutries in other clusters. This in turn could help us to find the underlying factors that motivate the selection of destination countries.
+            <hr>
+            </p>
+            <div class="row slideanim">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <h2 class="">Can we say something about their <b class="w3-text-pink">geographical</b> position?</h2>
+                    <p>
+                        The first thing we consider as a possible factor is geographical closeness. As can be seen in the map, most South American countries (Brasil being the most apparent exception) have the majority of offshore entities in Panama (cluster 2). In Northern America and the UK, most offshore entities are founded on the British Virgin Islands. So indeed geographical closeness might be a factor.
+                    </p>
+                    <iframe id="map" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/47.embed?link=false" height="700" width="100%"></iframe>
+                </div>
+            </div>
             <div class="row slideanim">
                 <div class="col-lg-8 col-sm-12 text-center">
                     <iframe id="pca_clusters" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~shamanga/9.embed?link=false" height="800" width="100%"></iframe>
@@ -311,17 +349,21 @@
                     <br>
                     <br>
                     <h2><b class="w3-text-green">Clusters</b> are not sharing economical factors</h2>
-                    <p>Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+                    <p>
+                        The next possible factors we consider are of economical nature. We investigate which influence the economic factors specified in the Index of Eonomic freedom data set have on the assignment to the clusters. There are several ways to tackle this question. One approach we took was to do a multinomial logit which predicts the cluster from the economical factors. As economical factors, we considered the gross domestic product (GDP), the GDP growth rate, government expenditures, the infalation, foreign direct investment (FDI) inflow and the public debt. We then interpreted the coefficients of the classifier. It turned out that none of the mentionned factors have a significant influence. Another approach is to do a principal component analysis (PCA). A PCA considering the three main factors can be visulized as follows, where every point corresponds to a country and the color indicates its cluster.
+                        <br>
+                        Similarly to the previous analysis, it is difficult to see a pattern in this. Therefore, we conclude that the economic factors we analyzed have no influence.
                     </p>
                     <br>
                     <br>
-                    <hr>
                 </div>
-            </div>
-            <div class="row slideanim">
-                <div class="col-lg-12 col-sm-12 text-center">
-                    <h2 class="">Can we say something about their <b class="w3-text-pink">geographical</b> position?</h2>
-                    <iframe id="map" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/47.embed?link=false" height="800" width="100%"></iframe>
+                <div class="col-lg-12 text-center">
+                    <hr>
+                    <h2>Observations</h2>
+                    <p>
+                        Note that in general this kind of reasoning only enables us to restrict the set of possible factors, while it does not enable us to identify the relevant factors with certainty. This would require more background research by experts. We still think that the map is a good basis to detact interesting tendencies. For example, starting from there one could try to see whether countries belonging to the Commonwealth of nations belong to the same cluster. We observe that the UK, India and Australia are in the same cluster. However, Canada is not. One can think of many questions like this considereing the historical and political background of countries.
+                    </p>
+                    <hr>
                 </div>
             </div>
             <div class="row slideanim">
