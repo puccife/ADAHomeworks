@@ -198,6 +198,22 @@
         .intro {
             background-image: url("project/images/mossac_fonseca.jpg")
         }
+
+        .triangle-right {
+            width: 0;
+            height: 0;
+            border-top: 25px solid transparent;
+            border-left: 50px solid #555;
+            border-bottom: 25px solid transparent;
+        }
+
+        .triangle-left {
+            width: 0;
+            height: 0;
+            border-top: 25px solid transparent;
+            border-right: 50px solid #555;
+            border-bottom: 25px solid transparent;
+        }
     </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" class="row">
@@ -394,13 +410,15 @@
 
 <!-- Container (Services Section) -->
 <div id="trends" class="container text-center">
-    <h2>How are the countries acting <b class="w3-text-brown">throughout the years</b> ?</h2>
-    <p>
-        We choose to analyze the behavior of the 50 most involved countries by clusters,
-        keeping only the top 5 countries for each of them. Cluster 3 is composed only
-        by Seychelles since the other members of the cluster are not included in the 50 most involved.
-    </p>
-    <hr>
+    <div class="row slideanim">
+        <h2>How are the countries acting <b class="w3-text-brown">throughout the years</b> ?</h2>
+        <p>
+            We choose to analyze the behavior of the 50 most involved countries by clusters,
+            keeping only the top 5 countries for each of them. Cluster 3 is composed only
+            by Seychelles since the other members of the cluster are not included in the 50 most involved.
+        </p>
+        <hr>
+    </div>
     <div class="row slideanim">
         <div class="col-lg-12 col-sm-12">
             <h2>Registered <b class="w3-text-green">Incorporations</b></h2>
@@ -446,37 +464,39 @@
         <hr>
         <h2><b>So what?</b></h2>
         <div class="row">
-            <div class="col-lg-4">
-                <h4>
+            <div class="col-lg-4 w3-padding-large  w3-indigo w3-card-4">
+                <h4 class="w3-text-white">
                     In the years following 2007 many countries experienced a dizzying fall regarding the number of created account offshores. Is this related to the 2008 economic crisis?
                 </h4>
             </div>
-            <div class="col-lg-4">
-                <h4>
+            <div class="col-lg-4 w3-padding-large w3-card-4">
+                <h4 >
                     For each country, we register the highest number of inactivations approximately five years after we registered the highest number of incorporations.
                 </h4>
             </div>
-            <div class="col-lg-4">
-                <h4>
-                    From 2010 onwards only a minority of countries continue to increase the number of offshores founded annually.
+            <div class="col-lg-4 w3-padding-large  w3-indigo w3-card-4">
+                <h4 class="w3-text-white">
+                    From 2010 onwards only a minority of countries continue to increase the number of offshores founded annually. China between them is the one with the most positive trend.
                 </h4>
+            </div>
+        </div>
+        <div class="text-center row">
+            <br>
+            <br>
+            <div class="w3-card-4 col-lg-offset-4 col-lg-4">
+                    <h3>There might be a connection between the <b class="w3-text-yellow">stock market</b> of one country and its activity in the <b class="w3-text-orange">offshore market</b>.</h3>
             </div>
         </div>
     </div>
     <div id="behavior_analysis" class="container-fluid">
         <div class="row slideanim">
             <div class="col-lg-12 col-sm-12">
+                <hr>
                 <div class="">
-                    <h3><b>Investigating the behavior throughout the years</b></h3>
-                </div>
-                <div class="">
-                    <p>
-                        News involving leaks and scandals might inevitably influence the behavior of the countries involved.
-                        In this section we analyse countries' behavior after this events, throughout the years.
-                    </p>
+                    <h1><b>A close look into the most involved countries</b></h1>
                 </div>
                 <div class="row">
-                    <h4><b>The majority of the countries has decreasing trend</b></h4>
+                    <h2><b>The majority of the countries has decreasing trend</b></h2>
                     <div class="col-lg-6 col-sm-12">
                         <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/23.embed?link=false" height="500" width="100%"></iframe>
                     </div>
@@ -488,7 +508,7 @@
                         <iframe id="d" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/31.embed?link=false" height="500" width="100%"></iframe>                    </div>
                 </div>
                 <div class="">
-                    <h3><b>China is showing increasing interest</b></h3>
+                    <h2><b>China is showing increasing interest</b></h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
@@ -497,9 +517,9 @@
                     <div class="col-lg-6 col-sm-12">
                         <iframe id="china_dist" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/17.embed?link=false" height="500" width="100%"></iframe>                     </div>
                     <div class="col-lg-12 col-sm-12">
-                        <h3>
-                            Is this related to the stock market?
-                        </h3>
+                        <h2 class="">
+                            Let's compare the <b class="w3-text-red">stock market</b> in the same period
+                        </h2>
                         <iframe id="china_stock" scrolling="no" style="border:none;" seamless="seamless" src="https://tvchart.tradingeconomics.com/c?s=SHCOMP:IND&interval=M&locale=com&originUrl=https://tradingeconomics.com/china/stock-market" height="500" width="100%"></iframe>                     </div>
                 </div>
             </div>
@@ -510,11 +530,12 @@
 
 <!-- Container (Contact Section) -->
 <div id="about" class="container-fluid bg-grey">
-    <h2 class="text-center">ABOUT SECTION</h2>
+    <h2 class="text-center">ABOUT SECTION AND I SHOULD DO THE LAUNDRY</h2>
     <div class="row">
         <div class="col-sm-5 text-center">
             <h3>Visit our website</h3>
             <img class="qr_code" src="insidetheleakqr.png" alt="qr_code">
+            <hr>
             <p>Contact us and we'll get back to you within 24 hours.</p>
         </div>
     </div>
