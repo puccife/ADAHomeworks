@@ -296,6 +296,12 @@ def visualize_slider_jurisdiction(countries_frame2, label):
         iplot(fig)
 
 def visualize_clusters_with_brush(countries_frame2, cluster_info, label):
+    """
+    Visualizing clusters trends with different colors in a scatterplot chart
+    :param countries_frame2: dataframe
+    :param cluster_info: dataframe containing infos on clusters
+    :param label: action to considerate (wheter incorporations, inactivations, strucs or active offshores)
+    """
     clusters = cluster_info.copy()
     cluster_color = {
         0:'rgba(44,123,182, .9)',
@@ -361,7 +367,12 @@ def visualize_clusters_with_brush(countries_frame2, cluster_info, label):
 
 
 
-def visualize_slider_country(countries_frame, label):
+def visualize_slider_country(countries_frame, label, filter_top_for_story=True):
+    """
+    Visualize country movements according to the defined label
+    :param countries_frame: entities dataframe
+    :param label: label mapping the action to represent in the viz
+    """
     for i, es_country in enumerate(countries_frame):
         test = countries_frame[i][countries_frame[i]['action'] == label].copy()
         test = test.reset_index()
@@ -369,57 +380,67 @@ def visualize_slider_country(countries_frame, label):
         test = test.set_index(['date'])
         jurisdictions = test.jurisdiction.unique()
         country = test.Country.unique()
-        traces = []
-        for jurisdiction in jurisdictions:
-            tmp_df = test[test['jurisdiction'] == jurisdiction]
-            tmp_trace = go.Scatter(x=tmp_df.index,
-                                  y=tmp_df.offshores,
-                                  name=jurisdiction)
-            traces.append(tmp_trace)
-        data = go.Data(traces)
-        layout = dict(
-            title='Country: ' + country[0],
-            xaxis=dict(
-                rangeslider=dict(),
-                title='Year'
-            ),
-            yaxis=dict(
-                title=label
+        if country[0] == 'China' or filter_top_for_story==False:
+            traces = []
+            for jurisdiction in jurisdictions:
+                tmp_df = test[test['jurisdiction'] == jurisdiction]
+                tmp_trace = go.Scatter(x=tmp_df.index,
+                                      y=tmp_df.offshores,
+                                      name=jurisdiction)
+                traces.append(tmp_trace)
+            data = go.Data(traces)
+            layout = dict(
+                title='Country: ' + country[0],
+                xaxis=dict(
+                    rangeslider=dict(),
+                    title='Year'
+                ),
+                yaxis=dict(
+                    title=label
+                )
             )
-        )
 
-        fig = dict(data=data, layout=layout)
-        iplot(fig)
+            fig = dict(data=data, layout=layout)
+            iplot(fig)
 
-def visualize_candle_country(countries_frame):
+def visualize_candle_country(countries_frame, filter_top_for_story=True):
+    """
+    Visualize financial candle plot of a country using incorporations and inactivations
+    :param countries_frame: country dataframe
+    """
     for i, es_country in enumerate(countries_frame):
         test = countries_frame[i].copy()
         test = test.reset_index()
         test = test.sort_values('date').reset_index()
         test = test.groupby(['date','Country']).sum().reset_index()
         country = (test['Country'][0])
-        tmp_trace = go.Candlestick(x=test.date,
-                                low=test.incorporations,
-                                close=test.incorporations,
-                                high=test.inactivations,
-                                open=test.inactivations,
-                                name=country)
-        data = go.Data([tmp_trace])
-        layout = dict(
-            title='Country: ' + country,
-            xaxis=dict(
-                rangeslider=dict(),
-                title='Year'
-            ),
-            yaxis=dict(
-                title='Movement'
+        if(country in ['Switzerland', 'Hong Kong', 'China', 'Luxembourg', 'Bahamas'] or filter_top_for_story==False):
+            tmp_trace = go.Candlestick(x=test.date,
+                                    low=test.incorporations,
+                                    close=test.incorporations,
+                                    high=test.inactivations,
+                                    open=test.inactivations,
+                                    name=country)
+            data = go.Data([tmp_trace])
+            layout = dict(
+                title='Country: ' + country,
+                xaxis=dict(
+                    rangeslider=dict(),
+                    title='Year'
+                ),
+                yaxis=dict(
+                    title='Movement'
+                )
             )
-        )
 
-        fig = dict(data=data, layout=layout)
-        iplot(fig)
+            fig = dict(data=data, layout=layout)
+            iplot(fig)
 
 def visualize_time_series(countries_frame):
+    """
+    Visualize timeseries of each country and their evolutions throughout the years
+    :param countries_frame: dataframe containing countries.
+    """
     for time_frame in countries_frame:
         c = time_frame['Country'][0]
         dataset = time_frame.copy().reset_index()
@@ -555,6 +576,11 @@ def visualize_time_series(countries_frame):
         iplot(figure)
 
 def visualize_time_series2(countries_frame2):
+    """
+    Similar to the previous
+    Visualize timeseries of each country and their evolutions throughout the years
+    :param countries_frame: dataframe containing countries.
+    """
     jurisd = pd.concat(countries_frame2)
     jurisd = jurisd.reset_index()
     jurisdictions = jurisd.jurisdiction.unique()
@@ -985,7 +1011,4 @@ def visualize_time_series4(countries_frame2):
 
 
         figure['layout']['sliders'] = [sliders_dict]
-        div = plot(figure, output_type='div')
-        f = open(c+'.html','w')
-        f.write(div)
-        f.close()
+        iplot(figure)
