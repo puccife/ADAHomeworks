@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" type="image/x-icon" href="project/images/globe.ico" />
     <style>
         body {
             font: 400 15px Lato, sans-serif;
@@ -276,21 +277,31 @@
                 <b class="w3-text-green">Countries</b> and
                 <b class="w3-text-red">jurisdictions</b>
             </h2>
-            <p>Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
-            <hr>
             <div class="col-lg-6 text-center">
+                <br>
                 <h5>Number of Entities by Jurisdiction</h5>
-                <iframe id="1" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/41.embed?link=false" height="500" width="100%"></iframe>
+                <iframe id="1" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/41.embed?link=false" height="700" width="100%"></iframe>
             </div>
             <div class="col-lg-6 text-center">
+                <br>
                 <h5>Number of Entities by Origin Country</h5>
-                <iframe id="2" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/43.embed?link=false" height="500" width="100%"></iframe>
+                <iframe id="2" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/43.embed?link=false" height="700" width="100%"></iframe>
             </div>
             <hr>
             <h2>
                 Interesting insights
             </h2>
-            <p>Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+            <p>
+                Above are two plots describing the number of entities opened throughout the years in both the tax haven " jurisdictions " and the origin/destination countries. The first thing that caught our attention is the amount of missing data, in particular, the entities without a registered origin in the Bahamas. Despite the loss of information, this shows that the Bahamas is a country of special interest and worth
+                being investigated.
+                Looking at the tax havens we can see a strong presence of British overseas territories and Crown
+                Dependencies such as British Virgin Islands, Cayman Islands, and British Anguilla, alongside British Commonwealth territories like the Bahamas and Cook Islands. Most of the countries heavily involved
+                in the scheme have some sort of financial secrecy. A detailed look into countries according to their secrecy and the scale of their offshore financial activities can be found in the Financial Secrecy Index <http://www.financialsecrecyindex.com/introduction/fsi-2015-results>.
+                Now looking at the number of entities opened from origin countries, we can see the prescence of a
+                significant number of tax havens. Those were interpreted as entities that were terminated then
+                re-established again at a certain period of time in the same country, or a movement of entities
+                from one haven to another.
+            </p>
             <hr>
         </div>
         <div class="row">
@@ -302,7 +313,8 @@
                 <br>
                 <br>
                 <h2>Where do the <b class="w3-text-blue">most involved countries</b> are investing?</h2>
-                <p>Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
+                <p>
+                    As the number of offshore entities increase, the number of tax havens involved increases. Of course this is only a small portion of the data available in the real world but it can be seen that most of the countries invest in Panama and British Virgin Islands. It would have been truly interesting to see the true distribution of the entities registered in Bahamas. Although Paradise papers <https://www.icij.org/investigations/paradise-papers/icij-releases-paradise-papers-data-appleby/> were not analyzed, it is worth to note that more than 70 percent of the new records belong to entities incorporated in Bermuda and the Cayman Islands.
                 </p>
                 <br>
                 <br>
@@ -316,8 +328,7 @@
                 <br>
                 <h2 class="">Let's look at their <b class="w3-text-red">Economical Factors</b></h2>
                 <p>
-                    Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.
-                </p>
+                    Trying to investigate if origin countries with high entity count are economically similar, we applied principal component analysis on the Index of Economic Freedom using only the data of the countries that are involved in the leak. This data is divided into 5 main categories ( Rule of law, Government size, Regulatory efficiency, Open markets, and Monetary measures) each of which is sub-divided into more detailed features. We can clearly see that most of the top 12 origin countries ( with respect to entity count ) ( colored blue ) are on the left-side of the x-axis and close to each other. This indicates that those countries indeed have similar economical factors. It is necessary to note that not ONLY the countries with great economic standing are the ones that invest the most, but also the ones with mediocre overall economy have a great contribution. However, this may be due to the fact that this data only points to a fraction of what really is out there.                </p>
                 <br>
                 <br>
                 <hr>
@@ -364,7 +375,7 @@
             <div class="row slideanim">
                 <div class="col-lg-12 col-sm-12 text-center">
                     <h2 class="">What's their <b class="w3-text-pink"> geographical</b> location?</h2>
-                    <h4 class="w3-text-cyan">We thanks <a class="w3-text-indigo" href="https://restcountries.eu/">Restcountries</a> API to make our life easier in the creation of the map.</h4>
+                    <h4 class="">Countries ISO 3166-1 numeric code is obtained through <a class="w3-text-indigo" href="https://restcountries.eu/">Restcountries API</a>.</h4>
                     <p>
                         The first thing we consider as a possible factor is geographical closeness. As can be seen in the map, most South American countries (Brasil being the most apparent exception) have the majority of offshore entities in Panama (cluster 2). In Northern America and the UK, most offshore entities are founded on the British Virgin Islands. So indeed geographical closeness might be a factor.
                     </p>
@@ -419,6 +430,15 @@
             by Seychelles since the other members of the cluster are not included in the 50 most involved.
         </p>
         <hr>
+        <p>
+            The graphs in the figures below show the amount of incorporations and inactivations that
+            each country has registered throughout the years. Considering the previously analyzed clusters,
+            we want to highlight the behavior of the countries that make up these macro-groups by analyzing
+            their behavior over the years. Recall that these clusters are designed to identify patterns in
+            the way that certain countries invest, in fact each country is assigned to a specific cluster
+            based on the geographical displacement of its offshore accounts.
+        </p>
+        <hr>
     </div>
     <div class="row slideanim">
         <div class="col-lg-12 col-sm-12">
@@ -437,17 +457,9 @@
     </div>
     <div id="analysis_trends" class="container-fluid">
         <h2>Some clusters are more <b class="w3-text-yellow">actives</b> than others</h2>
-        <p>
-            The graphs in the figures above show the amount of incorporations and inactivations that
-            each country has registered throughout the years. Considering the previously analyzed clusters,
-            we want to highlight the behavior of the countries that make up these macro-groups by analyzing
-            their behavior over the years. Recall that these clusters are designed to identify patterns in
-            the way that certain countries invest, in fact each country is assigned to a specific cluster
-            based on the geographical displacement of its offshore accounts.
-        </p>
         <hr>
         <p>
-            Furthermore, countries belonging to the same clusters show similar trends on the size of their
+            Countries belonging to the same clusters show similar trends on the size of their
             movements, both for incorporations and inactivations. As shown in Figure 3.A, all the clusters
             share a similar trend regarding the creation of new offshores accounts. More precisely, the
             majority of countries experienced a peak of movements in the years preceding 2007, with some
@@ -462,32 +474,6 @@
             <li>Hong Kong kept increasing its number until <b class="w3-text-red">2010</b>, after that year the number of incorporations suffered a sharp fall.</li>
             <li>Jersey and United Kingdom registered their highest number of incorporations before the <b class="w3-text-red">2000</b>, rispectively in <b class="w3-text-red">1999</b> and <b class="w3-text-red">1997</b>.</li>
         </ul>
-        <hr>
-        <h2><b>So what?</b></h2>
-        <div class="row">
-            <div class="col-lg-4 w3-padding-large  w3-indigo w3-card-4">
-                <h4 class="w3-text-white">
-                    In the years following 2007 many countries experienced a dizzying fall regarding the number of created account offshores. Is this related to the 2008 economic crisis?
-                </h4>
-            </div>
-            <div class="col-lg-4 w3-padding-large w3-card-4">
-                <h4 >
-                    For each country, we register the highest number of inactivations approximately five years after we registered the highest number of incorporations.
-                </h4>
-            </div>
-            <div class="col-lg-4 w3-padding-large  w3-indigo w3-card-4">
-                <h4 class="w3-text-white">
-                    From 2010 onwards only a minority of countries continue to increase the number of offshores founded annually. China between them is the one with the most positive trend.
-                </h4>
-            </div>
-        </div>
-        <div class="text-center row">
-            <br>
-            <br>
-            <div class="w3-card-4 col-lg-offset-4 col-lg-4 w3-padding-large">
-                    <h3>There might be a connection between the <b class="w3-text-yellow">stock market</b> of one country and its activity in the <b class="w3-text-orange">offshore market</b>.</h3>
-            </div>
-        </div>
     </div>
     <div id="behavior_analysis" class="container-fluid">
         <div class="row slideanim">
@@ -495,21 +481,54 @@
                 <hr>
                 <div class="">
                     <h1><b>A close look into the most involved countries</b></h1>
+                    <p>In the candle plots below we can find some evidences about the
+                    behaviour of the most involved countries.
+                    Our aim is to represent the differences between incorporations
+                    and inactivations throughout the years in each <b>origin Country</b>.
+                        <br><b class="w3-text-green">Green</b> candles are showing that the number of incorporations is higher than the number of inactivations. Where the highest point represents the number of incorporations while the lowest is representing the number of inactivations.
+                        <br>Viceversa, <b class="w3-text-red">Red</b> candles highlight that the number of inactivations is higher than the number of incorporations, furthermore the highest point represents the number of inactivations and the lowest is representing the number of incorporations.</p>
                 </div>
                 <div class="row">
                     <h2><b>The majority of the countries has decreasing trend</b></h2>
+                    <p>
+                        Switzerland and Luxembourg are behaving in a really similar way, they both reached their maximum number of
+                        incorporations in 2005 keeping a positive trend until 2008. From 2009 the number of inactivations has clearly surpassed the number of incorporations,
+                        which reached its minimum in the last years. It is evident that both countries seem to have lost interest in creating new accounts.
+                    </p>
+                    <div class="col-lg-6 col-sm-12">
+                        <iframe id="d" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/31.embed?link=false" height="500" width="100%"></iframe>                    </div>
                     <div class="col-lg-6 col-sm-12">
                         <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/23.embed?link=false" height="500" width="100%"></iframe>
                     </div>
+                    <p>
+                        Different situation for Bahamas and Hong Kong that have undergone a sudden change in the latest years after 2013. Both have suffered a
+                        downturn both in the incorporations and in inactivations numbers, a symptom of the fact that probably the people from this countries stopped
+                        investing after the first leak.
+                    </p>
                     <div class="col-lg-6 col-sm-12">
                         <iframe id="b" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/21.embed?link=false" height="500" width="100%"></iframe>                    </div>
                     <div class="col-lg-6 col-sm-12">
                         <iframe id="c" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/33.embed?link=false" height="500" width="100%"></iframe>                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <iframe id="d" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/31.embed?link=false" height="500" width="100%"></iframe>                    </div>
+                    <p>
+                        Anyway, we should take into consideration that both the trends are
+                        built with a fraction of the entire world situation, which is the
+                        only one available in the offshore leak dataset. This means that we do not
+                        have reliable data to state something which is 100% truthful
+                        about these trends, but we can have an overall idea of countries situation.
+                    </p>
                 </div>
                 <div class="">
                     <h2><b>China is showing increasing interest</b></h2>
+                    <p>
+                        As said before, the majority of the countries are following a negative trends in the last years.
+                        This is not the case of China which has undergone an abrupt decrease after 2007 keeping always an
+                        overall positive trend, but since 2013 (year of the biggest leak) the number of incorporations has
+                        exponentially increased, while the number of inactivations remained constant.
+                        <br>
+                        In the plot on the right we can look where China is investing. We can clearly see that before 2012 China was mainly investing
+                        in British Virgin Islands, while after 2012 the displacement of the offshores in the tax haven countries
+                        is well diversified.
+                    </p>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
@@ -518,9 +537,41 @@
                     <div class="col-lg-6 col-sm-12">
                         <iframe id="china_dist" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/17.embed?link=false" height="500" width="100%"></iframe>                     </div>
                     <div class="col-lg-12 col-sm-12">
+                        <hr>
+                        <br>
+                        <h2><b>Recap</b></h2>
+                        <div class="row w3-card-4">
+                            <div class="col-lg-4 w3-padding-large">
+                                <h4 class="">
+                                    <b class="w3-badge w3-padding-large w3-red w3-margin-bottom">1</b><br>In the years following 2007 many countries experienced a dizzying fall regarding the number of created offshore accounts. Is this related to the 2008 economic crisis?
+                                </h4>
+                            </div>
+                            <div class="col-lg-4 w3-padding-large">
+                                <h4 >
+                                    <b class="w3-badge w3-padding-large w3-red w3-margin-bottom">2</b><br>For each country, we register the highest number of inactivations approximately five years after we registered the highest number of incorporations.
+                                </h4>
+                            </div>
+                            <div class="col-lg-4 w3-padding-large">
+                                <h4 class="">
+                                    <b class="w3-badge w3-padding-large w3-red w3-margin-bottom">3</b><br>From 2010 onwards only a minority of countries continue to increase the number of offshores founded annually. China between them is the one with the most positive trend.
+                                </h4>
+                            </div>
+                        </div>
+                        <br>
+                        <h4>All these points led us think that there might be a connection between the size of the movement in each country and the stock market. 2008 in particular, the year of the biggest global economical crisis, is a year that acts as a watershed between positive and negative trends in several countries.
+                        As a conclusion of this work we will look at China's stock market and we will compare it to the candle plot previously seen.</h4>
+                        <hr>
+                        <br>
                         <h2 class="">
-                            Let's compare the <b class="w3-text-red">stock market</b> in the same period
+                            Shanghai stock exchange comparison
                         </h2>
+                        <p>
+                            In the financial chart below it's shown the Shanghai Stock Exchange. Shanghai Stock Exchange is the world's 5th largest stock market
+                            by market capitalization at US$3.5 trillion as of February 2016, and 2nd largest in East Asia and Asia.
+                            <br>Similarities with the candle plot above regarding China's trends in terms of incorporations and inactivations are really evident, however
+                            that's not enough to state wheter there is a true correlation or not, mostly based on the fact that we're considering only the fraction that has been leaked.
+
+                        </p>
                         <iframe id="china_stock" scrolling="no" style="border:none;" seamless="seamless" src="https://tvchart.tradingeconomics.com/c?s=SHCOMP:IND&interval=M&locale=com&originUrl=https://tradingeconomics.com/china/stock-market" height="500" width="100%"></iframe>                     </div>
                 </div>
             </div>
@@ -531,9 +582,21 @@
 
 <!-- Container (Contact Section) -->
 <div id="about" class="container-fluid bg-grey">
-    <h2 class="text-center">ABOUT SECTION AND I SHOULD DO THE LAUNDRY</h2>
+    <h2 class="text-center">About this project</h2>
     <div class="row">
-        <div class="col-sm-5 text-center">
+        <div class="col-lg-4 text-center">
+            <h3>Visit our website</h3>
+            <img class="qr_code" src="insidetheleakqr.png" alt="qr_code">
+            <hr>
+            <p>Contact us and we'll get back to you within 24 hours.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+            <h3>Visit our website</h3>
+            <img class="qr_code" src="insidetheleakqr.png" alt="qr_code">
+            <hr>
+            <p>Contact us and we'll get back to you within 24 hours.</p>
+        </div>
+        <div class="col-lg-4 text-center">
             <h3>Visit our website</h3>
             <img class="qr_code" src="insidetheleakqr.png" alt="qr_code">
             <hr>
