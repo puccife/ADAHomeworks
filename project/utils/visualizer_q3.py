@@ -6,6 +6,10 @@ import json
 import folium
 import requests
 
+from plotly.offline import init_notebook_mode, plot, iplot
+import plotly.graph_objs as go
+from plotly.graph_objs import *
+
 def plot_cross_table(matrix):
     '''
     Function used to plot the cross table.
@@ -60,3 +64,15 @@ def buildJsonAPI(url):
         except:
             print(json_country['name'] + " has problem with numeric code " + str(json_country['numericCode']))
     return restcountries, nametoid
+
+
+
+def plot_cross_table_plotly(matrix):  
+    matrix[matrix == 0.0] = np.nan
+    matrix_z = matrix.as_matrix()
+    trace = go.Heatmap(z=matrix_z,
+                      x=matrix.columns.values,
+                      y=matrix.index.values,
+                      colorscale = 'Reds')
+    data=[trace]
+    iplot(data, filename='basic-heatmap')
