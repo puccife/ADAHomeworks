@@ -272,15 +272,15 @@
             <p>
                 As global markets expand and become more interconnected, businesses are increasingly looking for resources to help identify competitive and profitable opportunities. Several data leakages in the last years have shown that a common approach to this is the creation of offshore companies, i.e. companies created in low-tax, offshore jurisdictions.
                 Our goal is to analyze motivating factors for creating
-                such offshore entities. We believe that a better understanding of the reasons can help to find ways to deal with those tendencies. This has an impact on the social good, because fiscal prudence and opennesss in international trade can have a powerful effect on improving society.
+                such offshore entities. We believe that a better understanding of the reasons can help find ways to deal with those tendencies. This has an impact on the social good, because fiscal prudence and opennesss in international trade can have a powerful effect on improving society.
             </p>
             <p>
-                Our analysis is based on data provided in the Offshore Leaks Database <a href="#db_leak">[1]</a>. It contains information about 500,000 offshore companies, foundations and trusts including links to people and companies in more than 200 countries and territories. The information comes from the Panama Papers, the Offshore Leaks and the Bahamas Leaks investigations cunducted in the years 2013 to 2016. While those data leaks contain diverse sorts of documents from emails to bank documents, the database provides only structured overview information excluding the raw files themselves. The latest investigation on the Paradise Papers, which was released in November 2017 is not included, in our analysis.
+                Our analysis is based on data provided from the Offshore Leaks Database <a href="#db_leak">[1]</a>. It contains information about 500,000 offshore companies, foundations and trusts including links to people and companies in more than 200 countries and territories. The information comes from the Panama Papers, the Offshore Leaks and the Bahamas Leaks investigations cunducted in the years 2013 to 2016. While those data leaks contain diverse sorts of documents from emails to bank documents, the database provides only structured overview information excluding the raw files themselves. The latest investigation on the Paradise Papers, which was released in November 2017 is not included, in our analysis.
             </p>
             <p>
-                In order to better understand the underlying structures of the offshore business, we analyze the available data on the level of countries. We identify the most involved countries and try to find factors that characterize those countries. To this aim, we enrich the dataset with information about the economical and social background of countries from the Index of Economic Freedom<a
+                In order to better understand the underlying structures of the offshore businesses, we analyze the available data on a country level. We identify the most involved countries and try to find factors that characterize them. To this aim, we enrich the dataset with information about the economical and social background of countries from the Index of Economic Freedom<a
                     href="#index">[2]</a>.
-                Furthermore, we investigate how the different countries are connected and how their presence in the offshore business evolved in the last years. In particular, we want to see whether the publication of the leaks influenced those developments in some way.
+                Furthermore, we investigate how the different countries are connected and how their presence in the offshore business evolved in the last 35 years. In particular, we want to see whether the publication of the leaks influenced investment behavior.
             </p>
             <hr>
             <h4>Terminology</h4>
@@ -322,9 +322,10 @@
                 being investigated.
                 Looking at the tax havens we can see a strong presence of British overseas territories and Crown
                 Dependencies such as British Virgin Islands, Cayman Islands, and British Anguilla, alongside British Commonwealth territories like the Bahamas and Cook Islands. Most of the countries heavily involved
-                in the scheme have some sort of financial secrecy. A detailed look into countries according to their secrecy and the scale of their offshore financial activities can be found in the Financial Secrecy Index <http://www.financialsecrecyindex.com/introduction/fsi-2015-results>.
+                in the scheme have some sort of financial secrecy. A detailed look into countries according to their secrecy and the scale of their offshore financial activities can be found in the Financial Secrecy Index
+                <a href="#index">[2]</a>.
                 Now looking at the number of entities opened from origin countries, we can see the prescence of a
-                significant number of tax havens. Those were interpreted as entities that were terminated then
+                significant number of tax havens. Those were interpreted as entities that were terminated and then
                 re-established again at a certain period of time in the same country, or a movement of entities
                 from one haven to another.
             </p>
@@ -338,7 +339,7 @@
                 <hr>
                 <br>
                 <br>
-                <h2>Where do the <b class="w3-text-blue">most involved countries</b> invest?</h2>
+                <h2>Where do the <b class="w3-text-blue">most involved countries</b> invest at?</h2>
                 <p>
                     As the number of offshore entities increase, the number of tax havens involved increases. Of course this is only a small portion of the data available in the real world but it can be seen that most of the countries invest in Panama and British Virgin Islands. It would have been truly interesting to see the true distribution of the entities registered in Bahamas. Although Paradise papers <https://www.icij.org/investigations/paradise-papers/icij-releases-paradise-papers-data-appleby/> were not analyzed, it is worth to note that more than 70 percent of the new records belong to entities incorporated in Bermuda and the Cayman Islands.
                 </p>
@@ -372,15 +373,12 @@
             <hr>
             <h2>Extricating the <b class="w3-text-blue">connections</b></h2>
             <p>
-                Let us now take a closer look at how the different countries are connected. We measure the connectedness of two countries by the number of offshores coming from one country founded in the other country.
+                Let us now take a closer look at how the different countries are connected. We measure the connectedness of two countries by the number of offshore entities coming from one country and founded in the other.
                 <br>
-                To begin with, we want to see if there is a pattern in the way players in origin countries select special countries for their offshores. Therefore, we cluster the origin countries into groups with similar selection information using k-means clustering.
+                To begin with, we want to see if there is a pattern in the way players in origin countries select special countries for their offshore accounts. Therefore, we cluster the origin countries into groups with similar selection information using k-means clustering.
                 <br>
-                The selection patterns of the four resulting clusters are visualized in the matrices below. Each row corresponds to an origin country and each column to a goal country. The color of a cell indicates for the corresponding origin country the relative frequency of offshores that where founded in the corresponding goal country.
+                The selection patterns of the four resulting clusters are visualized in the matrices below. Each row corresponds to an origin country and each column to a goal country. The color of a cell indicates for the corresponding origin country the relative frequency of offshore entities that where founded in the corresponding goal country.
             <hr>
-            <p>
-                And indeed it is easy to see a pattern that characterizes the countries which are in the same cluster: Cluster 0 contains those countries where the majority of offshore entities are founded on the British Virgin Islands. Cluster 1 contains the countries with most offshore entities in Panama, Cluster 2 those countries with a mojority of entities on the Seychelles. The countries in Cluster 3 show more diverse distributions of destination countries. However there are still interesting patterns. For example, for many countries in this cluster the main destination of entities is the country itself, see for example the Cook Islands or Samoa.
-            </p>
             <div class="row slideanim">
                 <div class="col-lg-12 col-sm-12">
                     <iframe id="4" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/49.embed?link=false" height="600" width="100%"></iframe>
@@ -396,7 +394,10 @@
                 </div>
             </div>
             <p>
-                <br>
+                And indeed it is easy to see a pattern that characterizes the countries which are in the same cluster: Cluster 0 contains those countries where the majority of offshore entities are founded in the British Virgin Islands. Cluster 1 contains the countries with the largest number of offshore entities in Panama, cluster 2 those countries with a majority of entities in the Seychelles. The countries in cluster 3 show more diverse distributions of destination countries. However there are still interesting patterns. For example, for many countries in this cluster the main destination of entities is the country itself, see for example the Cook Islands or Samoa.
+            </p>
+            <hr>
+            <p>
                 Now that we know that the countries can be categorized by the way jurisdictions for offshores are selected, an obvious question to ask is what causes those different structures. In other words, we want to know how the countries that are in the same cluster are similar to each other and different to the coutries in other clusters. This in turn could help us to find the underlying factors that motivate the selection of destination countries.
             <hr>
             </p>
@@ -487,18 +488,18 @@
         <h2>Some clusters are more <b class="w3-text-blue">active</b> than others</h2>
         <hr>
         <p>
-            Countries belonging to the same clusters show similar trends on the size of their
+            Countries belonging to the same cluster show similar trends on the size of their
             movements, both for incorporations and inactivations. As shown in Figure 3.A, all the clusters
-            share a similar trend regarding the creation of new offshores accounts. More precisely, the
+            share a similar trend regarding the creation of new offshore accounts. More precisely, the
             majority of countries experienced a peak of movements in the years preceding 2007, with some
             particular differences. For both clusters 2 and 4, the countries within them tend to share
             the same trend regarding the incorporation of offshores and slightly different trends regarding
-            the inactivation of them, as show in Figure 3.B. Cluster 1, which is also the cluster with the
-            highest number of registered accounts is composed by countries that are acting almost
+            the inactivation of them, as shown in Figure 3.B. Cluster 1, which is also the cluster with the
+            highest number of registered accounts is composed of countries that are acting almost
             independently between them:
         </p>
         <ul class="w3-ul w3-light-gray">
-            <li>Switzerland and British Virgin Islands reached their pick of number of incorporations respectively in <b class="w3-text-red">2005</b> and <b class="w3-text-red">2007</b>.</li>
+            <li>Switzerland and British Virgin Islands reached their peak of number of incorporations respectively in <b class="w3-text-red">2005</b> and <b class="w3-text-red">2007</b>.</li>
             <li>Hong Kong kept increasing its number until <b class="w3-text-red">2010</b>, after that year the number of incorporations suffered a sharp fall.</li>
             <li>Jersey and United Kingdom registered their highest number of incorporations before the <b class="w3-text-red">2000</b>, respectively in <b class="w3-text-red">1999</b> and <b class="w3-text-red">1997</b>.</li>
         </ul>
@@ -509,18 +510,18 @@
                 <hr>
                 <div class="">
                     <h1><b>A closer look at the most involved countries</b></h1>
-                    <p>In the candle plots below we can find some evidences about the
+                    <p>In the candle plots below we can find some evidence about the
                     behaviour of the most involved countries.
                     Our aim is to represent the differences between incorporations
                     and inactivations throughout the years in each <b>origin Country</b>.
-                        <br><b class="w3-text-green">Green</b> candles are showing that the number of incorporations is higher than the number of inactivations. Where the highest point represents the number of incorporations while the lowest is representing the number of inactivations.
+                        <br><b class="w3-text-green">Green</b> candles are showing that the number of incorporations is higher than the number of inactivations where the highest point represents the number of incorporations while the lowest is representing the number of inactivations.
                         <br>Viceversa, <b class="w3-text-red">Red</b> candles highlight that the number of inactivations is higher than the number of incorporations, furthermore the highest point represents the number of inactivations and the lowest is representing the number of incorporations.</p>
                 </div>
                 <div class="row">
-                    <h2><b>The majority of the countries has decreasing trend</b></h2>
+                    <h2><b>The majority of the countries have a decreasing trend</b></h2>
                     <p>
                         Switzerland and Luxembourg are behaving in a really similar way, they both reached their maximum number of
-                        incorporations in 2005 keeping a positive trend until 2008. From 2009 the number of inactivations has clearly surpassed the number of incorporations,
+                        incorporations in 2005 keeping a positive trend until 2008. From 2009 the number of inactivations has clearly surpassed the number of incorporations
                         which reached its minimum in the last years. It is evident that both countries seem to have lost interest in creating new accounts.
                     </p>
                     <div class="col-lg-6 col-sm-12">
@@ -529,8 +530,8 @@
                         <iframe id="a" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/23.embed?link=false" height="500" width="100%"></iframe>
                     </div>
                     <p>
-                        Different situation for Bahamas and Hong Kong that have undergone a sudden change in the latest years after 2013. Both have suffered a
-                        downturn both in the incorporations and in inactivations numbers, a symptom of the fact that probably the people from this countries stopped
+                        Different situation for the Bahamas and Hong Kong that have undergone a sudden change in the latest years after 2013. Both have suffered a
+                        downturn both in the incorporations and inactivations numbers, a symptom of the fact that probably the people from those countries stopped
                         investing after the first leak.
                     </p>
                     <div class="col-lg-6 col-sm-12">
@@ -538,7 +539,7 @@
                     <div class="col-lg-6 col-sm-12">
                         <iframe id="c" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/33.embed?link=false" height="500" width="100%"></iframe>                    </div>
                     <p>
-                        Anyway, we should take into consideration that both the trends are
+                        Anyway, we should take into consideration that both trends are
                         built with a fraction of the entire world situation, which is the
                         only one available in the offshore leak dataset. This means that we do not
                         have reliable data to state something which is 100% truthful
@@ -548,13 +549,13 @@
                 <div class="">
                     <h2><b>China is showing increasing interest</b></h2>
                     <p>
-                        As said before, the majority of the countries are following a negative trends in the last years.
+                        As said before, the majority of the countries are following negative trends in the last years.
                         This is not the case of China which has undergone an abrupt decrease after 2007 keeping always an
                         overall positive trend, but since 2013 (year of the biggest leak) the number of incorporations has
                         exponentially increased, while the number of inactivations remained constant.
                         <br>
                         In the plot on the right we can look where China is investing. We can clearly see that before 2012 China was mainly investing
-                        in British Virgin Islands, while after 2012 the displacement of the offshores in the tax haven countries
+                        in British Virgin Islands, while after 2012 the displacement of the offshore accounts in the tax haven countries
                         is well diversified.
                     </p>
                 </div>
@@ -581,12 +582,12 @@
                             </div>
                             <div class="col-lg-4 w3-padding-large">
                                 <h4 class="">
-                                    <b class="w3-badge w3-padding-large w3-red w3-margin-bottom">3</b><br>From 2010 onwards only a minority of countries continue to increase the number of offshores founded annually. China between them is the one with the most positive trend.
+                                    <b class="w3-badge w3-padding-large w3-red w3-margin-bottom">3</b><br>From 2010 onwards only a minority of countries continue to increase the number of offshore entities founded annually. Between them, China is the one with the most positive trend.
                                 </h4>
                             </div>
                         </div>
                         <br>
-                        <h4>All these points led us think that there might be a connection between the size of the movement in each country and the stock market. 2008 in particular, the year of the biggest global economical crisis, is a year that acts as a watershed between positive and negative trends in several countries.
+                        <h4>All these points led us to think that there might be a connection between the size of the movement in each country and the stock market. 2008 in particular, the year of the biggest financial crisis, is a year that acts as a watershed between positive and negative trends in several countries.
                         As a conclusion of this work we will look at China's stock market and we will compare it to the candle plot previously seen.</h4>
                         <hr>
                         <br>
@@ -597,7 +598,7 @@
                             In the financial chart below it's shown the Shanghai Stock Exchange. Shanghai Stock Exchange is the world's 5th largest stock market
                             by market capitalization at US$3.5 trillion as of February 2016, and 2nd largest in East Asia and Asia.
                             <br>Similarities with the candle plot above regarding China's trends in terms of incorporations and inactivations are really evident, however
-                            that's not enough to state wheter there is a true correlation or not, mostly based on the fact that we're considering only the fraction that has been leaked.
+                            that's not enough to state wheter there is a true correlation or not, mostly based on the fact that we're considering only the fraction of the data that has been leaked.
 
                         </p>
                         <iframe id="china_stock" scrolling="no" style="border:none;" seamless="seamless" src="https://tvchart.tradingeconomics.com/c?s=SHCOMP:IND&interval=M&locale=com&originUrl=https://tradingeconomics.com/china/stock-market" height="500" width="100%"></iframe>                     </div>
@@ -656,7 +657,6 @@
 <footer class="container-fluid text-center">
     <div class="row">
     <div class="w3-left col-lg-2 w3-white">
-        <img src="project/images/dlab.svg" alt="dlab logo" class="dlab">
     </div>
     <div class="col-lg-8">
         <img src="project/images/epfl-logo.png" alt="dlab logo" class="dlab">
