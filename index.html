@@ -18,6 +18,10 @@
             line-height: 1.8;
             color: #818181;
         }
+
+        .licences p {
+            font-size: 10px;
+        }
         h2 {
             font-size: 24px;
             text-transform: uppercase;
@@ -94,6 +98,11 @@
             border: 1px solid #3b3b3b;
             background-color: #fff !important;
             color: #3b3b3b;
+        }
+
+        .dlab {
+            max-height: 100px;
+            background: white;
         }
         .panel-heading {
             color: #fff !important;
@@ -215,6 +224,10 @@
             border-right: 50px solid #555;
             border-bottom: 25px solid transparent;
         }
+
+        p {
+            text-align: justify;
+        }
     </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" class="row">
@@ -259,23 +272,36 @@
             <p>
                 As global markets expand and become more interconnected, businesses are increasingly looking for resources to help identify competitive and profitable opportunities. Several data leakages in the last years have shown that a common approach to this is the creation of offshore companies, i.e. companies created in low-tax, offshore jurisdictions.
                 Our goal is to analyze motivating factors for creating
-                such entities. We believe that a better understanding of the reasons can help to find ways to deal with those tendencies. This has an impact on the social good, because fiscal prudence and opennesss in international trade can have a powerful effect on improving society.
+                such offshore entities. We believe that a better understanding of the reasons can help to find ways to deal with those tendencies. This has an impact on the social good, because fiscal prudence and opennesss in international trade can have a powerful effect on improving society.
             </p>
             <p>
-                Our analysis is based on data provided in the <a class="w3-text-indigo" href="https://www.occrp.org/en/panamapapers/database">Offshore Leaks Database</a>. It contains information about 500,000 offshore companies, foundations and trusts including links to people and companies in more than 200 countries and territories. The information comes from the Panama Papers, the Offshore Leaks and the Bahamas Leaks investigations cunducted in the years 2013 to 2016. While those data leaks contain diverse sorts of documents from emails to bank documents, the database provides structured information excluding raw files. The latest investigation on the Paradise Papers that was released in November 2017 is not included in our analysis.
+                Our analysis is based on data provided in the Offshore Leaks Database <a href="#db_leak">[1]</a>. It contains information about 500,000 offshore companies, foundations and trusts including links to people and companies in more than 200 countries and territories. The information comes from the Panama Papers, the Offshore Leaks and the Bahamas Leaks investigations cunducted in the years 2013 to 2016. While those data leaks contain diverse sorts of documents from emails to bank documents, the database provides only structured overview information excluding the raw files themselves. The latest investigation on the Paradise Papers that was released in November 2017 is not included in our analysis.
             </p>
             <p>
-                In order to better understand the underlying structures of the offshore business we analyze the available data on the level of countries. We identify the most involved countries and try to find factors that characterize those countries. To this aim we enrich the dataset with information about the economical and social background of countries from the
-                <a class="w3-text-indigo" href="http://www.heritage.org/index/about">Index of Economic Freedom</a>.
+                In order to better understand the underlying structures of the offshore business we analyze the available data on the level of countries. We identify the most involved countries and try to find factors that characterize those countries. To this aim we enrich the dataset with information about the economical and social background of countries from the Index of Economic Freedom<a
+                    href="#index">[2]</a>.
                 Furthermore, we investigate how the different countries are connected and how their presence in the offshore business evolved in the last years. In particular, we wanted to see whether the publication of the leaks influenced those developments in some way.
             </p>
             <hr>
+            <h4>Terminology</h4>
+            <p>
+                Before we present our findings we want to clarify some of the used terminology:
+            </p>
+
+            <ul class="text-left">
+                <li><b>Offshore entity</b>: A company, trust or fund created in a low-tax, offshore location.</li>
+                <li><b>Jurisdiction</b>: In general the term juridiction describes a territory over which authority is exercised. In the context of offshore entities we use it to refer to the country in which the offshore is founded, i.e. the tax haven.</li>
+                <li><b>Incorporation and Inactivation</b>: Those to terms refer to the process of founding and closing an offshore entity, respectively.</li>
+                <li><b>Net amount</b>: difference between incorporations and inactivations.</li>
+            </ul>
+            <br>
+            <br>
         </div>
         <div class="row text-center">
             <h2>
                 A close look to the most involved
-                <b class="w3-text-green">Countries</b> and
-                <b class="w3-text-red">jurisdictions</b>
+                <b class="w3-text-blue">Countries</b> and
+                <b class="w3-text-blue">jurisdictions</b>
             </h2>
             <div class="col-lg-6 text-center">
                 <br>
@@ -326,7 +352,7 @@
                 <hr>
                 <br>
                 <br>
-                <h2 class="">Let's look at their <b class="w3-text-red">Economical Factors</b></h2>
+                <h2 class="">Let's look at their <b class="w3-text-blue">Economical Factors</b></h2>
                 <p>
                     Trying to investigate if origin countries with high entity count are economically similar, we applied principal component analysis on the Index of Economic Freedom using only the data of the countries that are involved in the leak. This data is divided into 5 main categories ( Rule of law, Government size, Regulatory efficiency, Open markets, and Monetary measures) each of which is sub-divided into more detailed features. We can clearly see that most of the top 12 origin countries ( with respect to entity count ) ( colored blue ) are on the left-side of the x-axis and close to each other. This indicates that those countries indeed have similar economical factors. It is necessary to note that not ONLY the countries with great economic standing are the ones that invest the most, but also the ones with mediocre overall economy have a great contribution. However, this may be due to the fact that this data only points to a fraction of what really is out there.                </p>
                 <br>
@@ -344,40 +370,42 @@
     <div class="row ">
         <div class="col-lg-12">
             <hr>
-            <h2>Extricating the <b class="w3-text-indigo">connections</b></h2>
-            <p>Let us now take a closer look at how the different countries are connected. We measure the connectedness of two countries by the number of offshores coming from one country founded in the other country.
+            <h2>Extricating the <b class="w3-text-blue">connections</b></h2>
+            <p>
+                Let us now take a closer look at how the different countries are connected. We measure the connectedness of two countries by the number of offshores coming from one country founded in the other country.
                 <br>
-                To begin with, we want to see if there is a pattern in the way players in origin countries select special countries for their offshores. Therefore, we cluster the origin countries into groups with similar selection information using kMeans clustering.
+                To begin with, we want to see if there is a pattern in the way players in origin countries select special countries for their offshores. Therefore, we cluster the origin countries into groups with similar selection information using k-means clustering.
                 <br>
-                The selection patterns of the four resulting clusters are visualized in the matrices below. Each row corresponds to an origin country and each column to a goal country. The color of a cell indicates for the corresponding origin country the relative frequency of offshores that where founded in the corresponding goal country.</p>
-            <hr>
-            <div class="row slideanim">
-                <div class="col-lg-6 col-sm-12">
-                    <iframe id="4" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/49.embed?link=false" height="500" width="100%"></iframe>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <iframe id="5" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/51.embed?link=false" height="500" width="100%"></iframe>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <iframe id="6" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/53.embed?link=false" height="500" width="100%"></iframe>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <iframe id="7" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/55.embed?link=false" height="500" width="100%"></iframe>
-                </div>
-            </div>
+                The selection patterns of the four resulting clusters are visualized in the matrices below. Each row corresponds to an origin country and each column to a goal country. The color of a cell indicates for the corresponding origin country the relative frequency of offshores that where founded in the corresponding goal country.
             <hr>
             <p>
-                And indeed it is easy to see a pattern that characterizes the countries which are in the same  cluster: The first cluster contains those countries where the majority of offshore entities are founded on the British Virgin Islands. The second cluster contains the countries with most offshore entities in Panama, the third those countries with a mojority of entities on the Seychelles. The countries in the fourth cluster show more diverse distributions of destination countries. However there are still interesting patterns. For example, for many countries in this cluster the main destination of entities is the country itself, see for example the Cook Islands or Samoa.
+                And indeed it is easy to see a pattern that characterizes the countries which are in the same cluster: The first cluster contains those countries where the majority of offshore entities are founded on the British Virgin Islands. The second cluster contains the countries with most offshore entities in Panama, the third those countries with a mojority of entities on the Seychelles. The countries in the fourth cluster show more diverse distributions of destination countries. However there are still interesting patterns. For example, for many countries in this cluster the main destination of entities is the country itself, see for example the Cook Islands or Samoa.
+            </p>
+            <div class="row slideanim">
+                <div class="col-lg-12 col-sm-12">
+                    <iframe id="4" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/49.embed?link=false" height="600" width="100%"></iframe>
+                </div>
+                <div class="col-lg-12 col-sm-12">
+                    <iframe id="5" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/51.embed?link=false" height="600" width="100%"></iframe>
+                </div>
+                <div class="col-lg-12 col-sm-12">
+                    <iframe id="6" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/53.embed?link=false" height="600" width="100%"></iframe>
+                </div>
+                <div class="col-lg-12 col-sm-12">
+                    <iframe id="7" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/55.embed?link=false" height="600" width="100%"></iframe>
+                </div>
+            </div>
+            <p>
                 <br>
                 Now that we know that the countries can be categorized by the way jurisdictions for offshores are selected, an obvious question to ask is what causes those different structures. In other words, we want to know how the countries that are in the same cluster are similar to each other and different to the coutries in other clusters. This in turn could help us to find the underlying factors that motivate the selection of destination countries.
             <hr>
             </p>
             <div class="row slideanim">
                 <div class="col-lg-12 col-sm-12 text-center">
-                    <h2 class="">What's their <b class="w3-text-pink"> geographical</b> location?</h2>
+                    <h2 class="">What's their <b class="w3-text-blue"> geographical</b> location?</h2>
                     <h4 class="">Countries ISO 3166-1 numeric code is obtained through <a class="w3-text-indigo" href="https://restcountries.eu/">Restcountries API</a>.</h4>
                     <p>
-                        The first thing we consider as a possible factor is geographical closeness. As can be seen in the map, most South American countries (Brasil being the most apparent exception) have the majority of offshore entities in Panama (cluster 2). In Northern America and the UK, most offshore entities are founded on the British Virgin Islands. So indeed geographical closeness might be a factor.
+                        The first thing we consider as a possible factor is geographical closeness. To this means we draw a map1 where the color of each country represents its cluster. Countries colored in white do not occur in the database and therefore do not belong to any cluster. We observe that most South American countries (Brasil being the most apparent exception) have the majority of offshore entities in Panama (Cluster 1). In Northern America and the UK, most offshore entities are founded on the British Virgin Islands. So indeed geographical closeness might be a factor. Other interesting observations include that most of the countries in Cluster 2 are African. The only exceptions are Bulgaria and the Seychelles (which is also the most popular tax haven in these countries).
                     </p>
                     <iframe id="map" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/47.embed?link=false" height="700" width="100%"></iframe>
                 </div>
@@ -390,7 +418,7 @@
                     <hr>
                     <br>
                     <br>
-                    <h2><b class="w3-text-green">Clusters</b> are not sharing economical factors</h2>
+                    <h2><b class="w3-text-blue">Clusters</b> are not sharing economical factors</h2>
                     <p>
                         The next possible factors we consider are of economical nature. We investigate which influence the economic factors specified in the Index of Eonomic freedom data set have on the assignment to the clusters. There are several ways to tackle this question. One approach we took was to do a multinomial logit which predicts the cluster from the economical factors. As economical factors, we considered the gross domestic product (GDP), the GDP growth rate, government expenditures, the infalation, foreign direct investment (FDI) inflow and the public debt. We then interpreted the coefficients of the classifier. It turned out that none of the mentionned factors have a significant influence. Another approach is to do a principal component analysis (PCA). A PCA considering the three main factors can be visulized as follows, where every point corresponds to a country and the color indicates its cluster.
                         <br>
@@ -410,8 +438,8 @@
             </div>
             <div class="row slideanim">
                 <div class="col-lg-12 col-sm-12 text-center">
-                    <h2 class="">Is the <b class="w3-text-red">Network</b> of the countries interesting?</h2>
-                    <p>The network below describes if there is an established connection between 2 countries. As expected the countries present at the inner core of the network are the countries with the most number of connections which naturally are the tax havens. As we move from the inner core of the network to the outer core we can notice that the number of connections is decreasing but yet significant, and those are the origin countries that are most involved in the data. At the shell, the network represents the countries with the least amount of connections and can also be interpreted as the countries that are least involved. Keep in mind that a connection here only resembles that there is a link between those two countries and doesn't tell us anything about the number of entities entrenched. It is still valid that a country with 1 connection may have a large number of entities but that is not the general trend. As mentioned previously, we have seen cases where there is local activity within a country and those were terminated from the graph due to them being self loops, hence the presence of some nodes without any connections.</p>
+                    <h2 class="">Is the <b class="w3-text-blue">Network</b> of the countries interesting?</h2>
+                    <p>The network below describes if there is an established connection between two countries. As expected the countries present at the inner core of the network are the countries with the most number of connections which naturally are the tax havens. As we move from the inner core of the network to the outer core we can notice that the number of connections is decreasing but yet significant, and those are the origin countries that are most involved in the data. At the shell, the network represents the countries with the least amount of connections and can also be interpreted as the countries that are least involved. Keep in mind that a connection here only resembles that there is a link between those two countries and doesn't tell us anything about the number of entities entrenched. It is still valid that a country with one connection may have a large number of entities but that is not the general trend. As mentioned previously, we have seen cases where there is local activity within a country and those were terminated from the graph due to them being self loops, hence the presence of some nodes without any connections.</p>
                     <hr>
                     <iframe id="network" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/57.embed?link=false" height="800" width="100%"></iframe>
                 </div>
@@ -423,7 +451,7 @@
 <!-- Container (Services Section) -->
 <div id="trends" class="container text-center">
     <div class="row slideanim">
-        <h2>How are the countries acting <b class="w3-text-brown">throughout the years</b> ?</h2>
+        <h2>How are the countries acting <b class="w3-text-blue">throughout the years</b> ?</h2>
         <p>
             We choose to analyze the behavior of the 50 most involved countries by clusters,
             keeping only the top 5 countries for each of them. Cluster 3 is composed only
@@ -456,7 +484,7 @@
         </div>
     </div>
     <div id="analysis_trends" class="container-fluid">
-        <h2>Some clusters are more <b class="w3-text-yellow">actives</b> than others</h2>
+        <h2>Some clusters are more <b class="w3-text-blue">actives</b> than others</h2>
         <hr>
         <p>
             Countries belonging to the same clusters show similar trends on the size of their
@@ -577,39 +605,69 @@
             </div>
         </div>
     </div>
-
+    <div id="conclusions">
+        <hr>
+        <br>
+        <div class="row slideanim">
+            <h2>Conclusions</h2>
+            <p>
+                We analyzed the underlying structure of the offshore businesses on a country level. The Bahamas, the British Virgin Islands, Panama, and the Seychelles were identified as the most involved jurisdictions. On the other hand the most involved origin countries with respect to the outflow of entities are Hong Kong, Switzerland, United Kingdom, Luxembourg and the United Arab Emirates. A closer investigation showed that the most involved countries have common economical characteristics.
+                <br>
+                To understand how the countries are connected to each other we clustered them according to the distribution of the offshore entities to jurisdictions.  This resulted in four clusters with clear selection patterns. Taking a closer look into the geographical location of the countries in each cluster we found that the countries that are relatively close show similar behaviour in how they invest. However, we could not find any significant relationship between the patterns and the economic characteristics of the countries. We think that other important influencing factors might be found in the historical and political background of the countries.
+                <br>
+                Analyzing the fluctuations of the number of active offshore entities over time we found that countries which were in the same cluster showed similar trends. Interestingly, we can find similar patterns across the clusters, in particular we see a general increase in the amount of incorporations up-to 2008, and a sudden decrease afterwards. Considering that 2008 is the year when the global financial crisis occured led us to think that there might be a link between the net amount of established entities and the stock market.
+                <br>
+                Finally, future work to extend this analysis includes integrating the latest data which was made available in the Paradise Papers leak. We think that experts in international relations and economy might be able to find more in-depth explanations for the interesting insights we found.
+            </p>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
 </div>
 
 <!-- Container (Contact Section) -->
-<div id="about" class="container-fluid bg-grey">
-    <h2 class="text-center">About this project</h2>
+<div id="about" class="container">
     <div class="row">
-        <div class="col-lg-4 text-center">
-            <h3>Visit our website</h3>
-            <img class="qr_code" src="insidetheleakqr.png" alt="qr_code">
-            <hr>
-            <p>Contact us and we'll get back to you within 24 hours.</p>
-        </div>
-        <div class="col-lg-4 text-center">
-            <h3>Visit our website</h3>
-            <img class="qr_code" src="insidetheleakqr.png" alt="qr_code">
-            <hr>
-            <p>Contact us and we'll get back to you within 24 hours.</p>
-        </div>
-        <div class="col-lg-4 text-center">
-            <h3>Visit our website</h3>
-            <img class="qr_code" src="insidetheleakqr.png" alt="qr_code">
-            <hr>
-            <p>Contact us and we'll get back to you within 24 hours.</p>
-        </div>
+    <div class="col-lg-9">
+        <h2 class="text-center">About this project</h2>
+        <p>
+            We (Federico Pucci, Sarah Sallinger, Mazen Fouad A-wali Mahdi) are three Master's students at EPFL (École polytechnique fédérale de Lausanne). This data story was created as outcome of a project for the fall 2017 edition of the Applied Data Analysis course at EPFL.
+        </p>
+        <hr>
+        <h3>References</h3>
+        <p>
+            [1] The International Consortium of Investigative Journalists. <a id="db_leak" href="https://offshoreleaks.icij.org/pages/database" class="w3-text-indigo">Offshore Leaks Database</a>. Retrieved November 1, 2017.
+            <br>
+            [2]  The Heritage Foundation. <a id="index" href="http://www.heritage.org/index/" class="w3-text-indigo">Index of Economic Freedom</a>. Retrieved December 18, 2017.
+            <br>
+            [3] Florez, F. <a id="rest" href="https://restcountries.eu/" class="w3-text-indigo">REST Countries</a>. Retrieved December 18, 2017.
+        </p>
+    </div>
+    <div class="col-lg-3 text-center">
+        <h3>Visit our website</h3>
+        <img class="qr_code" src="insidetheleakqr.png" alt="qr_code">
+        <hr>
+        <p>Contact us and we'll get back to you within 24 hours.</p>
+    </div>
     </div>
 </div>
 
 <footer class="container-fluid text-center">
-    <a href="#myPage" title="To Top">
-        <span class="glyphicon glyphicon-chevron-up"></span>
-    </a>
-    <p>Inside Panama Leaks is hosted by <a href="https://github.com/puccife">puccife</a></p>
+    <div class="row">
+    <div class="w3-left col-lg-2 w3-white">
+        <img src="project/images/dlab.svg" alt="dlab logo" class="dlab">
+    </div>
+    <div class="col-lg-8">
+        <img src="project/images/epfl-logo.png" alt="dlab logo" class="dlab">
+    </div>
+    <div class="w3-right col-lg-2 licences">
+        <p>
+        We are using ICIJ Offshore Leaks Database under the Open Database License and the contents under Creative Commons Attribution-ShareAlike license.
+        <br>
+        We are using RESTcountries API under Mozilla Public License MPL 2.0
+    </p></div>
+    </div>
 </footer>
 
 <script>
