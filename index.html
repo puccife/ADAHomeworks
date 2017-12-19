@@ -268,38 +268,38 @@
 <div id="analysis" class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <h2>A brief introduction to the study case</h2>
+            <h2>A brief introduction</h2>
             <p>
                 As global markets expand and become more interconnected, businesses are increasingly looking for resources to help identify competitive and profitable opportunities. Several data leakages in the last years have shown that a common approach to this is the creation of offshore companies, i.e. companies created in low-tax, offshore jurisdictions.
                 Our goal is to analyze motivating factors for creating
                 such offshore entities. We believe that a better understanding of the reasons can help to find ways to deal with those tendencies. This has an impact on the social good, because fiscal prudence and opennesss in international trade can have a powerful effect on improving society.
             </p>
             <p>
-                Our analysis is based on data provided in the Offshore Leaks Database <a href="#db_leak">[1]</a>. It contains information about 500,000 offshore companies, foundations and trusts including links to people and companies in more than 200 countries and territories. The information comes from the Panama Papers, the Offshore Leaks and the Bahamas Leaks investigations cunducted in the years 2013 to 2016. While those data leaks contain diverse sorts of documents from emails to bank documents, the database provides only structured overview information excluding the raw files themselves. The latest investigation on the Paradise Papers that was released in November 2017 is not included in our analysis.
+                Our analysis is based on data provided in the Offshore Leaks Database <a href="#db_leak">[1]</a>. It contains information about 500,000 offshore companies, foundations and trusts including links to people and companies in more than 200 countries and territories. The information comes from the Panama Papers, the Offshore Leaks and the Bahamas Leaks investigations cunducted in the years 2013 to 2016. While those data leaks contain diverse sorts of documents from emails to bank documents, the database provides only structured overview information excluding the raw files themselves. The latest investigation on the Paradise Papers, which was released in November 2017 is not included, in our analysis.
             </p>
             <p>
-                In order to better understand the underlying structures of the offshore business we analyze the available data on the level of countries. We identify the most involved countries and try to find factors that characterize those countries. To this aim we enrich the dataset with information about the economical and social background of countries from the Index of Economic Freedom<a
+                In order to better understand the underlying structures of the offshore business, we analyze the available data on the level of countries. We identify the most involved countries and try to find factors that characterize those countries. To this aim, we enrich the dataset with information about the economical and social background of countries from the Index of Economic Freedom<a
                     href="#index">[2]</a>.
-                Furthermore, we investigate how the different countries are connected and how their presence in the offshore business evolved in the last years. In particular, we wanted to see whether the publication of the leaks influenced those developments in some way.
+                Furthermore, we investigate how the different countries are connected and how their presence in the offshore business evolved in the last years. In particular, we want to see whether the publication of the leaks influenced those developments in some way.
             </p>
             <hr>
             <h4>Terminology</h4>
             <p>
-                Before we present our findings we want to clarify some of the used terminology:
+                Before we present our findings, we want to clarify some of the used terminology:
             </p>
 
             <ul class="text-left">
                 <li><b>Offshore entity</b>: A company, trust or fund created in a low-tax, offshore location.</li>
-                <li><b>Jurisdiction</b>: In general the term juridiction describes a territory over which authority is exercised. In the context of offshore entities we use it to refer to the country in which the offshore is founded, i.e. the tax haven.</li>
-                <li><b>Incorporation and Inactivation</b>: Those to terms refer to the process of founding and closing an offshore entity, respectively.</li>
-                <li><b>Net amount</b>: difference between incorporations and inactivations.</li>
+                <li><b>Jurisdiction</b>: By jurisdiction we mean a territory over which authority is exercised. In the context of offshore entities it refers to the country in which the offshore is founded, i.e. the tax haven.</li>
+                <li><b>Incorporation and Inactivation</b>: Those two terms refer to the process of founding and closing an offshore entity, respectively.</li>
+                <li><b>Net amount</b>: The difference between the number of incorporations and the number of inactivations is referred to as net amount.</li>
             </ul>
             <br>
             <br>
         </div>
         <div class="row text-center">
             <h2>
-                A close look to the most involved
+                Most involved
                 <b class="w3-text-blue">Countries</b> and
                 <b class="w3-text-blue">jurisdictions</b>
             </h2>
@@ -338,7 +338,7 @@
                 <hr>
                 <br>
                 <br>
-                <h2>Where do the <b class="w3-text-blue">most involved countries</b> are investing?</h2>
+                <h2>Where do the <b class="w3-text-blue">most involved countries</b> invest?</h2>
                 <p>
                     As the number of offshore entities increase, the number of tax havens involved increases. Of course this is only a small portion of the data available in the real world but it can be seen that most of the countries invest in Panama and British Virgin Islands. It would have been truly interesting to see the true distribution of the entities registered in Bahamas. Although Paradise papers <https://www.icij.org/investigations/paradise-papers/icij-releases-paradise-papers-data-appleby/> were not analyzed, it is worth to note that more than 70 percent of the new records belong to entities incorporated in Bermuda and the Cayman Islands.
                 </p>
@@ -379,7 +379,7 @@
                 The selection patterns of the four resulting clusters are visualized in the matrices below. Each row corresponds to an origin country and each column to a goal country. The color of a cell indicates for the corresponding origin country the relative frequency of offshores that where founded in the corresponding goal country.
             <hr>
             <p>
-                And indeed it is easy to see a pattern that characterizes the countries which are in the same cluster: The first cluster contains those countries where the majority of offshore entities are founded on the British Virgin Islands. The second cluster contains the countries with most offshore entities in Panama, the third those countries with a mojority of entities on the Seychelles. The countries in the fourth cluster show more diverse distributions of destination countries. However there are still interesting patterns. For example, for many countries in this cluster the main destination of entities is the country itself, see for example the Cook Islands or Samoa.
+                And indeed it is easy to see a pattern that characterizes the countries which are in the same cluster: Cluster 0 contains those countries where the majority of offshore entities are founded on the British Virgin Islands. Cluster 1 contains the countries with most offshore entities in Panama, Cluster 2 those countries with a mojority of entities on the Seychelles. The countries in Cluster 3 show more diverse distributions of destination countries. However there are still interesting patterns. For example, for many countries in this cluster the main destination of entities is the country itself, see for example the Cook Islands or Samoa.
             </p>
             <div class="row slideanim">
                 <div class="col-lg-12 col-sm-12">
@@ -405,7 +405,7 @@
                     <h2 class="">What's their <b class="w3-text-blue"> geographical</b> location?</h2>
                     <h4 class="">Countries ISO 3166-1 numeric code is obtained through <a class="w3-text-indigo" href="https://restcountries.eu/">Restcountries API</a>.</h4>
                     <p>
-                        The first thing we consider as a possible factor is geographical closeness. To this means we draw a map1 where the color of each country represents its cluster. Countries colored in white do not occur in the database and therefore do not belong to any cluster. We observe that most South American countries (Brasil being the most apparent exception) have the majority of offshore entities in Panama (Cluster 1). In Northern America and the UK, most offshore entities are founded on the British Virgin Islands. So indeed geographical closeness might be a factor. Other interesting observations include that most of the countries in Cluster 2 are African. The only exceptions are Bulgaria and the Seychelles (which is also the most popular tax haven in these countries).
+                        The first thing we consider as a possible factor is geographical closeness. To this means we draw a map where the color of each country represents its cluster. Countries colored in white do not occur in the database and therefore do not belong to any cluster. We observe that most South American countries (Brasil being the most apparent exception) have the majority of offshore entities in Panama (Cluster 1). In Northern America and the UK, most offshore entities are founded on the British Virgin Islands. So indeed geographical closeness might be a factor. Other interesting observations include that most of the countries in Cluster 2 are African. The only exceptions are Bulgaria and the Seychelles (which is also the most popular tax haven in these countries).
                     </p>
                     <iframe id="map" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/47.embed?link=false" height="700" width="100%"></iframe>
                 </div>
@@ -438,7 +438,7 @@
             </div>
             <div class="row slideanim">
                 <div class="col-lg-12 col-sm-12 text-center">
-                    <h2 class="">Is the <b class="w3-text-blue">Network</b> of the countries interesting?</h2>
+                    <h2 class=""><b class="w3-text-blue">Network</b> of countries</h2>
                     <p>The network below describes if there is an established connection between two countries. As expected the countries present at the inner core of the network are the countries with the most number of connections which naturally are the tax havens. As we move from the inner core of the network to the outer core we can notice that the number of connections is decreasing but yet significant, and those are the origin countries that are most involved in the data. At the shell, the network represents the countries with the least amount of connections and can also be interpreted as the countries that are least involved. Keep in mind that a connection here only resembles that there is a link between those two countries and doesn't tell us anything about the number of entities entrenched. It is still valid that a country with one connection may have a large number of entities but that is not the general trend. As mentioned previously, we have seen cases where there is local activity within a country and those were terminated from the graph due to them being self loops, hence the presence of some nodes without any connections.</p>
                     <hr>
                     <iframe id="network" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~puccife/57.embed?link=false" height="800" width="100%"></iframe>
@@ -451,7 +451,7 @@
 <!-- Container (Services Section) -->
 <div id="trends" class="container text-center">
     <div class="row slideanim">
-        <h2>How are the countries acting <b class="w3-text-blue">throughout the years</b> ?</h2>
+        <h2>How is the situation in the countries changing <b class="w3-text-blue">throughout the years</b> ?</h2>
         <p>
             We choose to analyze the behavior of the 50 most involved countries by clusters,
             keeping only the top 5 countries for each of them. Cluster 3 is composed only
@@ -484,7 +484,7 @@
         </div>
     </div>
     <div id="analysis_trends" class="container-fluid">
-        <h2>Some clusters are more <b class="w3-text-blue">actives</b> than others</h2>
+        <h2>Some clusters are more <b class="w3-text-blue">active</b> than others</h2>
         <hr>
         <p>
             Countries belonging to the same clusters show similar trends on the size of their
@@ -500,7 +500,7 @@
         <ul class="w3-ul w3-light-gray">
             <li>Switzerland and British Virgin Islands reached their pick of number of incorporations respectively in <b class="w3-text-red">2005</b> and <b class="w3-text-red">2007</b>.</li>
             <li>Hong Kong kept increasing its number until <b class="w3-text-red">2010</b>, after that year the number of incorporations suffered a sharp fall.</li>
-            <li>Jersey and United Kingdom registered their highest number of incorporations before the <b class="w3-text-red">2000</b>, rispectively in <b class="w3-text-red">1999</b> and <b class="w3-text-red">1997</b>.</li>
+            <li>Jersey and United Kingdom registered their highest number of incorporations before the <b class="w3-text-red">2000</b>, respectively in <b class="w3-text-red">1999</b> and <b class="w3-text-red">1997</b>.</li>
         </ul>
     </div>
     <div id="behavior_analysis" class="container-fluid">
@@ -508,7 +508,7 @@
             <div class="col-lg-12 col-sm-12">
                 <hr>
                 <div class="">
-                    <h1><b>A close look into the most involved countries</b></h1>
+                    <h1><b>A closer look at the most involved countries</b></h1>
                     <p>In the candle plots below we can find some evidences about the
                     behaviour of the most involved countries.
                     Our aim is to represent the differences between incorporations
@@ -609,7 +609,7 @@
         <hr>
         <br>
         <div class="row slideanim">
-            <h2>Conclusions</h2>
+            <h2>Conclusion</h2>
             <p>
                 We analyzed the underlying structure of the offshore businesses on a country level. The Bahamas, the British Virgin Islands, Panama, and the Seychelles were identified as the most involved jurisdictions. On the other hand the most involved origin countries with respect to the outflow of entities are Hong Kong, Switzerland, United Kingdom, Luxembourg and the United Arab Emirates. A closer investigation showed that the most involved countries have common economical characteristics.
                 <br>
