@@ -79,3 +79,20 @@ def compute_countries_involved_data(index_2017,countries_involved):
     countries_involved_data = countries_involved_data.drop(countries_involved_data.index[28])
 
     return countries_involved_data
+
+def features_df(jurisdiction_count,index_2017):
+    
+    # Extracting countries involved in the leak
+    unique_countries = set(jurisdiction_count.index.get_level_values('countries').values)
+    list_countries =  list(unique_countries)
+    # Finding the data of those countries in the index of economical freedom
+    index_2017_filtered = index_2017.loc[list_countries].dropna()
+    
+    # Summing the number of entities in each origin country
+    unique_countries_count = jurisdiction_count.reset_index()\
+    .drop('jurisdiction_description',axis=1)\
+    .groupby('countries').aggregate(np.sum)
+    # Adding it to the index of economical freedom dataframe
+    countries_count = index_2017_filtered.join(unique_countries_count)
+    
+    return countries_count

@@ -10,7 +10,7 @@ from plotly.graph_objs import *
 init_notebook_mode(connected=True)
 
 
-def visualize_countries_situation(most_involved_leak, divide_by='Country', selected_jurisdiction=None):
+def visualize_countries_situation(most_involved_leak,vis_number,divide_by='Country', selected_jurisdiction=None):
     """
     This function is used to display the country situation. If a jurisdiction is specified, then the
     analysis is focused on that jurisdiction - otherwise it's based on all the jurisdictions involved.
@@ -23,13 +23,13 @@ def visualize_countries_situation(most_involved_leak, divide_by='Country', selec
     """
     if(selected_jurisdiction != None):
         leaks = []
-        for country in most_involved_leak:
+        for country in most_involved_leak[0:vis_number]:
             leak = country.copy()
             leak = leak.reset_index()
             leak = leak[leak['jurisdiction'] == selected_jurisdiction]
             leaks.append(leak)
     else:
-        leaks = most_involved_leak
+        leaks = most_involved_leak[0:vis_number]
 
     # For each country this function displays a seaborn factorplot.
     for index_, country_result in enumerate(leaks):
